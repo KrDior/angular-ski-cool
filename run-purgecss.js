@@ -1,4 +1,4 @@
-const exec = require('child_process').exec;
+var exec = require('child_process').exec;
 
 /**
  * or you can refer to https://dev.to/dylanvdmerwe/reduce-angular-style-size-using-purgecss-to-remove-unused-styles-3b2k

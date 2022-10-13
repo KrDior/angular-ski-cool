@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-new-app": {
+    "ski-cool-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -76,19 +76,19 @@
           "builder": "ngx-build-plus:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ng-new-app:build:production"
+              "browserTarget": "ski-cool-app:build:production"
             },
             "development": {
-              "browserTarget": "ng-new-app:build:development"
+              "browserTarget": "ski-cool-app:build:development"
             }
           },
           "defaultConfiguration": "development",
-          "options": { "browserTarget": "ng-new-app:build", "extraWebpackConfig": "./cypress/coverage.webpack.js" }
+          "options": { "browserTarget": "ski-cool-app:build", "extraWebpackConfig": "./cypress/coverage.webpack.js" }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-new-app:build"
+            "browserTarget": "ski-cool-app:build"
           }
         },
         "test": {
@@ -110,44 +110,44 @@
         "cypress-run": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "ng-new-app:serve"
+            "devServerTarget": "ski-cool-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ng-new-app:production"
+              "devServerTarget": "ski-cool-app:production"
             }
           }
         },
         "cypress-open": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "ng-new-app:serve",
+            "devServerTarget": "ski-cool-app:serve",
             "watch": true,
             "headless": false
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ng-new-app:serve:production"
+              "devServerTarget": "ski-cool-app:serve:production"
             }
           }
         },
         "e2e": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "ng-new-app:serve",
+            "devServerTarget": "ski-cool-app:serve",
             "watch": true,
             "headless": false
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ng-new-app:serve:production"
+              "devServerTarget": "ski-cool-app:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "ng-new-app",
+  "defaultProject": "ski-cool-app",
   "cli": {
     "defaultCollection": "@angular-eslint/schematics"
   }

@@ -1,0 +1,22 @@
+@import 'variables';
+
+.nav {
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+}
+
+.mat-toolbar {
+  background-color: $primary !important;
+}
+
+.mat-button {
+  font-size: 24px;
+  line-height: 58px !important;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none !important;
+  }
+}

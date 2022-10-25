@@ -8,6 +8,7 @@ import { environment } from '@env';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { SharedModule } from '@shared/shared.module';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -33,6 +34,7 @@ import { AppComponent } from './app.component';
       },
       defaultLanguage: 'en-US',
     }),
+    SharedModule,
   ],
   providers: [
     { provide: 'BASE_URL', useValue: environment.baseurl },

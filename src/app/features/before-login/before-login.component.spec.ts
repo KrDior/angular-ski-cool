@@ -5,24 +5,24 @@ import { SharedModule } from '../../shared/shared.module';
 import { BeforeLoginComponent } from './before-login.component';
 
 describe('BeforeLoginComponent', () => {
-  let component: BeforeLoginComponent;
-  let fixture: ComponentFixture<BeforeLoginComponent>;
+	let component: BeforeLoginComponent;
+	let fixture: ComponentFixture<BeforeLoginComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [BeforeLoginComponent],
-      imports: [SharedModule],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    }).compileComponents();
-  }));
+	beforeEach(waitForAsync(() => {
+		TestBed.configureTestingModule({
+			declarations: [BeforeLoginComponent],
+			imports: [SharedModule],
+			schemas: [CUSTOM_ELEMENTS_SCHEMA],
+		}).compileComponents();
+	}));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(BeforeLoginComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(BeforeLoginComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });

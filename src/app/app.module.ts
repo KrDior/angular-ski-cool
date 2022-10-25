@@ -11,39 +11,39 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SharedModule } from '@shared/shared.module';
 
 export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+	return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    CoreModule,
-    HttpClientModule,
-    LoadingBarRouterModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: createTranslateLoader,
-        deps: [HttpClient],
-      },
-      defaultLanguage: 'en-US',
-    }),
-    SharedModule,
-  ],
-  providers: [
-    { provide: 'BASE_URL', useValue: environment.baseurl },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: HTTPReqResInterceptor,
-      multi: true,
-    },
-  ],
-  bootstrap: [AppComponent],
+	declarations: [AppComponent],
+	imports: [
+		BrowserModule,
+		BrowserAnimationsModule,
+		AppRoutingModule,
+		CoreModule,
+		HttpClientModule,
+		LoadingBarRouterModule,
+		TranslateModule.forRoot({
+			loader: {
+				provide: TranslateLoader,
+				useFactory: createTranslateLoader,
+				deps: [HttpClient],
+			},
+			defaultLanguage: 'en-US',
+		}),
+		SharedModule,
+	],
+	providers: [
+		{ provide: 'BASE_URL', useValue: environment.baseurl },
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: HTTPReqResInterceptor,
+			multi: true,
+		},
+	],
+	bootstrap: [AppComponent],
 })
 export class AppModule {}

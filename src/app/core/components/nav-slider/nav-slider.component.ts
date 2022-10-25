@@ -1,16 +1,16 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-nav-slider',
-  templateUrl: './nav-slider.component.html',
-  styleUrls: ['./nav-slider.component.scss'],
+	selector: 'app-nav-slider',
+	templateUrl: './nav-slider.component.html',
+	styleUrls: ['./nav-slider.component.scss'],
 })
 export class NavSliderComponent {
-  @Output() public drawerClick: EventEmitter<void> = new EventEmitter();
+	@Output() public drawerClick: EventEmitter<void> = new EventEmitter();
 
-  constructor() {}
+	constructor() {}
 
-  public toggleDrawer(): void {
-    this.drawerClick.emit();
-  }
+	public toggleDrawer(): void {
+		this.drawerClick.emit();
+	}
 }

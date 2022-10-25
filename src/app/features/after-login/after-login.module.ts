@@ -7,7 +7,7 @@ import { AfterLoginRoutingModule } from './after-login-routing.module';
 import { AfterLoginComponent } from './after-login.component';
 
 @NgModule({
-  declarations: [AfterLoginComponent],
-  imports: [CommonModule, AfterLoginRoutingModule, SharedModule, ScamComponent],
+	declarations: [AfterLoginComponent],
+	imports: [CommonModule, AfterLoginRoutingModule, SharedModule, ScamComponent],
 })
 export class AfterLoginModule {}

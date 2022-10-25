@@ -5,10 +5,10 @@ import { AuthService } from './auth.service';
 let service: AuthService;
 
 beforeEach(() => {
-  TestBed.configureTestingModule({ providers: [AuthService], imports: [HttpClientTestingModule] });
+	TestBed.configureTestingModule({ providers: [AuthService], imports: [HttpClientTestingModule] });
 });
 
 it('should create', () => {
-  service = TestBed.inject(AuthService);
-  expect(service).toBeTruthy();
+	service = TestBed.inject(AuthService);
+	expect(service).toBeTruthy();
 });

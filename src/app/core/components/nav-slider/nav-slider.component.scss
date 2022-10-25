@@ -1,57 +1,57 @@
 .desktop-hide {
-  display: none !important;
+	display: none !important;
 }
 
 h1 {
-  margin: 0;
-  text-align: center;
-  padding: 10px;
-  font-weight: 600;
-  color: #fff;
+	margin: 0;
+	text-align: center;
+	padding: 10px;
+	font-weight: 600;
+	color: #fff;
 }
 
 .mat-icon {
-  color: var(--primary);
-  height: auto !important;
-  width: auto !important;
-  font-size: 66px;
+	color: var(--primary);
+	height: auto !important;
+	width: auto !important;
+	font-size: 66px;
 }
 
 .slider {
-  background-image: url(https://unsplash.com/photos/SUlisDzP9W8/download?force=true&w=1920);
-  height: 600px;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.9;
+	background-image: url(https://unsplash.com/photos/SUlisDzP9W8/download?force=true&w=1920);
+	height: 600px;
+	background-size: cover;
+	background-position: center;
+	opacity: 0.9;
 
-  .slider-content {
-    display: flex;
-    justify-self: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-  }
+	.slider-content {
+		display: flex;
+		justify-self: center;
+		align-items: center;
+		height: 100%;
+		width: 100%;
+	}
 
-  .mat-icon {
-    font-size: 40px;
-    color: #fff;
-    float: right;
-    cursor: pointer;
-  }
+	.mat-icon {
+		font-size: 40px;
+		color: #fff;
+		float: right;
+		cursor: pointer;
+	}
 
-  h1 {
-    color: #fff;
-    margin: auto;
-    font-size: 50px;
-  }
+	h1 {
+		color: #fff;
+		margin: auto;
+		font-size: 50px;
+	}
 }
 
 @media (max-width: 768px) {
-  .desktop-hide {
-    display: block !important;
-  }
+	.desktop-hide {
+		display: block !important;
+	}
 
-  .silder h1 {
-    font-size: 36px;
-  }
+	.silder h1 {
+		font-size: 36px;
+	}
 }

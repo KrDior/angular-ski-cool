@@ -6,10 +6,10 @@ import { AppComponent } from './app.component';
 let component: ComponentFixture<AppComponent>;
 
 beforeEach(() => {
-  TestBed.configureTestingModule({ declarations: [AppComponent], schemas: [NO_ERRORS_SCHEMA] });
+	TestBed.configureTestingModule({ declarations: [AppComponent], schemas: [NO_ERRORS_SCHEMA] });
 });
 
 it('should create', () => {
-  component = TestBed.createComponent(AppComponent);
-  expect(component).toBeTruthy();
+	component = TestBed.createComponent(AppComponent);
+	expect(component).toBeTruthy();
 });

@@ -8,24 +8,24 @@ import { SharedModule } from '../../shared.module';
 import { ScamComponent } from './scam.component';
 
 describe('ScamComponent', () => {
-  let component: ScamComponent;
-  let fixture: ComponentFixture<ScamComponent>;
+	let component: ScamComponent;
+	let fixture: ComponentFixture<ScamComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [],
-      imports: [ScamComponent, SharedModule, MatDatepickerModule, MatNativeDateModule, BrowserAnimationsModule],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    }).compileComponents();
-  }));
+	beforeEach(waitForAsync(() => {
+		TestBed.configureTestingModule({
+			declarations: [],
+			imports: [ScamComponent, SharedModule, MatDatepickerModule, MatNativeDateModule, BrowserAnimationsModule],
+			schemas: [CUSTOM_ELEMENTS_SCHEMA],
+		}).compileComponents();
+	}));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ScamComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(ScamComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });

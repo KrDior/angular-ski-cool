@@ -15,13 +15,13 @@ export const directives: any[] = [];
 export const pipes: any[] = [];
 
 export const materialModules: any[] = [
-  MatTabsModule,
-  MatSidenavModule,
-  MatToolbarModule,
-  MatIconModule,
-  MatButtonModule,
-  MatListModule,
-  MatMenuModule,
-  MatFormFieldModule,
-  MatInputModule,
+	MatTabsModule,
+	MatSidenavModule,
+	MatToolbarModule,
+	MatIconModule,
+	MatButtonModule,
+	MatListModule,
+	MatMenuModule,
+	MatFormFieldModule,
+	MatInputModule,
 ];

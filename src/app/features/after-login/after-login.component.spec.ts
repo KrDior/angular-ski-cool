@@ -9,24 +9,24 @@ import { SharedModule } from '../../shared/shared.module';
 import { AfterLoginComponent } from './after-login.component';
 
 describe('AfterLoginComponent', () => {
-  let component: AfterLoginComponent;
-  let fixture: ComponentFixture<AfterLoginComponent>;
+	let component: AfterLoginComponent;
+	let fixture: ComponentFixture<AfterLoginComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [AfterLoginComponent],
-      imports: [ScamComponent, SharedModule, MatDatepickerModule, MatNativeDateModule, BrowserAnimationsModule],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    }).compileComponents();
-  }));
+	beforeEach(waitForAsync(() => {
+		TestBed.configureTestingModule({
+			declarations: [AfterLoginComponent],
+			imports: [ScamComponent, SharedModule, MatDatepickerModule, MatNativeDateModule, BrowserAnimationsModule],
+			schemas: [CUSTOM_ELEMENTS_SCHEMA],
+		}).compileComponents();
+	}));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(AfterLoginComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(AfterLoginComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });

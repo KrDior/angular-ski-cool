@@ -1,9 +1,9 @@
 export class AuthToken {
-  access_token!: string;
-  refresh_token!: string;
+	access_token!: string;
+	refresh_token!: string;
 }
 
 export class UserDetail {
-  username!: string;
-  password!: string;
+	username!: string;
+	password!: string;
 }

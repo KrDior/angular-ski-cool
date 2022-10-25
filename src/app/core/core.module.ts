@@ -7,15 +7,15 @@ import { SidenavMenuComponent } from './components/sidenav-menu/sidenav-menu.com
 import { NavSliderComponent } from './components/nav-slider/nav-slider.component';
 
 @NgModule({
-  declarations: [SidenavMenuComponent, LayoutComponent, NavTabComponent, NavSliderComponent],
-  imports: [CommonModule, SharedModule],
-  exports: [SidenavMenuComponent, LayoutComponent, NavTabComponent, NavSliderComponent],
+	declarations: [SidenavMenuComponent, LayoutComponent, NavTabComponent, NavSliderComponent],
+	imports: [CommonModule, SharedModule],
+	exports: [SidenavMenuComponent, LayoutComponent, NavTabComponent, NavSliderComponent],
 })
 export class CoreModule {
-  /* make sure CoreModule is imported only by the AppModule and noone else */
-  constructor(@Optional() @SkipSelf() presentInParent: CoreModule) {
-    if (presentInParent) {
-      throw new Error('CoreModule is already loaded. Import only in AppModule');
-    }
-  }
+	/* make sure CoreModule is imported only by the AppModule and noone else */
+	constructor(@Optional() @SkipSelf() presentInParent: CoreModule) {
+		if (presentInParent) {
+			throw new Error('CoreModule is already loaded. Import only in AppModule');
+		}
+	}
 }

@@ -6,12 +6,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 @Component({
-  selector: 'app-scam',
-  templateUrl: './scam.component.html',
-  styleUrls: ['./scam.component.scss'],
-  imports: [MatDatepickerModule, MatFormFieldModule, MatNativeDateModule, MatInputModule],
-  standalone: true,
+	selector: 'app-scam',
+	templateUrl: './scam.component.html',
+	styleUrls: ['./scam.component.scss'],
+	imports: [MatDatepickerModule, MatFormFieldModule, MatNativeDateModule, MatInputModule],
+	standalone: true,
 })
 export class ScamComponent {
-  control = new FormControl();
+	control = new FormControl();
 }

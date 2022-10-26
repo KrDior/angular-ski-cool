@@ -1,0 +1,62 @@
+@import 'variables';
+
+.features {
+	padding-top: 60px;
+
+	.row {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.column {
+			width: 33%;
+			float: left;
+			text-align: center;
+			padding-top: 10px;
+			padding-bottom: 10px;
+
+			&:hover {
+				background-color: #dfe4ea;
+				cursor: pointer;
+			}
+
+			p {
+				padding: 0 10px;
+			}
+		}
+	}
+
+	h3 {
+		font-size: 26px;
+		margin-bottom: 0px;
+	}
+
+	.mat-icon {
+		font-size: 66px;
+		height: auto !important;
+		width: auto !important;
+	}
+}
+
+@media (max-width: 842px) {
+	h3 {
+		font-size: 22px !important;
+	}
+
+	p {
+		font-size: 16px !important;
+	}
+}
+
+@media (max-width: 768px) {
+	.features {
+		.row {
+			flex-direction: column;
+		}
+
+		.column {
+			width: 100% !important;
+		}
+	}
+}

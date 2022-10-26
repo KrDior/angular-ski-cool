@@ -1,2 +1,16 @@
+@import 'variables';
+
 .layout-wrapper {
+	.mat-drawer {
+		width: 100%;
+		background-color: $primary;
+	}
+
+	.mat-drawer:not(.mat-drawer-side) {
+		position: fixed;
+	}
+
+	.mat-drawer-backdrop {
+		position: fixed !important;
+	}
 }

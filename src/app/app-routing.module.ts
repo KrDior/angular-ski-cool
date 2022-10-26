@@ -17,7 +17,7 @@ const routes: Routes = [
 	},
 	{
 		path: '**',
-		redirectTo: 'after-login', // or 404 module
+		redirectTo: '', // or 404 module
 	},
 ];
 

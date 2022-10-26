@@ -1,1 +1,30 @@
 @import 'variables';
+
+.close {
+	font-size: 28px;
+	color: #fff;
+	float: right;
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	cursor: pointer;
+}
+
+h1 {
+	color: #fff;
+}
+
+.mat-list-base {
+	display: block !important;
+	margin: 0 auto;
+	position: relative;
+
+	a {
+		text-align: center;
+		margin: 0 auto;
+	}
+}
+
+.mat-list-base .mat-list-item {
+	color: #fff !important;
+}

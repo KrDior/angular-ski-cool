@@ -5,11 +5,30 @@ import { NavTabComponent } from './components/nav-tab/nav-tab.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { SidenavMenuComponent } from './components/sidenav-menu/sidenav-menu.component';
 import { NavSliderComponent } from './components/nav-slider/nav-slider.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { MainContentComponent } from './components/main-page/main-content/main-content.component';
+import { MainFeaturesComponent } from './components/main-page/main-features/main-features.component';
 
 @NgModule({
-	declarations: [SidenavMenuComponent, LayoutComponent, NavTabComponent, NavSliderComponent],
+	declarations: [
+		SidenavMenuComponent,
+		LayoutComponent,
+		NavTabComponent,
+		NavSliderComponent,
+		FooterComponent,
+		MainContentComponent,
+		MainFeaturesComponent,
+	],
 	imports: [CommonModule, SharedModule],
-	exports: [SidenavMenuComponent, LayoutComponent, NavTabComponent, NavSliderComponent],
+	exports: [
+		SidenavMenuComponent,
+		LayoutComponent,
+		NavTabComponent,
+		NavSliderComponent,
+		FooterComponent,
+		MainContentComponent,
+		MainFeaturesComponent,
+	],
 })
 export class CoreModule {
 	/* make sure CoreModule is imported only by the AppModule and noone else */

@@ -35,7 +35,8 @@ export class AuthService {
 	}
 
 	isLoggedIn() {
-		return this.getToken() ? true : false; // add your strong logic
+		return false;
+		// return this.getToken() ? true : false; // add your strong logic
 	}
 
 	storeToken(token: AuthToken) {

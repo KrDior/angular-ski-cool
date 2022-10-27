@@ -17,6 +17,7 @@ import { MenuItem } from '@core/models/menu-item.model';
 import { Subscription } from 'rxjs';
 import { MenuContentWrapperDirective } from '@shared/directives/menu-content-wrapper.directive';
 import { US_STATE_ACTIVE, US_STATE_ACTIVE_SUB } from '@shared/constants/common-constants';
+import { NavigationService } from '@core/services/navigation.service';
 
 export type Position = 'flex-end' | 'center' | 'flex-start' | 'space-around';
 
@@ -62,17 +63,28 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 	public moreItemCount = 0;
 
 	//Measures the total space needed to show every link (linkW = LinkW + PrevLinkW).
-	public linkWidths = [] as any;
+	public linkWidths!: number[];
 
 	//Break points widths to show next available item as screen size grows, order matters.
 	//(e.g. if availabespace > breakpoint, show it and then remove it from the list).
-	public linkBreaks = [] as any;
+	public linkBreaks!: number[];
 	public resize = Subscription.EMPTY;
 
-	constructor(private viewportRuler: ViewportRuler, private changeDetectorRef: ChangeDetectorRef) {}
+	private navSubscription!: Subscription;
+	private subscriptions: Subscription[] = [];
+
+	constructor(
+		private viewportRuler: ViewportRuler,
+		private changeDetectorRef: ChangeDetectorRef,
+		private navigationService: NavigationService
+	) {
+		this.subscriptions.push(
+			this.navigationService.getLineBreaks().subscribe((val) => (this.linkBreaks = val)),
+			this.navigationService.getLinkWidths().subscribe((val) => (this.linkWidths = val))
+		);
+	}
 
 	public ngAfterViewInit() {
-		this.linkWidths = [];
 		const resize = this.viewportRuler.change();
 		const realign = () => {
 			this.updateNav();
@@ -86,6 +98,11 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 
 	public ngOnDestroy() {
 		this.resize.unsubscribe();
+		this.subscriptions.forEach((sub) => sub.unsubscribe());
+	}
+
+	public getAvailableSpace(): number {
+		return this.tabListContainer.nativeElement.offsetWidth - this.moreButtonWidth - 100;
 	}
 
 	public updateNav() {
@@ -95,7 +112,7 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 		}
 
 		//The available space needs to be account for the space the More button takes up.
-		const availableSpace = this.tabListContainer.nativeElement.offsetWidth - this.moreButtonWidth - 100;
+		const availableSpace = this.getAvailableSpace();
 
 		//Update the menu items when the nav loads.
 		if (this.linkWidths.length === 0) {
@@ -106,11 +123,13 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 				} else {
 					this.linkWidths.push(val.getOffsetWidth() + this.linkWidths[index - 1]);
 				}
+				this.navigationService.updateLinkWidths(this.linkWidths);
 
 				//Update the menu items that are overflowing.
 				if (this.linkWidths[index] > availableSpace) {
 					this.menuItems[index].visible = false;
 					this.linkBreaks.push(this.linkWidths[index]);
+					this.navigationService.updateLineBreaks(this.linkBreaks);
 				}
 			});
 
@@ -123,13 +142,12 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 			}
 
 			//Update the view.
-			this.changeDetectorRef.detectChanges();
 		} else {
 			//All of this code below only runs if the viewport changes.
 
 			//Check if the available space is less than the next smallest breakpoint (e.g. hide the next item).
 			if (availableSpace < this.linkWidths[this.linkWrappers.length - 1]) {
-				this.hideLinks(availableSpace);
+				this.hideLinks();
 
 				//Show the more button if it is not already shown.
 				if (!this.showMoreButton) {
@@ -138,29 +156,28 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 
 				//Update the count and then the view.
 				this.moreItemCount = this.linkBreaks.length;
-				this.changeDetectorRef.detectChanges();
 			} else {
 				//As the viewport grows we need to ensure the next item shows, order matters.
 				//We need to ensure the smalles breakpoint is always checked first (e.g. the next
 				//list item).
 
 				this.linkBreaks.reverse();
+				this.navigationService.updateLineBreaks(this.linkBreaks);
 
 				//Check if the viewport should show the next item as it grows.
 				if (availableSpace > this.linkBreaks[this.linkBreaks.length - 1]) {
-					this.showLinks(availableSpace);
+					this.showLinks();
 
 					//Update the viewport.
 					this.moreItemCount = this.linkBreaks.length;
-					this.changeDetectorRef.detectChanges();
 				}
 				// Hide the more button if link break list is empty.
 				if (this.linkBreaks.length < 1) {
 					this.showMoreButton = false;
-					this.changeDetectorRef.detectChanges();
 				}
 			}
 		}
+		this.changeDetectorRef.detectChanges();
 	}
 
 	// We iterate through the list of items because changes in the viewport
@@ -168,23 +185,28 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 	// assume then that the change could have affected the next N items vs
 	// the next item.
 
-	public hideLinks(availableSpace: number) {
+	public hideLinks() {
+		const availableSpace = this.getAvailableSpace();
 		this.linkBreaks = [];
 
 		this.linkWidths.map((val: number, index: any) => {
 			if (availableSpace < val) {
 				this.linkBreaks.push(val);
+				this.navigationService.updateLineBreaks(this.linkBreaks);
 				this.menuItems[index].visible = false;
 			}
 		});
+		this.navigationService.updateLinkWidths(this.linkWidths);
 	}
 
-	public showLinks(availableSpace: number) {
+	public showLinks() {
+		const availableSpace = this.getAvailableSpace();
 		const breaks = [...this.linkBreaks];
 
 		breaks.reverse().map((val) => {
 			if (availableSpace > val) {
 				this.linkBreaks.pop();
+				this.navigationService.updateLineBreaks(this.linkBreaks);
 				this.menuItems[this.linkWidths.indexOf(val)].visible = true;
 			}
 		});

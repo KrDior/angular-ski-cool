@@ -1,18 +1,32 @@
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { fromEvent, Observable, Subject } from 'rxjs';
+import { map, startWith, takeUntil, tap, throttleTime } from 'rxjs/operators';
 
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, ViewChild, OnInit } from '@angular/core';
 import { BroadcasterService } from '@core/services/broadcaster.service';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalizationList } from '@shared/models/localization-list';
+import { MatDrawer } from '@angular/material/sidenav';
+import { MenuItem } from '@core/models/menu-item.model';
+import { menuItemsConfig } from '@shared/configs/menu-items.config';
+import { RoutePath } from './app-routing.module';
+import { MOBILE_LAND_WIDTH } from '@shared/constants/common-constants';
 
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnDestroy {
-	$destroy: Subject<void> = new Subject();
+export class AppComponent implements OnInit, OnDestroy {
+	public isShowHideFlag: 'over' | 'push' | 'side' = 'over';
+	public menuItems: MenuItem[] = menuItemsConfig;
+	public routes: typeof RoutePath = RoutePath;
+	public isDesktopView$!: Observable<boolean>;
+	// private $destroy: Subject<void> = new Subject();
+
+	@ViewChild('drawer', { static: true })
+	public drawerContainer!: MatDrawer;
+
+	private $destroy: Subject<void> = new Subject();
 
 	constructor(public translateService: TranslateService, private broadcaster: BroadcasterService) {
 		// this.translateService.addLangs(Object.values(LocalizationList));
@@ -37,6 +51,20 @@ export class AppComponent implements OnDestroy {
 			.subscribe({
 				next: (data) => console.log(data), // your broadcasted value
 			});
+	}
+
+	ngOnInit() {
+		const checkScreenSize = () => document.body.offsetWidth > MOBILE_LAND_WIDTH;
+
+		const isDesktopView$ = fromEvent(window, 'resize').pipe(throttleTime(200), map(checkScreenSize));
+
+		// Start off with the initial value use the isScreenSmall$ | async in the
+		// view to get both the original value and the new value after resize.
+		this.isDesktopView$ = isDesktopView$.pipe(startWith(checkScreenSize()));
+	}
+
+	public onDrawerClick(): void {
+		this.drawerContainer.toggle();
 	}
 
 	ngOnDestroy() {

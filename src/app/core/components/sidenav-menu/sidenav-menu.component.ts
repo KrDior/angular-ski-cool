@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { MenuItem } from '@core/models/menu-item.model';
 
 @Component({
 	selector: 'app-sidenav-menu',
@@ -6,7 +7,11 @@ import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 	styleUrls: ['./sidenav-menu.component.scss'],
 })
 export class SidenavMenuComponent {
-	@Output() public drawerClick: EventEmitter<void> = new EventEmitter();
+	@Input()
+	public menuItems!: MenuItem[];
+
+	@Output()
+	public drawerClick: EventEmitter<void> = new EventEmitter();
 
 	constructor() {}
 

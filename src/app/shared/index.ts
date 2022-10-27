@@ -7,10 +7,13 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatRippleModule, MatCommonModule } from '@angular/material/core';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MenuContentWrapperDirective } from '@shared/directives/menu-content-wrapper.directive';
 
 export const components: any[] = [];
 
-export const directives: any[] = [];
+export const directives: any[] = [MenuContentWrapperDirective];
 
 export const pipes: any[] = [];
 
@@ -24,4 +27,7 @@ export const materialModules: any[] = [
 	MatMenuModule,
 	MatFormFieldModule,
 	MatInputModule,
+	MatExpansionModule,
+	MatRippleModule,
+	MatCommonModule,
 ];

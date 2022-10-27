@@ -32,3 +32,41 @@ body {
 	margin: 0;
 	background: #f0f3f5;
 }
+
+.item {
+	// font-size: 1rem;
+	// min-width: unset !important;
+	// margin: 0;
+	// padding: 0 8px !important;
+}
+
+.item:not([disabled]) {
+	color: rgba(0, 0, 0, 0.54);
+}
+
+.item:hover:not([disabled]) {
+	color: rgba(0, 0, 0, 0.8);
+}
+
+.disabled {
+	pointer-events: none;
+	color: rgba(0, 0, 0, 0.38) !important;
+}
+
+.ui-state-active {
+	// border-bottom: 4px solid purple !important;
+}
+
+.ui-state-active:before {
+	content: '';
+	border-bottom: 3px solid purple;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.ui-state-active-sub {
+	color: purple;
+}

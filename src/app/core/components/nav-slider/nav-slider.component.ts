@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
 	selector: 'app-nav-slider',
@@ -6,7 +6,11 @@ import { Component, EventEmitter, Output } from '@angular/core';
 	styleUrls: ['./nav-slider.component.scss'],
 })
 export class NavSliderComponent {
-	@Output() public drawerClick: EventEmitter<void> = new EventEmitter();
+	@Input()
+	public isDesktop!: boolean | null;
+
+	@Output()
+	public drawerClick: EventEmitter<void> = new EventEmitter();
 
 	constructor() {}
 

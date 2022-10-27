@@ -21,7 +21,7 @@
     "source": "ng build --sourceMap=true --namedChunks=true && ./node_modules/.bin/source-map-explorer dist/*.js",
     "webpack-analyze": "ng build --sourceMap=true --namedChunks=true --stats-json && ./node_modules/.bin/webpack-bundle-analyzer dist/stats.json",
     "purgecss": "node run-purgecss.js",
-    "final-build": "npm run build && npm run purgecss",
+    "final-build": "npm run build-prod && npm run purgecss",
     "test": "ng test",
     "test:coverage": "ng test --coverage",
     "lint": "ng lint",
@@ -29,7 +29,8 @@
     "e2e:ci": "ng run ng-new-app:cypress-run",
     "prettier": "prettier --config ./.prettierrc --write \"src/{app,environments}/**/*{.ts,.html,.scss,.json}\"",
     "prettier:verify": "prettier --config ./.prettierrc --check \"src/{app,environments}/**/*{.ts,.html,.scss,.json}\"",
-    "prettier:staged": "pretty-quick --staged"
+    "prettier:staged": "pretty-quick --staged",
+	"source-map-explorer": "ng build --configuration production && source-map-explorer dist/*.*"
   },
   "dependencies": {
     "@angular/animations": "^14.2.0",

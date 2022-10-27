@@ -1,0 +1,33 @@
+@import 'variables';
+
+.mat-drawer {
+	width: 100%;
+	background-color: $primary;
+}
+
+.mat-drawer:not(.mat-drawer-side) {
+	position: fixed;
+}
+
+.mat-drawer-backdrop {
+	position: fixed !important;
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+	background-color: white;
+	height: 48px;
+	border-bottom: 1px solid lightgrey;
+	padding: 0 10px;
+}
+.wrapper {
+	display: flex;
+	position: relative;
+	align-items: center;
+	align-self: stretch;
+}
+
+.body {
+	margin-top: 60px;
+}

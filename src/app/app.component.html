@@ -1,5 +1,36 @@
-<app-layout></app-layout>
+<app-layout>
+	<mat-drawer-container class="layout-wrapper">
+		<mat-drawer #drawer [mode]="isShowHideFlag">
+			<app-sidenav-menu [menuItems]="menuItems" (drawerClick)="onDrawerClick()"></app-sidenav-menu>
+		</mat-drawer>
+
+		<mat-drawer-content>
+			<nav *ngIf="isDesktopView$ | async" class="nav">
+				<span>LOGO</span>
+				<div
+					style="
+						flex: 1;
+						display: flex;
+						justify-content: flex-end;
+						margin: 0 15px;
+						overflow: hidden;
+						align-self: stretch;
+					"
+				>
+					<app-nav-tab [menuItems]="menuItems" [moreMenuItem]="{ styleClass: 'item', icon: 'keyboard_arrow_down' }">
+					</app-nav-tab>
+				</div>
+
+				<button mat-button routerLink="{{ routes.Booking }}" style="border: 1px solid purple; margin-left: 4px">
+					Book now
+				</button>
+			</nav>
+
+			<app-nav-slider [isDesktop]="isDesktopView$ | async" (drawerClick)="onDrawerClick()"></app-nav-slider>
+			<router-outlet></router-outlet>
+			<app-footer></app-footer>
+		</mat-drawer-content>
+	</mat-drawer-container>
+</app-layout>
 
 <ngx-loading-bar [includeSpinner]="false" color="red"></ngx-loading-bar>
-
-<router-outlet></router-outlet>

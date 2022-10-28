@@ -4,6 +4,7 @@ import { RoutePath } from 'src/app/app-routing.module';
 export const menuItemsConfig: MenuItem[] = [
 	{
 		label: 'Home',
+		localizeField: 'Home',
 		visible: true,
 		disabled: false,
 		styleClass: 'item',
@@ -11,6 +12,7 @@ export const menuItemsConfig: MenuItem[] = [
 	},
 	{
 		label: 'About Us',
+		localizeField: 'About Us',
 		visible: true,
 		disabled: false,
 		styleClass: 'item',
@@ -18,6 +20,7 @@ export const menuItemsConfig: MenuItem[] = [
 	},
 	{
 		label: 'Private Lessons',
+		localizeField: 'Private Lessons',
 		visible: true,
 		disabled: false,
 		styleClass: 'item',
@@ -25,6 +28,7 @@ export const menuItemsConfig: MenuItem[] = [
 	},
 	{
 		label: 'Group Lesson',
+		localizeField: 'Group Lesson',
 		visible: true,
 		disabled: false,
 		styleClass: 'item',
@@ -32,6 +36,7 @@ export const menuItemsConfig: MenuItem[] = [
 	},
 	{
 		label: 'Individual Recreation',
+		localizeField: 'Individual Recreation',
 		visible: true,
 		disabled: false,
 		styleClass: 'item',
@@ -39,6 +44,7 @@ export const menuItemsConfig: MenuItem[] = [
 	},
 	{
 		label: 'Review',
+		localizeField: 'Review',
 		visible: true,
 		disabled: false,
 		styleClass: 'item',
@@ -46,6 +52,7 @@ export const menuItemsConfig: MenuItem[] = [
 	},
 	{
 		label: 'Contact Us',
+		localizeField: 'Contact Us',
 		visible: true,
 		disabled: false,
 		styleClass: 'item',

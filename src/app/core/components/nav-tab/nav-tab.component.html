@@ -54,7 +54,7 @@
 						[attr.target]="item.target"
 					>
 						<span class="fa fa-fw" style="margin-right: 4px" *ngIf="item.icon" [ngClass]="item.icon"></span
-						>{{ item.label }}
+						>{{ item.localizeField }}
 					</a>
 					<a
 						*ngIf="item.visible && !item.routerLink"

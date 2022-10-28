@@ -43,8 +43,6 @@ export class AppComponent implements OnInit, OnDestroy {
 			this.sanitizer.bypassSecurityTrustResourceUrl('assets/svg/long_up_right.svg')
 		);
 
-		this.setLocalizationList();
-
 		// app component broadasting
 		this.broadcaster.broadcast('mykey', 'myvalue');
 		//set dummy token just to enable auth guard for after-login module
@@ -63,6 +61,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.setLocalizationList();
 		const checkScreenSize = () => document.body.offsetWidth > MOBILE_LAND_WIDTH;
 
 		const isDesktopView$ = fromEvent(window, 'resize').pipe(throttleTime(200), map(checkScreenSize));

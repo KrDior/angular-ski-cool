@@ -15,9 +15,9 @@ import { ViewportRuler } from '@angular/cdk/scrolling';
 import { RoutePath } from 'src/app/app-routing.module';
 import { MenuItem, MenuItemMore } from '@core/models/menu-item.model';
 import { Subscription } from 'rxjs';
-import { MenuContentWrapperDirective } from '@shared/directives/menu-content-wrapper.directive';
 import { US_STATE_ACTIVE, US_STATE_ACTIVE_SUB } from '@shared/constants/common-constants';
 import { NavigationService } from '@core/services/navigation.service';
+import { MenuContentWrapperDirective } from '@core/directives/menu-content-wrapper.directive';
 
 export type Position = 'flex-end' | 'center' | 'flex-start' | 'space-around';
 
@@ -70,7 +70,6 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 	public linkBreaks!: number[];
 	public resize = Subscription.EMPTY;
 
-	private navSubscription!: Subscription;
 	private subscriptions: Subscription[] = [];
 
 	constructor(

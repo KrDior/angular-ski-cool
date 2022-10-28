@@ -9,11 +9,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatRippleModule, MatCommonModule } from '@angular/material/core';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { MenuContentWrapperDirective } from '@shared/directives/menu-content-wrapper.directive';
 
 export const components: any[] = [];
 
-export const directives: any[] = [MenuContentWrapperDirective];
+export const directives: any[] = [];
 
 export const pipes: any[] = [];
 

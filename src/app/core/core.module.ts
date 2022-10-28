@@ -18,6 +18,7 @@ import { ReviewsComponent } from './components/reviews/reviews.component';
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { MenuContentWrapperDirective } from './directives/menu-content-wrapper.directive';
 
 @NgModule({
 	declarations: [
@@ -36,6 +37,7 @@ import { TranslateModule } from '@ngx-translate/core';
 		GroupLessonComponent,
 		ContactComponent,
 		HomeComponent,
+		MenuContentWrapperDirective,
 	],
 	imports: [CommonModule, SharedModule, RouterModule, TranslateModule.forChild({})],
 	exports: [LayoutComponent, SidenavMenuComponent, NavTabComponent, NavSliderComponent, FooterComponent],

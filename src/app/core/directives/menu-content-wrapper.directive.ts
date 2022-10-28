@@ -1,7 +1,8 @@
-import { Directive, ElementRef, Renderer2, Input, OnInit, OnDestroy } from '@angular/core';
+import { Directive, ElementRef, Renderer2, Input, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
 import { MenuItem } from '@core/models/menu-item.model';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { US_STATE_ACTIVE } from '@shared/constants/common-constants';
 import { filter, Subscription } from 'rxjs';
 
@@ -9,13 +10,27 @@ import { filter, Subscription } from 'rxjs';
 	selector: '[appMenuContentWrapper]',
 })
 export class MenuContentWrapperDirective implements OnInit, OnDestroy {
+	private translateSubscription!: Subscription;
+	private langChangeSubscription!: Subscription;
+
 	private urlChanges = Subscription.EMPTY;
 
-	constructor(public elementRef: ElementRef, private renderer: Renderer2, private router: Router) {}
+	constructor(
+		public elementRef: ElementRef,
+		private renderer: Renderer2,
+		private router: Router,
+		private readonly translate: TranslateService,
+		private changeDetectorRef: ChangeDetectorRef
+	) {}
 
 	@Input() item!: MenuItem;
 
 	public ngOnInit() {
+		this.langChangeSubscription = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+			this.translateLabel();
+		});
+		this.translateLabel();
+
 		// This is to ensure the top menu button gets active state class if a sub item is active.
 		this.urlChanges = this.router.events
 			.pipe(filter((event) => event instanceof NavigationEnd))
@@ -41,6 +56,15 @@ export class MenuContentWrapperDirective implements OnInit, OnDestroy {
 
 	public ngOnDestroy() {
 		this.urlChanges.unsubscribe();
+		this.translateSubscription.unsubscribe();
+		this.langChangeSubscription.unsubscribe();
+	}
+
+	private translateLabel(): void {
+		this.translateSubscription = this.translate.get(this.item.label).subscribe((text: string) => {
+			this.item.localizeField = text;
+			this.changeDetectorRef.detectChanges();
+		});
 	}
 
 	private setTopMenuActiveRoute(event: NavigationEnd) {

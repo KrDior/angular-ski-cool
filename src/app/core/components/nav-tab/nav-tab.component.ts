@@ -9,27 +9,49 @@ import {
 	OnDestroy,
 	QueryList,
 	ElementRef,
+	HostBinding,
+	Output,
+	EventEmitter,
 } from '@angular/core';
 
 import { ViewportRuler } from '@angular/cdk/scrolling';
 import { RoutePath } from 'src/app/app-routing.module';
 import { MenuItem, MenuItemMore } from '@core/models/menu-item.model';
-import { Subscription } from 'rxjs';
+import { fromEvent, Subscription } from 'rxjs';
 import { US_STATE_ACTIVE, US_STATE_ACTIVE_SUB } from '@shared/constants/common-constants';
 import { NavigationService } from '@core/services/navigation.service';
 import { MenuContentWrapperDirective } from '@core/directives/menu-content-wrapper.directive';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
+import { trigger, state, style, transition, animate } from '@angular/animations';
+import { distinctUntilChanged, filter, map, pairwise, share, throttleTime } from 'rxjs/operators';
 
 export type Position = 'flex-end' | 'center' | 'flex-start' | 'space-around';
+
+enum VisibilityState {
+	Visible = 'visible',
+	Hidden = 'hidden',
+}
+
+enum Direction {
+	Up = 'Up',
+	Down = 'Down',
+}
 
 @Component({
 	selector: 'app-nav-tab',
 	templateUrl: './nav-tab.component.html',
 	styleUrls: ['./nav-tab.component.scss'],
-	changeDetection: ChangeDetectionStrategy.OnPush,
+	changeDetection: ChangeDetectionStrategy.Default,
+	animations: [
+		trigger('toggle', [
+			state(VisibilityState.Hidden, style({ opacity: 0, transform: 'translateY(-100%)' })), // display: 'none'
+			state(VisibilityState.Visible, style({ opacity: 1, transform: 'translateY(0)' })), // display: 'flex'
+			transition('* => *', animate('200ms ease-in')),
+		]),
+	],
 })
 export class NavTabComponent implements AfterViewInit, OnDestroy {
-	public routes: typeof RoutePath = RoutePath;
-
 	@Input()
 	public menuItems!: MenuItem[];
 
@@ -45,6 +67,9 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 	@Input()
 	public position: Position = 'center';
 
+	@Output()
+	public isNavTabVisible: EventEmitter<boolean> = new EventEmitter(true);
+
 	@ViewChildren(MenuContentWrapperDirective)
 	public linkWrappers!: QueryList<MenuContentWrapperDirective>;
 
@@ -53,6 +78,14 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 
 	@ViewChild('moreButton')
 	public moreButton!: ElementRef;
+
+	@HostBinding('@toggle')
+	get toggle(): VisibilityState {
+		return this.isVisible ? VisibilityState.Visible : VisibilityState.Hidden;
+	}
+
+	public routes: typeof RoutePath = RoutePath;
+	public isVisible = true;
 
 	public uiStateActive = US_STATE_ACTIVE;
 	public uiStateActiveSub = US_STATE_ACTIVE_SUB;
@@ -75,8 +108,14 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 	constructor(
 		private viewportRuler: ViewportRuler,
 		private changeDetectorRef: ChangeDetectorRef,
-		private navigationService: NavigationService
+		private navigationService: NavigationService,
+		private iconRegistry: MatIconRegistry,
+		private sanitizer: DomSanitizer
 	) {
+		this.iconRegistry.addSvgIcon(
+			'booking',
+			this.sanitizer.bypassSecurityTrustResourceUrl('assets/svg/long_up_right.svg')
+		);
 		this.subscriptions.push(
 			this.navigationService.getLineBreaks().subscribe((val) => (this.linkBreaks = val)),
 			this.navigationService.getLinkWidths().subscribe((val) => (this.linkWidths = val))
@@ -84,6 +123,7 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 	}
 
 	public ngAfterViewInit() {
+		this.handleScrollEvent();
 		const resize = this.viewportRuler.change();
 		const realign = () => {
 			this.updateNav();
@@ -208,6 +248,30 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 				this.navigationService.updateLineBreaks(this.linkBreaks);
 				this.menuItems[this.linkWidths.indexOf(val)].visible = true;
 			}
+		});
+	}
+
+	private handleScrollEvent(): void {
+		const scroll$ = fromEvent(window, 'scroll').pipe(
+			throttleTime(100),
+			map(() => window.pageYOffset),
+			pairwise(),
+			map(([y1, y2]): Direction => (y2 < y1 ? Direction.Up : Direction.Down)),
+			distinctUntilChanged(),
+			share()
+		);
+
+		const goingUp$ = scroll$.pipe(filter((direction) => direction === Direction.Up));
+
+		const goingDown$ = scroll$.pipe(filter((direction) => direction === Direction.Down));
+
+		goingUp$.subscribe(() => {
+			this.isNavTabVisible.emit(true);
+			this.isVisible = true;
+		});
+		goingDown$.subscribe(() => {
+			this.isNavTabVisible.emit(false);
+			this.isVisible = false;
 		});
 	}
 }

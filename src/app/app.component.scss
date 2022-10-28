@@ -13,13 +13,6 @@
 	position: fixed !important;
 }
 
-.nav {
-	display: flex;
-	align-items: center;
-	margin: 28px 100px;
-	height: 60px;
-	background: none;
-}
 .wrapper {
 	display: flex;
 	position: relative;
@@ -29,22 +22,6 @@
 
 .body {
 	margin-top: 60px;
-}
-
-.booking-btn {
-	border: 1px solid black;
-	margin-left: 4px;
-	width: 200px;
-	color: white;
-	background-color: #486d9c;
-	font-size: 18px;
-
-	.booking-svg {
-		height: 18px;
-		position: relative;
-		bottom: 4px;
-		left: 4px;
-	}
 }
 
 .lang {

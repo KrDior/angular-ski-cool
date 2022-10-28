@@ -1,5 +1,10 @@
 <div class="slider">
-	<mat-icon *ngIf="!isDesktop" aria-label="Example home icon" class="desktop-hide" (click)="toggleDrawer()">
+	<mat-icon
+		*ngIf="!isDesktop || !isNavTabVisible"
+		aria-label="Example home icon"
+		class="desktop-hide"
+		(click)="toggleDrawer()"
+	>
 		reorder
 	</mat-icon>
 	<div class="slider-content">

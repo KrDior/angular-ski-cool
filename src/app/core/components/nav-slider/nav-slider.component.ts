@@ -10,6 +10,9 @@ export class NavSliderComponent {
 	@Input()
 	public isDesktop!: boolean | null;
 
+	@Input()
+	public isNavTabVisible!: boolean;
+
 	@Output()
 	public drawerClick: EventEmitter<void> = new EventEmitter();
 

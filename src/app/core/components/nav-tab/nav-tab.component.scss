@@ -1,10 +1,24 @@
 @import 'variables';
 
-.mat-tab-label-container {
+.nav-tab-wrapper {
 	display: flex;
-	flex-grow: 1;
 	overflow: hidden;
-	z-index: 1;
+	position: relative;
+	border: none;
+	align-items: center;
+	margin: 28px 100px;
+	height: 60px;
+	background: none;
+}
+
+.mat-tab-label-container {
+	z-index: 1000;
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+	margin: 0 15px;
+	overflow: hidden;
+	align-self: stretch;
 }
 
 .nav-main-visible-item {
@@ -16,6 +30,8 @@
 .more-button {
 	display: flex;
 	align-items: center;
+	font-weight: 700;
+	font-size: 17px;
 }
 
 .button-stretch {
@@ -87,10 +103,18 @@
 	color: rgba(0, 0, 0.54);
 }
 
-:host {
-	display: flex;
-	overflow: hidden;
-	position: relative;
-	border: none;
-	flex: 1;
+.booking-btn {
+	border: 1px solid black;
+	margin-left: 4px;
+	width: 200px;
+	color: white;
+	background-color: #486d9c;
+	font-size: 18px;
+
+	.booking-svg {
+		height: 18px;
+		position: relative;
+		bottom: 4px;
+		left: 4px;
+	}
 }

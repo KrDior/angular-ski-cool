@@ -5,29 +5,19 @@
 		</mat-drawer>
 
 		<mat-drawer-content>
-			<nav *ngIf="isDesktopView$ | async" class="nav">
-				<img alt="Logo" src="assets/svg/Logo.svg" />
-				<div
-					style="
-						flex: 1;
-						display: flex;
-						justify-content: flex-end;
-						margin: 0 15px;
-						overflow: hidden;
-						align-self: stretch;
-					"
-				>
-					<app-nav-tab [menuItems]="menuItems" [moreMenuItem]="{ styleClass: 'item', icon: 'keyboard_arrow_down' }">
-					</app-nav-tab>
-				</div>
+			<app-nav-tab
+				*ngIf="isDesktopView$ | async"
+				(isNavTabVisible)="onNavTabVisibilityChange($event)"
+				[menuItems]="menuItems"
+				[moreMenuItem]="{ styleClass: 'item', icon: 'keyboard_arrow_down' }"
+			>
+			</app-nav-tab>
 
-				<button mat-button class="booking-btn" routerLink="{{ routes.Booking }}">
-					<span>Book now</span>
-					<mat-icon class="booking-svg" svgIcon="booking"></mat-icon>
-				</button>
-			</nav>
-
-			<app-nav-slider [isDesktop]="isDesktopView$ | async" (drawerClick)="onDrawerClick()">
+			<app-nav-slider
+				[isDesktop]="isDesktopView$ | async"
+				[isNavTabVisible]="navTabVisibility"
+				(drawerClick)="onDrawerClick()"
+			>
 				<button mat-button [matMenuTriggerFor]="belowMenu" class="lang">
 					{{ currentLang.slice(0, 2) | uppercase }}
 					<mat-icon aria-hidden="false">keyboard_arrow_down</mat-icon>

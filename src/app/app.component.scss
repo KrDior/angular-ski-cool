@@ -16,10 +16,9 @@
 .nav {
 	display: flex;
 	align-items: center;
-	background-color: white;
-	height: 48px;
-	border-bottom: 1px solid lightgrey;
-	padding: 0 10px;
+	margin: 28px 100px;
+	height: 60px;
+	background: none;
 }
 .wrapper {
 	display: flex;
@@ -30,4 +29,51 @@
 
 .body {
 	margin-top: 60px;
+}
+
+.booking-btn {
+	border: 1px solid black;
+	margin-left: 4px;
+	width: 200px;
+	color: white;
+	background-color: #486d9c;
+	font-size: 18px;
+
+	.booking-svg {
+		height: 18px;
+		position: relative;
+		bottom: 4px;
+		left: 4px;
+	}
+}
+
+.lang {
+	color: white;
+	align-self: flex-end;
+	padding-right: 0;
+	font-size: 17px;
+	font-weight: 500;
+	line-height: 0px;
+	margin-top: 10px;
+}
+
+::ng-deep {
+	.mat-menu-panel.lang-menu {
+		min-width: 60px;
+		width: 60px;
+		background: none;
+		color: white;
+
+		.mat-menu-content {
+			padding-top: 0px;
+		}
+
+		button {
+			color: white;
+			font-size: 17px;
+			font-weight: 500;
+			height: 33px;
+			padding: 0px 5px 0px 17px;
+		}
+	}
 }

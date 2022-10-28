@@ -1,5 +1,5 @@
 export interface MenuItem {
-	label?: string;
+	label: string;
 	icon?: string;
 	command?: (event?: any) => void;
 	url?: string;
@@ -20,3 +20,6 @@ export interface MenuItem {
 	id?: string;
 	matMenuItem?: boolean;
 }
+
+type Modify<T, R> = Omit<T, keyof R> & R;
+export interface MenuItemMore extends Modify<MenuItem, { label?: string }> {}

@@ -13,7 +13,7 @@ import {
 
 import { ViewportRuler } from '@angular/cdk/scrolling';
 import { RoutePath } from 'src/app/app-routing.module';
-import { MenuItem } from '@core/models/menu-item.model';
+import { MenuItem, MenuItemMore } from '@core/models/menu-item.model';
 import { Subscription } from 'rxjs';
 import { MenuContentWrapperDirective } from '@shared/directives/menu-content-wrapper.directive';
 import { US_STATE_ACTIVE, US_STATE_ACTIVE_SUB } from '@shared/constants/common-constants';
@@ -39,7 +39,7 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 
 	// If you want to customize the "more" button
 	@Input()
-	public moreMenuItem!: MenuItem;
+	public moreMenuItem!: MenuItemMore;
 
 	// Position the main menu block, not the items
 	@Input()

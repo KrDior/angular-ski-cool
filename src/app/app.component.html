@@ -6,7 +6,7 @@
 
 		<mat-drawer-content>
 			<nav *ngIf="isDesktopView$ | async" class="nav">
-				<span>LOGO</span>
+				<img alt="Logo" src="assets/svg/Logo.svg" />
 				<div
 					style="
 						flex: 1;
@@ -21,12 +21,23 @@
 					</app-nav-tab>
 				</div>
 
-				<button mat-button routerLink="{{ routes.Booking }}" style="border: 1px solid purple; margin-left: 4px">
-					Book now
+				<button mat-button class="booking-btn" routerLink="{{ routes.Booking }}">
+					<span>Book now</span>
+					<mat-icon class="booking-svg" svgIcon="booking"></mat-icon>
 				</button>
 			</nav>
 
-			<app-nav-slider [isDesktop]="isDesktopView$ | async" (drawerClick)="onDrawerClick()"></app-nav-slider>
+			<app-nav-slider [isDesktop]="isDesktopView$ | async" (drawerClick)="onDrawerClick()">
+				<button mat-button [matMenuTriggerFor]="belowMenu" class="lang">
+					{{ currentLang.slice(0, 2) | uppercase }}
+					<mat-icon aria-hidden="false">keyboard_arrow_down</mat-icon>
+				</button>
+				<mat-menu class="lang-menu" #belowMenu="matMenu" yPosition="below">
+					<button *ngFor="let lang of availableLang" (click)="onLanguageChange(lang)" mat-menu-item>
+						{{ lang.slice(0, 2) | uppercase }}
+					</button>
+				</mat-menu>
+			</app-nav-slider>
 			<router-outlet></router-outlet>
 			<app-footer></app-footer>
 		</mat-drawer-content>

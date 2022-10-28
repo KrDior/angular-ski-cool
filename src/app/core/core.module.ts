@@ -17,6 +17,7 @@ import { RecreationComponent } from './components/recreation/recreation.componen
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
 	declarations: [
@@ -36,7 +37,7 @@ import { RouterModule } from '@angular/router';
 		ContactComponent,
 		HomeComponent,
 	],
-	imports: [CommonModule, SharedModule, RouterModule],
+	imports: [CommonModule, SharedModule, RouterModule, TranslateModule.forChild({})],
 	exports: [LayoutComponent, SidenavMenuComponent, NavTabComponent, NavSliderComponent, FooterComponent],
 })
 export class CoreModule {

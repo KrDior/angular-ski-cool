@@ -1,5 +1,5 @@
 export enum LocalizationList {
-	EN = 'en',
-	RU = 'ru',
-	DE = 'de',
+	EN = 'en-US',
+	DE = 'de-DE',
+	CN = 'zh-CN',
 }

@@ -80,22 +80,6 @@
 			<div style="display: flex; align-items: center" *ngIf="showMoreButton">
 				<!-- All the options for how you can layout the "more" button -->
 
-				<button #moreButton *ngIf="!moreMenuItem" class="button-stretch item more-button" [matMenuTriggerFor]="more">
-					More +
-				</button>
-
-				<button
-					#moreButton
-					*ngIf="moreMenuItem && moreMenuItem.visible"
-					class="button-stretch more-button"
-					[matMenuTriggerFor]="more"
-					[ngClass]="moreMenuItem.styleClass"
-					[ngStyle]="moreMenuItem.style"
-				>
-					<span class="fa fa-fw" *ngIf="moreMenuItem.icon" [ngClass]="moreMenuItem.icon"></span>
-					{{ moreMenuItem.label ? moreMenuItem.label : 'More +' }}
-				</button>
-
 				<button
 					#moreButton
 					*ngIf="moreMenuItem && !moreMenuItem.visible"
@@ -104,7 +88,6 @@
 					[ngClass]="moreMenuItem.styleClass"
 					[ngStyle]="moreMenuItem.style"
 				>
-					<span class="fa fa-fw" *ngIf="moreMenuItem.icon" [ngClass]="moreMenuItem.icon"></span>
 					<mat-icon *ngIf="moreMenuItem.icon" aria-hidden="false" [ngClass]="moreMenuItem.icon">{{
 						moreMenuItem.icon
 					}}</mat-icon>

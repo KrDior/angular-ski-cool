@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { RoutePath } from 'src/app/app-routing.module';
 
 @Component({
 	selector: 'app-nav-slider',
@@ -11,6 +12,8 @@ export class NavSliderComponent {
 
 	@Output()
 	public drawerClick: EventEmitter<void> = new EventEmitter();
+
+	public routes: typeof RoutePath = RoutePath;
 
 	constructor() {}
 

@@ -3,6 +3,18 @@
 		reorder
 	</mat-icon>
 	<div class="slider-content">
-		<h1>Angular Material Landing Page</h1>
+		<div class="left-content">
+			<h1>{{ 'Skicool' }}</h1>
+			<p>
+				Ski Cool St. Moritz, is an elite snowsports school <br />
+				of the Engadin Valley, Switzerland.
+			</p>
+			<button class="discover-btn" mat-raised-button color="accent" routerLink="{{ routes.Booking }}">
+				Discover more
+			</button>
+		</div>
+		<div class="right-content">
+			<ng-content></ng-content>
+		</div>
 	</div>
 </div>

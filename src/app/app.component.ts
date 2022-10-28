@@ -1,5 +1,5 @@
 import { fromEvent, Observable, Subject } from 'rxjs';
-import { map, startWith, takeUntil, tap, throttleTime } from 'rxjs/operators';
+import { map, startWith, takeUntil, throttleTime } from 'rxjs/operators';
 
 import { Component, OnDestroy, ViewChild, OnInit } from '@angular/core';
 import { BroadcasterService } from '@core/services/broadcaster.service';
@@ -10,6 +10,8 @@ import { MenuItem } from '@core/models/menu-item.model';
 import { menuItemsConfig } from '@shared/configs/menu-items.config';
 import { RoutePath } from './app-routing.module';
 import { MOBILE_LAND_WIDTH } from '@shared/constants/common-constants';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
 	selector: 'app-root',
@@ -21,20 +23,27 @@ export class AppComponent implements OnInit, OnDestroy {
 	public menuItems: MenuItem[] = menuItemsConfig;
 	public routes: typeof RoutePath = RoutePath;
 	public isDesktopView$!: Observable<boolean>;
-	// private $destroy: Subject<void> = new Subject();
+	public localizationList: LocalizationList[] = Object.values(LocalizationList);
+	public currentLang!: string;
+	public availableLang!: LocalizationList[];
 
 	@ViewChild('drawer', { static: true })
 	public drawerContainer!: MatDrawer;
 
 	private $destroy: Subject<void> = new Subject();
 
-	constructor(public translateService: TranslateService, private broadcaster: BroadcasterService) {
-		// this.translateService.addLangs(Object.values(LocalizationList));
-		// this.translateService.setDefaultLang(LocalizationList.EN);
+	constructor(
+		public translateService: TranslateService,
+		private broadcaster: BroadcasterService,
+		private iconRegistry: MatIconRegistry,
+		private sanitizer: DomSanitizer
+	) {
+		this.iconRegistry.addSvgIcon(
+			'booking',
+			this.sanitizer.bypassSecurityTrustResourceUrl('assets/svg/long_up_right.svg')
+		);
 
-		// const browserLang = this.translateService.getBrowserLang();
-
-		// this.translateService.use(browserLang ? browserLang : LocalizationList.EN);
+		this.setLocalizationList();
 
 		// app component broadasting
 		this.broadcaster.broadcast('mykey', 'myvalue');
@@ -65,6 +74,18 @@ export class AppComponent implements OnInit, OnDestroy {
 
 	public onDrawerClick(): void {
 		this.drawerContainer.toggle();
+	}
+
+	public onLanguageChange(lang: string): void {
+		this.translateService.use(lang);
+
+		this.setLocalizationList();
+	}
+
+	private setLocalizationList(): void {
+		this.currentLang = this.translateService.currentLang ?? LocalizationList.EN;
+
+		this.availableLang = this.localizationList.filter((lang) => lang !== this.currentLang);
 	}
 
 	ngOnDestroy() {

@@ -1,64 +1,93 @@
 @import 'variables';
 
-.contacts {
-	background-image: url('https://unsplash.com/photos/VivsxaizzVE/download?force=true');
-	background-position: center;
-	background-size: cover;
-	height: 200px;
-	padding-top: 60px;
-	padding-bottom: 40px;
+.footer-wrapper {
+	height: 468px;
+	padding: 0 100px 60px 100px;
 
-	.mat-form-field-appearance-fill .mat-form-field-flex {
-		background-color: rgba(222, 222, 222, 0.5);
-	}
-
-	.mat-form-field.mat-focused .mat-form-field-label {
-		color: $primary;
-	}
-
-	.mat-input-element {
-		caret-color: $primary;
-	}
-
-	h2 {
-		color: #fff;
-	}
-
-	form {
-		display: block;
-		margin: 0 auto;
-		width: 50%;
-	}
-
-	.mat-form-field {
+	.line {
+		margin-bottom: 76px;
 		width: 100%;
+		border: 0;
+		height: 1px;
+		background: black;
 	}
 
-	button {
-		width: 100%;
-		height: 50px;
-		font-size: 18px;
-		background-color: #741570;
-		color: #fff;
-	}
-}
+	.content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: calc(100% - 100px);
 
-.footer {
-	span {
-		margin: auto;
-	}
+		.top-content {
+			display: flex;
+			gap: 20px;
+			align-content: flex-start;
+			justify-content: space-between;
 
-	.mat-toolbar {
-		background-color: $primary !important;
-	}
-}
+			.logo {
+				align-self: flex-start;
+			}
 
-@media (max-width: 542px) {
-	.contacts {
-		height: auto;
+			.column {
+				display: flex;
+				flex-direction: column;
+			}
 
-		form {
-			width: 70%;
+			.contact-btn {
+				border: 1px solid black;
+				width: 200px;
+				color: white;
+				background-color: #486d9c;
+				font-size: 18px;
+			}
+
+			.contact {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.icon-block {
+				display: flex;
+				gap: 10px;
+				justify-content: flex-end;
+				margin-top: 15px;
+			}
 		}
+	}
+
+	.bottom-content {
+		display: flex;
+		justify-content: space-between;
+
+		.condition {
+			font-weight: 400;
+			font-size: 17px;
+			line-height: 22px;
+			letter-spacing: 0.008em;
+			color: #333333;
+		}
+
+		.active-link {
+			font-weight: 400;
+			font-size: 17px;
+			line-height: 22px;
+			letter-spacing: 0.008em;
+			color: #5b779a;
+		}
+	}
+
+	.link,
+	.info,
+	.info a {
+		font-weight: 400;
+		font-size: 17px;
+		line-height: 27px;
+		color: #333333;
+		margin-bottom: 10px;
+		text-decoration: none;
+	}
+
+	.link:hover {
+		border-bottom: 2px solid #333333;
 	}
 }

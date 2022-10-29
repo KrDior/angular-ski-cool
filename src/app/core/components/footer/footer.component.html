@@ -1,15 +1,48 @@
-<div class="contacts">
-	<h2>Subscribe now To get Updates</h2>
-	<form>
-		<mat-form-field appearance="fill">
-			<mat-label>Subscribe</mat-label>
-			<input matInput />
-		</mat-form-field>
-		<button mat-flat-button>Subscribe Now</button>
-	</form>
-</div>
-<div class="footer" color="primary">
-	<mat-toolbar color="primary">
-		<span>W3hubs.com 2020</span>
-	</mat-toolbar>
+<div class="footer-wrapper" color="primary">
+	<hr class="line" />
+	<div class="content">
+		<div class="top-content">
+			<img class="logo" alt="Logo" src="assets/svg/Logo.svg" />
+			<div class="column">
+				<a class="link" routerLink="{{ routes.AboutUs }}">{{ 'About us' }}</a>
+				<a class="link" routerLink="{{ routes.PrivateLesson }}">{{ 'Private lessons' }}</a>
+				<a class="link" routerLink="{{ routes.GroupLesson }}">{{ 'Group lessons' }}</a>
+				<a class="link" routerLink="{{ routes.Recreation }}">{{ 'Individual recreation' }}</a>
+			</div>
+			<div class="column">
+				<a class="link" routerLink="{{ routes.AboutUs }}">{{ 'Our team' }}</a>
+				<a class="link" routerLink="{{ routes.PrivateLesson }}">{{ 'Become a part of our team' }}</a>
+				<a class="link" routerLink="{{ routes.GroupLesson }}">{{ 'Our partners' }}</a>
+				<a class="link" routerLink="{{ routes.Reviews }}">{{ 'Reviews' }}</a>
+				<a class="link" routerLink="{{ routes.Contact }}">{{ 'Contact us' }}</a>
+			</div>
+			<div class="column">
+				<div class="info">
+					Silvaplana-Surlej,<br />
+					Via Sturetscha 13,<br />
+					CH 7513, Switzerland<br />
+				</div>
+				<div class="info">{{ 'Email' }}: <a href="mailto:info@skicool.ch">info@skicool.ch</a></div>
+				<div class="info">{{ 'Phone' }}: <a href="tel:+41(0)799152989">+41 (0) 799152989</a></div>
+			</div>
+			<div class="column contact">
+				<button mat-button class="contact-btn" routerLink="{{ routes.Booking }}">
+					<span>{{ 'Contact Us' }}</span>
+					<mat-icon class="booking-svg" svgIcon="booking"></mat-icon>
+				</button>
+				<div class="icon-block">
+					<mat-icon class="contact-svg" svgIcon="facebook"></mat-icon>
+					<mat-icon class="contact-svg" svgIcon="twitter"></mat-icon>
+					<mat-icon class="contact-svg" svgIcon="instagram"></mat-icon>
+				</div>
+			</div>
+		</div>
+		<div class="bottom-content">
+			<span class="condition">
+				{{ 'Copyright @ 2022 Ski Cool. All rights reserved.' }}
+				<a class="active-link" routerLink="{{ routes.Contact }}">{{ 'Term and Conditions' }}</a>
+			</span>
+			<a class="active-link" routerLink="{{ routes.Contact }}">{{ 'Privacy Policy' }}</a>
+		</div>
+	</div>
 </div>

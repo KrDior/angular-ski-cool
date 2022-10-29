@@ -1,0 +1,20 @@
+<div class="cart-wrapper" [style]="cardConfig.direction">
+	<div class="article">
+		<div class="header-block">
+			<p class="header-text">
+				{{ cardConfig.header }}
+			</p>
+			<hr />
+		</div>
+		<div class="title">
+			{{ cardConfig.title }}
+		</div>
+		<div class="description">
+			{{ cardConfig.description }}
+		</div>
+		<button mat-button class="discover-btn">
+			{{ cardConfig.button }}
+		</button>
+	</div>
+	<img class="image" [src]="cardConfig.imageLink" [alt]="cardConfig.imageAlt" />
+</div>

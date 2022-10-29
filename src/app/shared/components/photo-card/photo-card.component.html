@@ -1,11 +1,6 @@
 <div class="cart-wrapper" [style]="cardConfig.direction">
 	<div class="article">
-		<div class="header-block">
-			<p class="header-text">
-				{{ cardConfig.header }}
-			</p>
-			<hr />
-		</div>
+		<app-text-line [text]="cardConfig.header"></app-text-line>
 		<div class="title">
 			{{ cardConfig.title }}
 		</div>

@@ -6,4 +6,18 @@
 	.card {
 		padding: 100px 0;
 	}
+
+	.video {
+		height: 798px;
+		background: #c2c7cb;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 10px 0;
+
+		.video-svg {
+			transform: scale(5);
+			cursor: pointer;
+		}
+	}
 }

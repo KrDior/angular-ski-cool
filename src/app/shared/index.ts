@@ -10,8 +10,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRippleModule, MatCommonModule } from '@angular/material/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { PhotoCardComponent } from '@shared/components/photo-card/photo-card.component';
+import { ArticleCenterComponent } from '@shared/components/article-center/article-center.component';
+import { TextLineComponent } from '@shared/components/text-line/text-line.component';
 
-export const components: any[] = [PhotoCardComponent];
+export const components: any[] = [PhotoCardComponent, ArticleCenterComponent, TextLineComponent];
 
 export const directives: any[] = [];
 

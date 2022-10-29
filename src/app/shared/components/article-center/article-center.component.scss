@@ -1,18 +1,25 @@
-.cart-wrapper {
-	display: flex;
-	flex: 1;
-	gap: 50px;
-	height: 700px;
+.article-wrapper {
+	height: 620px;
+	background: #c2c7cb;
 
 	.article {
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 		justify-content: center;
-		width: 50%;
-		padding-left: 55px;
+		height: 100%;
+		padding: 0 25%;
+		text-align: center;
 
-		.app-text-line {
-			margin-bottom: 18px;
+		.header-text {
+			font-weight: 700;
+			font-size: 17px;
+			line-height: 27px;
+			letter-spacing: 0.02em;
+			text-transform: uppercase;
+			color: #333333;
+			padding-right: 20px;
+			white-space: nowrap;
 		}
 
 		.title {
@@ -39,12 +46,5 @@
 			background-color: #486d9c;
 			font-size: 18px;
 		}
-	}
-
-	.image {
-		width: 50%;
-		max-width: 700px;
-		height: 100%;
-		max-height: 700px;
 	}
 }

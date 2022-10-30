@@ -13,15 +13,20 @@ import { PhotoCardComponent } from '@shared/components/photo-card/photo-card.com
 import { ArticleCenterComponent } from '@shared/components/article-center/article-center.component';
 import { TextLineComponent } from '@shared/components/text-line/text-line.component';
 import { AdvantageSlideComponent } from '@shared/components/advantage-slide/advantage-slide.component';
+import { CarouselCardComponent } from '@shared/components/carousel-card/carousel-card.component';
+import { PanningItemDirective } from '@shared/directives/panning-item.directive';
+import { PanningContainerComponent } from '@shared/components/carousel-card/panning/panning.component';
 
 export const components: any[] = [
 	PhotoCardComponent,
 	ArticleCenterComponent,
 	TextLineComponent,
 	AdvantageSlideComponent,
+	CarouselCardComponent,
+	PanningContainerComponent,
 ];
 
-export const directives: any[] = [];
+export const directives: any[] = [PanningItemDirective];
 
 export const pipes: any[] = [];
 

@@ -1,0 +1,19 @@
+<div class="carousel-wrapper">
+	<div class="empty"></div>
+	<app-text-line [text]="carouselConfig.message"></app-text-line>
+	<span *ngIf="carouselConfig?.title" class="title">{{ carouselConfig.title }}</span>
+
+	<div class="navigation">
+		<button class="discover-btn" mat-raised-button color="accent" routerLink="{{ routes.Booking }}">
+			{{ carouselConfig.button }}
+		</button>
+		<div class="pagination">
+			<button (click)="panner.shift(-1)" aria-label="Example icon button with a home icon">
+				<mat-icon svgIcon="arrow-left">home</mat-icon>
+			</button>
+			<button (click)="panner.shift(1)" aria-label="Example icon button with a home icon">
+				<mat-icon svgIcon="arrow-right">home</mat-icon>
+			</button>
+		</div>
+	</div>
+</div>

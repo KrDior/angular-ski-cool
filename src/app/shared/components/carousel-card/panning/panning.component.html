@@ -1,0 +1,7 @@
+<div class="panning-container-wrapper" #wrapper>
+	<ul class="carousel-inner" #carouselInner [style.width]="containerWidth">
+		<li *ngFor="let item of items" class="carousel-item" #consumedItem>
+			<ng-container [ngTemplateOutlet]="item.tpl"></ng-container>
+		</li>
+	</ul>
+</div>

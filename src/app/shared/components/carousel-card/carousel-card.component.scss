@@ -1,0 +1,119 @@
+.carousel-wrapper {
+	padding: 100px;
+
+	.empty {
+		height: 70px;
+	}
+
+	app-text-line {
+		width: 50%;
+		display: block;
+	}
+
+	.title {
+		margin-top: 40px;
+		font-weight: 700;
+		font-size: 34px;
+		line-height: 50px;
+		letter-spacing: 0.015em;
+		color: #333333;
+	}
+
+	.card-block {
+		margin-top: 45px;
+		display: block;
+	}
+
+	.navigation {
+		margin: 48px 0 10px 0;
+		display: flex;
+		justify-content: space-between;
+
+		.pagination button {
+			width: 63px;
+			height: 63px;
+			margin-left: 32px;
+			border: 0.4px solid #143d6e;
+			background: none;
+			cursor: pointer;
+		}
+	}
+
+	.item {
+		transition: background-color 0.25s ease;
+		background-color: #c2c7cb;
+	}
+
+	.discover-btn {
+		border: 1px solid black;
+		width: 200px;
+		color: white;
+		background-color: #486d9c;
+		font-size: 18px;
+	}
+
+	.item.current {
+	}
+}
+
+.card-feedback {
+	margin-right: 56px;
+	padding: 32px;
+	width: 515px;
+	height: 335px;
+	left: 363px;
+	top: 242px;
+	background: linear-gradient(
+			270deg,
+			rgba(51, 51, 51, 0.45) 0%,
+			rgba(0, 0, 0, 0.380875) 0.01%,
+			rgba(51, 51, 51, 0.341718) 20.05%,
+			rgba(51, 51, 51, 0.313302) 40.88%,
+			rgba(51, 51, 51, 0.256652) 53.38%,
+			rgba(51, 51, 51, 0) 100%
+		),
+		#d2d9e2;
+	border: 0.5px solid #5b779a;
+	border-radius: 4px;
+	display: flex;
+
+	.image-block {
+		min-width: 110px;
+		height: 140px;
+		background: #878b8e;
+		margin-right: 26px;
+	}
+
+	.feedback-content {
+		display: flex;
+		flex-direction: column;
+
+		.feedback-name {
+			font-weight: 700;
+			font-size: 24px;
+			line-height: 38px;
+			letter-spacing: 0.005em;
+			color: #333333;
+		}
+
+		.feedback-text {
+			font-weight: 400;
+			font-size: 17px;
+			line-height: 27px;
+			color: #333333;
+		}
+
+		.date {
+			margin-top: 14px;
+			display: flex;
+			gap: 10px;
+
+			.feedback-date {
+				font-weight: 400;
+				font-size: 17px;
+				line-height: 27px;
+				color: #5b779a;
+			}
+		}
+	}
+}

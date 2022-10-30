@@ -7,3 +7,10 @@ export interface MainCard {
 	imageAlt: string;
 	direction: string;
 }
+
+export interface AdvantageSlide {
+	header: string;
+	title: string;
+	imageLink: string;
+	imageAlt: string;
+}

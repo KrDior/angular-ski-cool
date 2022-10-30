@@ -12,8 +12,14 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { PhotoCardComponent } from '@shared/components/photo-card/photo-card.component';
 import { ArticleCenterComponent } from '@shared/components/article-center/article-center.component';
 import { TextLineComponent } from '@shared/components/text-line/text-line.component';
+import { AdvantageSlideComponent } from '@shared/components/advantage-slide/advantage-slide.component';
 
-export const components: any[] = [PhotoCardComponent, ArticleCenterComponent, TextLineComponent];
+export const components: any[] = [
+	PhotoCardComponent,
+	ArticleCenterComponent,
+	TextLineComponent,
+	AdvantageSlideComponent,
+];
 
 export const directives: any[] = [];
 

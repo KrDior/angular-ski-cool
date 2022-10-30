@@ -2,6 +2,32 @@
 	<div class="empty"></div>
 	<app-text-line [text]="carouselConfig.message"></app-text-line>
 	<span *ngIf="carouselConfig?.title" class="title">{{ carouselConfig.title }}</span>
+	<app-panning-container class="card-block" #panner>
+		<ng-container *ngFor="let card of carouselConfig.cards; index as i">
+			<ng-container *ngIf="carouselConfig.type" === 'feedback'>
+				<ng-container *appPanningItem>
+					<div class="card-feedback item" [ngClass]="{ current: i === panner.currentIndex }">
+
+						<div class="image-block">
+							<img class="image" [src]="card.imageLink" [alt]="card.imageAlt" />
+						</div>
+						<div class="feedback-content">
+							<span class="feedback-name">{{ card.name }}</span>
+							<span class="feedback-text">{{ card.text }}</span>
+							<div class="date">
+								<img class="img" alt="Date" src="assets/svg/calendar.svg" />
+								<span class="feedback-date">{{ card.date }}</span>
+							</div>
+						</div>
+					</div>
+				</ng-container>
+			</ng-container>
+			<ng-container *ngIf="carouselConfig.type" === 'partner'>
+				<div class="card-partner item" [ngClass]="{ current: i === panner.currentIndex }"></div>
+			</ng-container>
+
+		</ng-container>
+	</app-panning-container>
 
 	<div class="navigation">
 		<button class="discover-btn" mat-raised-button color="accent" routerLink="{{ routes.Booking }}">
@@ -16,4 +42,5 @@
 			</button>
 		</div>
 	</div>
+
 </div>

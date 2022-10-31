@@ -10,6 +10,10 @@
 	"keywords": [],
 	"author": "",
 	"license": "MIT",
+	"engines": {
+		"node": "16.15.1",
+		"npm": "8.1.2"
+	},
 	"scripts": {
 		"ng": "ng",
 		"prepare": "husky install",
@@ -30,11 +34,7 @@
 		"prettier:staged": "pretty-quick --staged",
 		"source-map-explorer": "ng build --configuration production && source-map-explorer dist/*.*",
 		"heroku-postbuild": "ng build --configuration production && node run-purgecss.js",
-		"start" : "node server.js",
-		"engines": {
-			"node": "16.15.1",
-			"npm": "8.1.2"
-		}
+		"start" : "node server.js"
 	},
 	"dependencies": {
 		"@angular/animations": "^14.2.0",

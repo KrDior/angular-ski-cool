@@ -16,16 +16,16 @@ export interface AdvantageSlide {
 }
 
 export interface CarouselCard {
-	date: string;
+	date?: string;
 	name: string;
-	text: string;
+	text?: string;
 	imageLink: string;
-	imageAlt: string;
+	imageAlt?: string;
 }
 
 export interface CarouselConfig {
 	message: string;
-	title: string;
+	title?: string;
 	cards: CarouselCard[];
 	button: string;
 	type: 'feedback' | 'partner';

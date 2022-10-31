@@ -1,0 +1,58 @@
+.contact-block-wrapper {
+	display: flex;
+	padding: 100px 170px;
+	height: 452px;
+	background-image: url('/assets/img/contact-block.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+
+	.content-left {
+		width: 50%;
+		min-width: 250px;
+		display: flex;
+		flex-direction: column;
+
+		.title {
+			font-weight: 600;
+			font-size: 38px;
+			line-height: 49px;
+			letter-spacing: 0.015em;
+			color: #fcfcfc;
+		}
+	}
+
+	.content-right {
+		display: flex;
+		flex-direction: column;
+		width: 50%;
+		min-width: 250px;
+
+		.info,
+		.info a {
+			font-weight: 400;
+			font-size: 17px;
+			line-height: 27px;
+			text-align: right;
+			color: #fcfcfc;
+			margin-bottom: 30px;
+			text-decoration: none;
+		}
+	}
+}
+
+.booking-btn {
+	border: 1px solid black;
+	margin-top: 42px;
+	width: 200px;
+	color: white;
+	background-color: #486d9c;
+	font-size: 18px;
+
+	.booking-svg {
+		height: 18px;
+		position: relative;
+		bottom: 4px;
+		left: 4px;
+	}
+}

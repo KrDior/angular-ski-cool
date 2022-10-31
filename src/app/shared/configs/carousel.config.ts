@@ -64,3 +64,51 @@ export const homeCarouselConfig: CarouselConfig = {
 	],
 	button: 'Discover more',
 };
+
+export const homeCarouselPartnerConfig: CarouselConfig = {
+	message: 'our partners',
+	type: 'partner',
+	cards: [
+		{
+			name: 'Name partner',
+			imageLink: '',
+			imageAlt: 'partner logo',
+		},
+		{
+			name: 'Name partner',
+			imageLink: '',
+			imageAlt: 'partner logo',
+		},
+		{
+			name: 'Name partner',
+			imageLink: '',
+			imageAlt: 'partner logo',
+		},
+		{
+			name: 'Name partner',
+			imageLink: '',
+			imageAlt: 'partner logo',
+		},
+		{
+			name: 'Name partner',
+			imageLink: '',
+			imageAlt: 'partner logo',
+		},
+		{
+			name: 'Name partner',
+			imageLink: '',
+			imageAlt: 'partner logo',
+		},
+		{
+			name: 'Name partner',
+			imageLink: '',
+			imageAlt: 'partner logo',
+		},
+		{
+			name: 'Name partner',
+			imageLink: '',
+			imageAlt: 'partner logo',
+		},
+	],
+	button: 'Discover more',
+};

@@ -16,6 +16,7 @@ import { AdvantageSlideComponent } from '@shared/components/advantage-slide/adva
 import { CarouselCardComponent } from '@shared/components/carousel-card/carousel-card.component';
 import { PanningItemDirective } from '@shared/directives/panning-item.directive';
 import { PanningContainerComponent } from '@shared/components/carousel-card/panning/panning.component';
+import { ContactBlockComponent } from '@shared/components/contact-block/contact-block.component';
 
 export const components: any[] = [
 	PhotoCardComponent,
@@ -24,6 +25,7 @@ export const components: any[] = [
 	AdvantageSlideComponent,
 	CarouselCardComponent,
 	PanningContainerComponent,
+	ContactBlockComponent,
 ];
 
 export const directives: any[] = [PanningItemDirective];

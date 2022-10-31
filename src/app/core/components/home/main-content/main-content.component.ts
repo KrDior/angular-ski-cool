@@ -3,7 +3,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { advantageHomeMessage, homeAdvantageSlideConfig } from '@shared/configs/advantage-slide.config';
 import { homePageArticleCenter } from '@shared/configs/article-center.config';
-import { homeCarouselConfig } from '@shared/configs/carousel.config';
+import { homeCarouselConfig, homeCarouselPartnerConfig } from '@shared/configs/carousel.config';
 import { homeCardConfig } from '@shared/configs/home-card-config';
 import { AdvantageSlide, CarouselConfig, MainCard } from '@shared/models/main-card.model';
 
@@ -18,6 +18,7 @@ export class MainContentComponent {
 	public advantageSlideConfig!: AdvantageSlide[];
 	public advantageHomeMessage!: string;
 	public carouselConfig!: CarouselConfig;
+	public carouselPartnerConfig!: CarouselConfig;
 
 	constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer) {
 		this.cardConfig = homeCardConfig;
@@ -25,6 +26,7 @@ export class MainContentComponent {
 		this.advantageSlideConfig = homeAdvantageSlideConfig;
 		this.advantageHomeMessage = advantageHomeMessage;
 		this.carouselConfig = homeCarouselConfig;
+		this.carouselPartnerConfig = homeCarouselPartnerConfig;
 
 		this.iconRegistry.addSvgIcon('video', this.sanitizer.bypassSecurityTrustResourceUrl('assets/svg/video.svg'));
 	}

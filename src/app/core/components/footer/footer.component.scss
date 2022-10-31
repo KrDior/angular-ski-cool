@@ -30,6 +30,16 @@
 			}
 
 			.column {
+				font-weight: 400;
+				font-size: 17px;
+				line-height: 27px;
+				/* identical to box height, or 159% */
+
+				text-align: right;
+
+				/* Text/White */
+
+				color: #fcfcfc;
 				display: flex;
 				flex-direction: column;
 			}

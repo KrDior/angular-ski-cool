@@ -13,7 +13,6 @@
 	"scripts": {
 		"ng": "ng",
 		"prepare": "husky install",
-		"start": "ng serve",
 		"build": "ng build --configuration development --base-href ./ ",
 		"build-prod": "ng build --configuration production && npm run purgecss",
 		"watch": "ng build --watch --configuration development",
@@ -29,7 +28,13 @@
 		"prettier": "prettier --config ./.prettierrc --write \"src/{app,environments}/**/*{.ts,.html,.scss,.json}\"",
 		"prettier:verify": "prettier --config ./.prettierrc --check \"src/{app,environments}/**/*{.ts,.html,.scss,.json}\"",
 		"prettier:staged": "pretty-quick --staged",
-		"source-map-explorer": "ng build --configuration production && source-map-explorer dist/*.*"
+		"source-map-explorer": "ng build --configuration production && source-map-explorer dist/*.*",
+		"heroku-postbuild": "ng build --configuration production && node run-purgecss.js",
+		"start" : "node server.js",
+		"engines": {
+			"node": "16.15.1",
+			"npm": "8.1.2"
+		}
 	},
 	"dependencies": {
 		"@angular/animations": "^14.2.0",
@@ -46,6 +51,8 @@
 		"@ngx-loading-bar/router": "^6.0.0",
 		"@ngx-translate/core": "^14.0.0",
 		"@ngx-translate/http-loader": "^7.0.0",
+		"express": "^4.18.2",
+		"path": "^0.12.7",
 		"rxjs": "~7.5.0",
 		"tslib": "^2.4.0",
 		"web-animations-js": "^2.3.2",

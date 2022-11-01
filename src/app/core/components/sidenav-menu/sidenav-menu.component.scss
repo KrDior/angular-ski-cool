@@ -2,7 +2,7 @@
 
 .close {
 	font-size: 28px;
-	color: #fff;
+	color: $text-default-hover;
 	float: right;
 	position: absolute;
 	right: 15px;
@@ -11,7 +11,7 @@
 }
 
 h1 {
-	color: #fff;
+	color: $text-default-hover;
 }
 
 .mat-list-base {
@@ -26,5 +26,5 @@ h1 {
 }
 
 .mat-list-base .mat-list-item {
-	color: #fff !important;
+	color: $text-default-hover !important;
 }

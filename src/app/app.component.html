@@ -9,7 +9,7 @@
 				*ngIf="isDesktopView$ | async"
 				(isNavTabVisible)="onNavTabVisibilityChange($event)"
 				[menuItems]="menuItems"
-				[moreMenuItem]="{ styleClass: 'item', icon: 'keyboard_arrow_down' }"
+				[moreMenuItem]="{ styleClass: 'mat-display-1', icon: 'keyboard_arrow_down' }"
 			>
 			</app-nav-tab>
 
@@ -18,12 +18,17 @@
 				[isNavTabVisible]="navTabVisibility"
 				(drawerClick)="onDrawerClick()"
 			>
-				<button mat-button [matMenuTriggerFor]="belowMenu" class="lang">
+				<button mat-button [matMenuTriggerFor]="belowMenu" class="lang mat-display-4">
 					{{ currentLang.slice(0, 2) | uppercase }}
 					<mat-icon aria-hidden="false">keyboard_arrow_down</mat-icon>
 				</button>
 				<mat-menu class="lang-menu" #belowMenu="matMenu" yPosition="below">
-					<button *ngFor="let lang of availableLang" (click)="onLanguageChange(lang)" mat-menu-item>
+					<button
+						class="mat-display-4"
+						*ngFor="let lang of availableLang"
+						(click)="onLanguageChange(lang)"
+						mat-menu-item
+					>
 						{{ lang.slice(0, 2) | uppercase }}
 					</button>
 				</mat-menu>

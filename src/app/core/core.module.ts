@@ -7,7 +7,6 @@ import { SidenavMenuComponent } from './components/sidenav-menu/sidenav-menu.com
 import { NavSliderComponent } from './components/nav-slider/nav-slider.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MainContentComponent } from './components/home/main-content/main-content.component';
-import { MainFeaturesComponent } from './components/home/main-features/main-features.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { BookingComponent } from './components/booking/booking.component';
 import { ContactComponent } from './components/contact/contact.component';
@@ -28,7 +27,6 @@ import { MenuContentWrapperDirective } from './directives/menu-content-wrapper.d
 		NavSliderComponent,
 		FooterComponent,
 		MainContentComponent,
-		MainFeaturesComponent,
 		AboutUsComponent,
 		BookingComponent,
 		ReviewsComponent,

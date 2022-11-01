@@ -7,7 +7,7 @@ export const menuItemsConfig: MenuItem[] = [
 		localizeField: 'Home',
 		visible: true,
 		disabled: false,
-		styleClass: 'item',
+		styleClass: 'mat-display-1',
 		routerLink: RoutePath.Home,
 	},
 	{
@@ -15,7 +15,7 @@ export const menuItemsConfig: MenuItem[] = [
 		localizeField: 'About Us',
 		visible: true,
 		disabled: false,
-		styleClass: 'item',
+		styleClass: 'mat-display-1',
 		routerLink: RoutePath.AboutUs,
 	},
 	{
@@ -23,7 +23,7 @@ export const menuItemsConfig: MenuItem[] = [
 		localizeField: 'Private Lessons',
 		visible: true,
 		disabled: false,
-		styleClass: 'item',
+		styleClass: 'mat-display-1',
 		routerLink: RoutePath.PrivateLesson,
 	},
 	{
@@ -31,7 +31,7 @@ export const menuItemsConfig: MenuItem[] = [
 		localizeField: 'Group Lesson',
 		visible: true,
 		disabled: false,
-		styleClass: 'item',
+		styleClass: 'mat-display-1',
 		routerLink: RoutePath.GroupLesson,
 	},
 	{
@@ -39,7 +39,7 @@ export const menuItemsConfig: MenuItem[] = [
 		localizeField: 'Individual Recreation',
 		visible: true,
 		disabled: false,
-		styleClass: 'item',
+		styleClass: 'mat-display-1',
 		routerLink: RoutePath.Recreation,
 	},
 	{
@@ -47,7 +47,7 @@ export const menuItemsConfig: MenuItem[] = [
 		localizeField: 'Review',
 		visible: true,
 		disabled: false,
-		styleClass: 'item',
+		styleClass: 'mat-display-1',
 		routerLink: RoutePath.Reviews,
 	},
 	{
@@ -55,7 +55,7 @@ export const menuItemsConfig: MenuItem[] = [
 		localizeField: 'Contact Us',
 		visible: true,
 		disabled: false,
-		styleClass: 'item',
+		styleClass: 'mat-display-1',
 		routerLink: RoutePath.Contact,
 	},
 ];

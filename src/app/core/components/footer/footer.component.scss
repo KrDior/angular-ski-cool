@@ -30,26 +30,10 @@
 			}
 
 			.column {
-				font-weight: 400;
-				font-size: 17px;
-				line-height: 27px;
-				/* identical to box height, or 159% */
-
 				text-align: right;
-
-				/* Text/White */
-
-				color: #fcfcfc;
+				color: $text-default-hover;
 				display: flex;
 				flex-direction: column;
-			}
-
-			.contact-btn {
-				border: 1px solid black;
-				width: 200px;
-				color: white;
-				background-color: #486d9c;
-				font-size: 18px;
 			}
 
 			.contact {
@@ -71,34 +55,24 @@
 		justify-content: space-between;
 
 		.condition {
-			font-weight: 400;
-			font-size: 17px;
-			line-height: 22px;
 			letter-spacing: 0.008em;
-			color: #333333;
+			color: $black-text;
 		}
 
 		.active-link {
-			font-weight: 400;
-			font-size: 17px;
-			line-height: 22px;
-			letter-spacing: 0.008em;
-			color: #5b779a;
+			color: $background-default;
 		}
 	}
 
 	.link,
 	.info,
 	.info a {
-		font-weight: 400;
-		font-size: 17px;
-		line-height: 27px;
-		color: #333333;
+		color: $black-text;
 		margin-bottom: 10px;
 		text-decoration: none;
 	}
 
 	.link:hover {
-		border-bottom: 2px solid #333333;
+		border-bottom: 2px solid $black-text;
 	}
 }

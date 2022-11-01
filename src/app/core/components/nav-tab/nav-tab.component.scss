@@ -2,21 +2,22 @@
 
 .nav-tab-wrapper {
 	display: flex;
-	overflow: hidden;
 	position: relative;
 	border: none;
 	align-items: center;
 	margin: 28px 100px;
 	height: 60px;
 	background: none;
+
+	.logo {
+		margin-right: 50px;
+	}
 }
 
 .mat-tab-label-container {
-	z-index: 1000;
 	flex: 1;
 	display: flex;
-	justify-content: flex-end;
-	margin: 0 15px;
+
 	overflow: hidden;
 	align-self: stretch;
 }
@@ -30,8 +31,8 @@
 .more-button {
 	display: flex;
 	align-items: center;
-	font-weight: 700;
-	font-size: 17px;
+	color: $black-text;
+	padding-top: 2px;
 }
 
 .button-stretch {
@@ -58,17 +59,7 @@
 	pointer-events: none;
 }
 
-.button-stretch:hover:not([disabled]) {
-	background: rgba(0, 0, 0, 0.04);
-	cursor: pointer;
-}
-
-.button-stretch[disabled] {
-	color: rgba(0, 0, 0, 0.38) !important;
-}
-
 .mat-tab-list {
-	flex-grow: 1;
 	display: flex;
 	justify-content: flex-end;
 	position: relative;
@@ -77,44 +68,14 @@
 
 .mat-tab-labels {
 	display: flex;
-	font-weight: 700;
-	font-size: 17px;
-	line-height: 22px;
-	gap: 10px;
+}
+
+.mat-tab-labels a {
+	margin: 0 10px;
+	color: $black-text;
 }
 
 .space {
 	flex: 1;
 	justify-content: space-between;
-}
-.item {
-	font-size: 1rem;
-	padding-left: 8px !important;
-	padding-right: 8px !important;
-}
-/* .item:hover:not(.mat-menu-item[disabled]){
-	color: rgba(0,0,0,.8);
-}
-.item:hover:not(.mat-menu-item:disabled){
-	color: rgba(0,0,0,.8);
-  } */
-
-.item:not(.mat-menu-item[disabled]) {
-	color: rgba(0, 0, 0.54);
-}
-
-.booking-btn {
-	border: 1px solid black;
-	margin-left: 4px;
-	width: 200px;
-	color: white;
-	background-color: #486d9c;
-	font-size: 18px;
-
-	.booking-svg {
-		height: 18px;
-		position: relative;
-		bottom: 4px;
-		left: 4px;
-	}
 }

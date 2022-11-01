@@ -12,16 +12,10 @@ body {
 }
 body {
 	margin: 0;
-	font-family: Roboto, 'Helvetica Neue', sans-serif;
+	font-family: mat-font-family($custom-typography);
 }
 
 /* You can add global styles to this file, and also import other style files */
-
-$primary: #1a1a1a;
-
-* {
-	font-family: 'Nunito Sans';
-}
 
 html,
 body {
@@ -33,33 +27,13 @@ body {
 	background: #f0f3f5;
 }
 
-.item {
-	// font-size: 1rem;
-	// min-width: unset !important;
-	// margin: 0;
-	// padding: 0 8px !important;
-}
-
-.item:not([disabled]) {
-	color: rgba(0, 0, 0, 0.54);
-}
-
-.item:hover:not([disabled]) {
-	color: rgba(0, 0, 0, 0.8);
-}
-
-.disabled {
-	pointer-events: none;
-	color: rgba(0, 0, 0, 0.38) !important;
-}
-
 .ui-state-active {
 	// border-bottom: 4px solid purple !important;
 }
 
 .ui-state-active:before {
 	content: '';
-	border-bottom: 3px solid purple;
+	border-bottom: 3px solid $black-text;
 	width: 100%;
 	position: absolute;
 	bottom: 0;
@@ -68,5 +42,38 @@ body {
 }
 
 .ui-state-active-sub {
-	color: purple;
+	color: $black-text;
+}
+
+.stroked-btn {
+	width: 200px !important;
+	height: 54px !important;
+	color: #486d9c !important;
+	border: 1px solid #486d9c !important;
+	margin-left: 4px !important;
+	font-weight: 600 !important;
+	font-size: 18px !important;
+	border-radius: 2px !important;
+
+	.booking-svg {
+		height: 18px !important;
+		line-height: 10px;
+		position: relative !important;
+		bottom: 4px !important;
+		left: 5px !important;
+		overflow: visible;
+	}
+}
+
+.stroked-btn:hover {
+	background: #f5f5f5 !important;
+}
+
+.stroked-btn:active {
+	background: #f5f5f5 !important;
+	border: none !important;
+}
+
+.stroked-btn:focus {
+	background: #f5f5f5 !important;
 }

@@ -1,7 +1,7 @@
 <div class="carousel-wrapper">
 	<div class="empty"></div>
 	<app-text-line [text]="carouselConfig.message"></app-text-line>
-	<span *ngIf="carouselConfig?.title" class="title">{{ carouselConfig.title }}</span>
+	<span *ngIf="carouselConfig?.title" class="title mat-display-2">{{ carouselConfig.title }}</span>
 	<app-panning-container class="card-block" #panner>
 		<ng-container *ngFor="let card of carouselConfig.cards; index as i">
 			<ng-container *ngIf="carouselConfig.type === 'feedback'">
@@ -12,10 +12,10 @@
 						</div>
 						<div class="feedback-content">
 							<span class="feedback-name">{{ card.name }}</span>
-							<span class="feedback-text">{{ card.text }}</span>
+							<span class="feedback-text mat-display-4">{{ card.text }}</span>
 							<div class="date">
 								<img class="img" alt="Date" src="assets/svg/calendar.svg" />
-								<span class="feedback-date">{{ card.date }}</span>
+								<span class="feedback-date mat-display-4">{{ card.date }}</span>
 							</div>
 						</div>
 					</div>

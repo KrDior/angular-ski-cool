@@ -1,3 +1,5 @@
+@import 'variables';
+
 .contact-block-wrapper {
 	display: flex;
 	padding: 100px 170px;
@@ -14,11 +16,7 @@
 		flex-direction: column;
 
 		.title {
-			font-weight: 600;
-			font-size: 38px;
-			line-height: 49px;
-			letter-spacing: 0.015em;
-			color: #fcfcfc;
+			color: $text-default-hover;
 		}
 	}
 
@@ -30,11 +28,8 @@
 
 		.info,
 		.info a {
-			font-weight: 400;
-			font-size: 17px;
-			line-height: 27px;
 			text-align: right;
-			color: #fcfcfc;
+			color: $text-default-hover;
 			margin-bottom: 30px;
 			text-decoration: none;
 		}
@@ -46,8 +41,8 @@
 	margin-top: 42px;
 	width: 200px;
 	color: white;
-	background-color: #486d9c;
-	font-size: 18px;
+	background-color: $text-default-3;
+	font-size: 17px;
 
 	.booking-svg {
 		height: 18px;

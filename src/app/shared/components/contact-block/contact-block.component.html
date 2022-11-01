@@ -1,14 +1,18 @@
 <div class="contact-block-wrapper">
 	<div class="content-left">
-		<span class="title">{{ 'Ski Cool St. Moritz Silvaplana-Surlej, Switzerland' }}</span>
+		<span class="title mat-display-2">{{ 'Ski Cool St. Moritz Silvaplana-Surlej, Switzerland' }}</span>
 		<button mat-button class="booking-btn" routerLink="{{ routes.Booking }}">
-			<span>Book now</span>
+			<span>{{ 'Contact Us' }}</span>
 			<mat-icon class="booking-svg" svgIcon="booking"></mat-icon>
 		</button>
 	</div>
 	<div class="content-right">
-		<div class="info email">{{ 'Email' }}: <a href="mailto:info@skicool.ch">info@skicool.ch</a></div>
-		<div class="info phone">{{ 'Phone' }}: <a href="tel:+41(0)799152989">+41 (0) 799152989</a></div>
+		<div class="info email">
+			{{ 'Email' }}: <a class="mat-display-4" href="mailto:info@skicool.ch">info@skicool.ch</a>
+		</div>
+		<div class="info phone">
+			{{ 'Phone' }}: <a class="mat-display-4" href="tel:+41(0)799152989">+41 (0) 799152989</a>
+		</div>
 		<div class="info adress">
 			Silvaplana-Surlej,<br />
 			Via Sturetscha 13, CH 7513, Switzerland<br />

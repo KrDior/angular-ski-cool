@@ -17,6 +17,7 @@ import { CarouselCardComponent } from '@shared/components/carousel-card/carousel
 import { PanningItemDirective } from '@shared/directives/panning-item.directive';
 import { PanningContainerComponent } from '@shared/components/carousel-card/panning/panning.component';
 import { ContactBlockComponent } from '@shared/components/contact-block/contact-block.component';
+import { ButtonConfigDirective } from '@shared/directives/button-config.directive';
 
 export const components: any[] = [
 	PhotoCardComponent,
@@ -28,7 +29,7 @@ export const components: any[] = [
 	ContactBlockComponent,
 ];
 
-export const directives: any[] = [PanningItemDirective];
+export const directives: any[] = [PanningItemDirective, ButtonConfigDirective];
 
 export const pipes: any[] = [];
 

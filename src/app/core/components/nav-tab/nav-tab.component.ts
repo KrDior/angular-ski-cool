@@ -94,6 +94,7 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 	public showMoreButton = true;
 	public moreButtonWidth = 0;
 	public moreItemCount = 0;
+	public itemMargin = 15;
 
 	//Measures the total space needed to show every link (linkW = LinkW + PrevLinkW).
 	public linkWidths!: number[];
@@ -141,7 +142,7 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 	}
 
 	public getAvailableSpace(): number {
-		return this.tabListContainer.nativeElement.offsetWidth - this.moreButtonWidth - 100;
+		return this.tabListContainer.nativeElement.offsetWidth - this.moreButtonWidth - 10;
 	}
 
 	public updateNav() {
@@ -158,9 +159,9 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 			//Measure each menulink's width and save it.
 			this.linkWrappers.map((val, index) => {
 				if (this.linkWidths.length === 0) {
-					this.linkWidths.push(val.getOffsetWidth());
+					this.linkWidths.push(val.getOffsetWidth() + this.itemMargin);
 				} else {
-					this.linkWidths.push(val.getOffsetWidth() + this.linkWidths[index - 1]);
+					this.linkWidths.push(val.getOffsetWidth() + this.linkWidths[index - 1] + this.itemMargin);
 				}
 				this.navigationService.updateLinkWidths(this.linkWidths);
 
@@ -195,6 +196,7 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 
 				//Update the count and then the view.
 				this.moreItemCount = this.linkBreaks.length;
+				this.changeDetectorRef.detectChanges();
 			} else {
 				//As the viewport grows we need to ensure the next item shows, order matters.
 				//We need to ensure the smalles breakpoint is always checked first (e.g. the next
@@ -209,14 +211,15 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 
 					//Update the viewport.
 					this.moreItemCount = this.linkBreaks.length;
+					this.changeDetectorRef.detectChanges();
 				}
 				// Hide the more button if link break list is empty.
 				if (this.linkBreaks.length < 1) {
 					this.showMoreButton = false;
+					this.changeDetectorRef.detectChanges();
 				}
 			}
 		}
-		this.changeDetectorRef.detectChanges();
 	}
 
 	// We iterate through the list of items because changes in the viewport

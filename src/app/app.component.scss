@@ -25,12 +25,10 @@
 }
 
 .lang {
-	color: white;
+	color: $text-default-hover;
 	align-self: flex-end;
 	padding-right: 0;
-	font-size: 17px;
-	font-weight: 500;
-	line-height: 0px;
+	line-height: 0px !important;
 	margin-top: 10px;
 }
 
@@ -39,16 +37,14 @@
 		min-width: 60px;
 		width: 60px;
 		background: none;
-		color: white;
+		color: $text-default-hover;
 
 		.mat-menu-content {
 			padding-top: 0px;
 		}
 
 		button {
-			color: white;
-			font-size: 17px;
-			font-weight: 500;
+			color: $text-default-hover;
 			height: 33px;
 			padding: 0px 5px 0px 17px;
 		}

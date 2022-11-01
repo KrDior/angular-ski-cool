@@ -1,3 +1,5 @@
+@import 'variables';
+
 .header-block {
 	display: flex;
 	flex-flow: row;
@@ -12,12 +14,8 @@
 	}
 
 	.header-text {
-		font-weight: 700;
-		font-size: 17px;
-		line-height: 27px;
-		letter-spacing: 0.02em;
 		text-transform: uppercase;
-		color: #333333;
+		color: $black-text;
 		padding-right: 20px;
 		white-space: nowrap;
 	}

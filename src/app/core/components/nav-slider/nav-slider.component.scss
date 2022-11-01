@@ -1,8 +1,9 @@
+@import 'variables';
+
 .mat-icon {
 	color: var(--primary);
 	height: auto !important;
 	width: auto !important;
-	font-size: 66px;
 }
 
 .desktop-hide {
@@ -37,7 +38,7 @@
 
 	.mat-icon {
 		font-size: 40px;
-		color: #fff;
+		color: $text-default-hover;
 		float: right;
 		cursor: pointer;
 	}
@@ -46,11 +47,11 @@
 		text-align: start;
 		font-weight: 600;
 		font-size: 120px;
-		color: #fff;
+		color: $text-default-hover;
 	}
 
 	p {
-		color: #fff;
+		color: $text-default-hover;
 		font-weight: 600;
 		font-size: 24px;
 		line-height: 38px;
@@ -62,9 +63,5 @@
 @media (max-width: 768px) {
 	.desktop-hide {
 		display: block !important;
-	}
-
-	.silder h1 {
-		font-size: 36px;
 	}
 }

@@ -16,18 +16,32 @@ $custom-warn: mat-palette($mat-custom-warn);
 
 // Create the light theme object NOTE: use mat-dark-theme if you use dark mode for your app
 $custom-theme: mat-light-theme(
-  (
-    color: (
-      primary: $custom-primary,
-      accent: $custom-accent,
-      warn: $custom-warn,
-    ),
-  )
+	(
+		color: (
+			primary: $custom-primary,
+			accent: $custom-accent,
+			warn: $custom-warn,
+		),
+	)
 );
 
 $custom-typography: mat-typography-config(
-  $font-family: $primary-font,
+	$font-family: $primary-font,
+	$display-4: mat-typography-level(17px, 27px, 400),
+	$display-3: mat-typography-level(17px, 27px, 700),
+	$display-2: mat-typography-level(34px, 50px, 700),
+	$display-1: mat-typography-level(17px, 27px, 700, $third-font),
+	$headline: mat-typography-level(120px, 144px, 600, $secondary-font),
+	$title: mat-typography-level(20px, 32px, 500),
+	$subheading-2: mat-typography-level(16px, 28px, 400),
+	$subheading-1: mat-typography-level(15px, 24px, 400),
+	$body-2: mat-typography-level(14px, 24px, 500),
+	$body-1: mat-typography-level(14px, 20px, 400),
+	$caption: mat-typography-level(12px, 20px, 400),
+	$button: mat-typography-level(14px, 14px, 500),
+	$input: mat-typography-level(16px, 1.25, 400),
 );
+
 @include angular-material-typography($custom-typography);
 
 // apply material theme

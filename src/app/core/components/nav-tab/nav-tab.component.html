@@ -1,5 +1,5 @@
 <div class="nav-tab-wrapper">
-	<img alt="Logo" src="assets/svg/Logo.svg" />
+	<img class="logo" alt="Logo" src="assets/svg/Logo.svg" />
 	<div class="mat-tab-label-container" #tabListContainer>
 		<div class="mat-tab-list" #tabList role="tablist" [style.justify-content]="position">
 			<div class="mat-tab-labels" #labels [class.space]="space">
@@ -90,7 +90,7 @@
 						[ngClass]="moreMenuItem.styleClass"
 						[ngStyle]="moreMenuItem.style"
 					>
-						More
+						{{ 'More' }}
 						<mat-icon *ngIf="moreMenuItem.icon" aria-hidden="false" [ngClass]="moreMenuItem.icon">{{
 							moreMenuItem.icon
 						}}</mat-icon>
@@ -127,9 +127,9 @@
 			</div>
 		</div>
 	</div>
-	<button mat-button class="booking-btn" routerLink="{{ routes.Booking }}">
-		<span>Book now</span>
-		<mat-icon class="booking-svg" svgIcon="booking"></mat-icon>
+	<button mat-button appButtonConfig [type]="'stroked'" class="booking-btn" routerLink="{{ routes.Booking }}">
+		<span>{{ 'Book now' }}</span>
+		<mat-icon aria-hidden="true" class="booking-svg" svgIcon="booking"></mat-icon>
 	</button>
 </div>
 

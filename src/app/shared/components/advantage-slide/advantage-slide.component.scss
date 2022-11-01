@@ -1,7 +1,7 @@
 @import 'variables';
 
 .advantage-wrapper {
-	padding: 100px;
+	padding: 50px 100px;
 
 	.empty {
 		height: 70px;
@@ -24,6 +24,9 @@
 			.header-text {
 				color: $black-text;
 				margin-bottom: 24px;
+				font-weight: 700;
+				font-size: 34px;
+				line-height: 50px;
 			}
 
 			.title {

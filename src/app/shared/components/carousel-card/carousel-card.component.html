@@ -37,7 +37,7 @@
 	</app-panning-container>
 
 	<div class="navigation">
-		<button class="discover-btn" mat-raised-button color="accent" routerLink="{{ routes.Booking }}">
+		<button class="discover-btn" mat-button appButtonConfig [type]="'stroked'" routerLink="{{ routes.Booking }}">
 			{{ carouselConfig.button }}
 		</button>
 		<div class="pagination">

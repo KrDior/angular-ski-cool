@@ -5,19 +5,22 @@
 		</mat-drawer>
 
 		<mat-drawer-content>
-			<app-nav-tab
-				*ngIf="isDesktopView$ | async"
-				(isNavTabVisible)="onNavTabVisibilityChange($event)"
-				[menuItems]="menuItems"
-				[moreMenuItem]="{ styleClass: 'mat-display-1', icon: 'keyboard_arrow_down' }"
-			>
-			</app-nav-tab>
-
+			<button mat-button appButtonConfig [type]="'stroked'" class="booking-btn" routerLink="{{ routes.Booking }}">
+				<span>{{ 'Book now' }}</span>
+				<mat-icon aria-hidden="true" class="booking-svg" svgIcon="booking"></mat-icon>
+			</button>
 			<app-nav-slider
 				[isDesktop]="isDesktopView$ | async"
 				[isNavTabVisible]="navTabVisibility"
 				(drawerClick)="onDrawerClick()"
 			>
+				<app-nav-tab
+					*ngIf="isDesktopView$ | async"
+					(isNavTabVisible)="onNavTabVisibilityChange($event)"
+					[menuItems]="menuItems"
+					[moreMenuItem]="{ styleClass: 'mat-display-1', icon: 'keyboard_arrow_down' }"
+				>
+				</app-nav-tab>
 				<button mat-button [matMenuTriggerFor]="belowMenu" class="lang mat-display-4">
 					{{ currentLang.slice(0, 2) | uppercase }}
 					<mat-icon aria-hidden="false">keyboard_arrow_down</mat-icon>

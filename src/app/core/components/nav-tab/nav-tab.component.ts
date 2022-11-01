@@ -21,8 +21,6 @@ import { fromEvent, Subscription } from 'rxjs';
 import { US_STATE_ACTIVE, US_STATE_ACTIVE_SUB } from '@shared/constants/common-constants';
 import { NavigationService } from '@core/services/navigation.service';
 import { MenuContentWrapperDirective } from '@core/directives/menu-content-wrapper.directive';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { distinctUntilChanged, filter, map, pairwise, share, throttleTime } from 'rxjs/operators';
 
@@ -109,14 +107,8 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 	constructor(
 		private viewportRuler: ViewportRuler,
 		private changeDetectorRef: ChangeDetectorRef,
-		private navigationService: NavigationService,
-		private iconRegistry: MatIconRegistry,
-		private sanitizer: DomSanitizer
+		private navigationService: NavigationService
 	) {
-		this.iconRegistry.addSvgIcon(
-			'booking',
-			this.sanitizer.bypassSecurityTrustResourceUrl('assets/svg/long_up_right.svg')
-		);
 		this.subscriptions.push(
 			this.navigationService.getLineBreaks().subscribe((val) => (this.linkBreaks = val)),
 			this.navigationService.getLinkWidths().subscribe((val) => (this.linkWidths = val))

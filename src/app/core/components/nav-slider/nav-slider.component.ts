@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 import { RoutePath } from 'src/app/app-routing.module';
 
 @Component({
@@ -18,7 +20,9 @@ export class NavSliderComponent {
 
 	public routes: typeof RoutePath = RoutePath;
 
-	constructor() {}
+	constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer) {
+		this.iconRegistry.addSvgIcon('menu', this.sanitizer.bypassSecurityTrustResourceUrl('assets/svg/menu.svg'));
+	}
 
 	public toggleDrawer(): void {
 		this.drawerClick.emit();

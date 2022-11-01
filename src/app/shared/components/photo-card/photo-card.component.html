@@ -7,9 +7,11 @@
 		<div class="description mat-display-4">
 			{{ cardConfig.description }}
 		</div>
-		<button mat-button class="discover-btn">
+		<button mat-button appButtonConfig [type]="'stroked'" class="discover-btn">
 			{{ cardConfig.button }}
 		</button>
 	</div>
-	<img class="image" [src]="cardConfig.imageLink" [alt]="cardConfig.imageAlt" />
+	<div class="image-block">
+		<img class="image" [src]="cardConfig.imageLink" [alt]="cardConfig.imageAlt" />
+	</div>
 </div>

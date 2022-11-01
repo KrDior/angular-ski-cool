@@ -3,6 +3,7 @@
 .article-wrapper {
 	height: 620px;
 	background: $default-background-image;
+	width: 100%;
 
 	.article {
 		display: flex;
@@ -12,17 +13,19 @@
 		height: 100%;
 		padding: 0 25%;
 		text-align: center;
+		min-width: 600px;
 
 		.header-text {
 			text-transform: uppercase;
 			color: $black-text;
 			padding-right: 20px;
 			white-space: nowrap;
+			margin-bottom: 20px;
 		}
 
 		.title {
 			color: $black-text;
-			margin-bottom: 32px;
+			margin-bottom: 15px;
 		}
 
 		.description {
@@ -31,11 +34,7 @@
 		}
 
 		.discover-btn {
-			border: 1px solid $black-text;
-			width: 200px;
-			color: $text-default-hover;
-			background-color: $black-text;
-			font-size: 17px;
+			width: 248px;
 		}
 	}
 }

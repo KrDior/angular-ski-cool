@@ -16,7 +16,8 @@
 		flex-direction: column;
 
 		.title {
-			color: $text-default-hover;
+			color: $default-background;
+			margin-bottom: 50px;
 		}
 	}
 
@@ -29,25 +30,13 @@
 		.info,
 		.info a {
 			text-align: right;
-			color: $text-default-hover;
+			color: $default-background;
 			margin-bottom: 30px;
 			text-decoration: none;
 		}
 	}
 }
 
-.booking-btn {
-	border: 1px solid black;
-	margin-top: 42px;
-	width: 200px;
-	color: white;
-	background-color: $text-default-3;
-	font-size: 17px;
-
-	.booking-svg {
-		height: 18px;
-		position: relative;
-		bottom: 4px;
-		left: 4px;
-	}
+.contact-btn {
+	width: 220px;
 }

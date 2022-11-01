@@ -31,7 +31,7 @@
 
 			.column {
 				text-align: right;
-				color: $text-default-hover;
+				color: $default-background;
 				display: flex;
 				flex-direction: column;
 			}
@@ -75,4 +75,8 @@
 	.link:hover {
 		border-bottom: 2px solid $black-text;
 	}
+}
+
+.contact-btn {
+	width: 220px;
 }

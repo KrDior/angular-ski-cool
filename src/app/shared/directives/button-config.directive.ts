@@ -12,8 +12,8 @@ export class ButtonConfigDirective implements OnInit {
 	ngOnInit() {
 		switch (this.type) {
 			case ButtonConfigType.Flat:
+				this.renderer.addClass(this.elementRef.nativeElement, 'flat-btn');
 				break;
-
 			case ButtonConfigType.Stroked:
 				this.renderer.addClass(this.elementRef.nativeElement, 'stroked-btn');
 				break;

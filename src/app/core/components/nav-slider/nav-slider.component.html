@@ -1,25 +1,23 @@
 <div class="slider">
 	<mat-icon
 		*ngIf="!isDesktop || !isNavTabVisible"
-		aria-label="Example home icon"
+		svgIcon="menu"
 		class="desktop-hide"
 		(click)="toggleDrawer()"
-	>
-		reorder
-	</mat-icon>
+	></mat-icon>
 	<div class="slider-content">
-		<div class="left-content">
+		<div class="top-content" [ngClass]="{ marginTop: !isDesktop || !isNavTabVisible }">
+			<ng-content></ng-content>
+		</div>
+		<div class="bottom-content">
 			<h1 class="mat-headline">{{ 'Skicool' }}</h1>
 			<p>
 				Ski Cool St. Moritz, is an elite snowsports school <br />
 				of the Engadin Valley, Switzerland.
 			</p>
-			<button class="discover-btn" mat-raised-button color="accent" routerLink="{{ routes.Booking }}">
+			<button mat-flat-button class="discover-btn" appButtonConfig [type]="'flat'" routerLink="{{ routes.Booking }}">
 				Discover more
 			</button>
-		</div>
-		<div class="right-content">
-			<ng-content></ng-content>
 		</div>
 	</div>
 </div>

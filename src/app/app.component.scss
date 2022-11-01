@@ -1,8 +1,12 @@
 @import 'variables';
 
+.layout-wrapper {
+	background-color: $default-background !important;
+}
+
 .mat-drawer {
 	width: 100%;
-	background-color: $primary;
+	background-color: $default-background;
 }
 
 .mat-drawer:not(.mat-drawer-side) {
@@ -13,19 +17,20 @@
 	position: fixed !important;
 }
 
-.wrapper {
-	display: flex;
-	position: relative;
-	align-items: center;
-	align-self: stretch;
-}
-
 .body {
 	margin-top: 60px;
 }
 
+.booking-btn {
+	width: 200px;
+	position: fixed;
+	right: 100px;
+	top: 44px;
+	z-index: 1000;
+}
+
 .lang {
-	color: $text-default-hover;
+	color: $default-background;
 	align-self: flex-end;
 	padding-right: 0;
 	line-height: 0px !important;
@@ -37,16 +42,17 @@
 		min-width: 60px;
 		width: 60px;
 		background: none;
-		color: $text-default-hover;
+		color: $default-background;
 
 		.mat-menu-content {
 			padding-top: 0px;
 		}
 
 		button {
-			color: $text-default-hover;
+			color: $default-background;
 			height: 33px;
 			padding: 0px 5px 0px 17px;
+			margin: 0;
 		}
 	}
 }

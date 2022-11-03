@@ -22,11 +22,12 @@
 }
 
 .booking-btn {
-	width: 200px;
 	position: fixed;
 	right: 100px;
-	top: 44px;
+	top: 31px;
 	z-index: 1000;
+	max-width: 200px;
+	width: 10%;
 }
 
 .lang {
@@ -54,5 +55,11 @@
 			padding: 0px 5px 0px 17px;
 			margin: 0;
 		}
+	}
+}
+
+@media screen and (max-width: 1400px) {
+	.booking-btn {
+		width: 132px;
 	}
 }

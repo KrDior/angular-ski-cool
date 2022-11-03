@@ -17,7 +17,7 @@
 .mat-tab-label-container {
 	flex: 1;
 	display: flex;
-
+	justify-content: center;
 	overflow: hidden;
 	align-self: stretch;
 }
@@ -78,4 +78,10 @@
 .space {
 	flex: 1;
 	justify-content: space-between;
+}
+
+@media screen and (max-width: 1140px) {
+	.mat-tab-label-container {
+		justify-content: start;
+	}
 }

@@ -22,7 +22,7 @@ import { US_STATE_ACTIVE, US_STATE_ACTIVE_SUB } from '@shared/constants/common-c
 import { NavigationService } from '@core/services/navigation.service';
 import { MenuContentWrapperDirective } from '@core/directives/menu-content-wrapper.directive';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { distinctUntilChanged, filter, map, pairwise, share, throttleTime } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, share, throttleTime } from 'rxjs/operators';
 
 export type Position = 'flex-end' | 'center' | 'flex-start' | 'space-around';
 
@@ -134,7 +134,17 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 	}
 
 	public getAvailableSpace(): number {
-		return this.tabListContainer.nativeElement.offsetWidth - this.moreButtonWidth - 10;
+		let bookingOffset = 0;
+
+		if (window.innerWidth < 1450) {
+			bookingOffset = (window.screen.width / 100) * 18;
+		}
+
+		if (window.innerWidth < 1200) {
+			bookingOffset = (window.screen.width / 100) * 8;
+		}
+
+		return this.tabListContainer.nativeElement.offsetWidth - this.moreButtonWidth - 10 - bookingOffset;
 	}
 
 	public updateNav() {
@@ -249,9 +259,7 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 	private handleScrollEvent(): void {
 		const scroll$ = fromEvent(window, 'scroll').pipe(
 			throttleTime(100),
-			map(() => window.pageYOffset),
-			pairwise(),
-			map(([y1, y2]): Direction => (y2 < y1 ? Direction.Up : Direction.Down)),
+			map(() => (window.scrollY < 200 ? Direction.Up : Direction.Down)),
 			distinctUntilChanged(),
 			share()
 		);

@@ -1,8 +1,10 @@
 @import 'variables';
 
 .mat-icon {
-	height: 54px !important;
-	width: 54px !important;
+	height: 4vw;
+	width: 4vw;
+	min-width: 40px;
+	min-height: 40px;
 }
 
 .desktop-hide {

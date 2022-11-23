@@ -1,0 +1,29 @@
+@import 'variables';
+
+.group-booking-wrapper {
+	padding: 50px 100px;
+
+	app-text-line {
+		width: 100%;
+		display: block;
+	}
+
+	.full-width,
+	.double-field {
+		width: 100%;
+	}
+
+	.datepicker ::ng-deep .mat-form-field-infix {
+		display: flex;
+	}
+
+	.double-field {
+		display: flex;
+		flex-direction: row;
+		gap: 12px;
+
+		.half-width {
+			width: 50%;
+		}
+	}
+}

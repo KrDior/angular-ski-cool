@@ -1,1 +1,9 @@
 @import 'variables';
+
+.booking-wrapper {
+	display: flex;
+
+	.group-form {
+		width: 100%;
+	}
+}

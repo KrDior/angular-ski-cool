@@ -1,0 +1,32 @@
+@import 'variables';
+
+.instructor-wrapper {
+	padding: 30px 55px 50px 55px;
+
+	.name {
+		padding: 10px 0 35px 0;
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 38px;
+		text-align: center;
+		color: $black-text;
+	}
+
+	.title {
+		font-weight: 700;
+		font-size: 17px;
+		line-height: 27px;
+		text-align: center;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+		color: $black-text;
+	}
+
+	.description {
+		padding-top: 20px;
+		font-weight: 400;
+		font-size: 17px;
+		line-height: 27px;
+		color: $black-text;
+	}
+}

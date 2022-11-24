@@ -1,6 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { DisciplineList, LanguageList, LessonList, ResortList } from './group-form.config';
+import { MatDialog } from '@angular/material/dialog';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
+import { DialogType, PopupDialogComponent } from '../popup-dialog/popup-dialog.component';
+import {
+	DisciplineList,
+	instructorsData,
+	InstructorsList,
+	LanguageList,
+	LessonDurationList,
+	LessonList,
+	ResortList,
+} from './group-form.config';
 
 @Component({
 	selector: 'app-group-booking-form',
@@ -9,6 +21,7 @@ import { DisciplineList, LanguageList, LessonList, ResortList } from './group-fo
 })
 export class GroupBookingFormComponent implements OnInit {
 	public messageDetails = 'Your Details';
+	public messagePayment = 'Payment';
 
 	public groupBookingForm!: FormGroup;
 
@@ -16,8 +29,17 @@ export class GroupBookingFormComponent implements OnInit {
 	public resorts = ResortList;
 	public disciplines = DisciplineList;
 	public lessons = LessonList;
+	public lessonDuration = LessonDurationList;
+	public instructors = InstructorsList;
 
-	constructor() {}
+	private instructorsData = instructorsData;
+
+	constructor(public dialog: MatDialog, private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer) {
+		this.iconRegistry.addSvgIcon(
+			'help-circle',
+			this.sanitizer.bypassSecurityTrustResourceUrl('assets/svg/help_circle.svg')
+		);
+	}
 
 	ngOnInit() {
 		this.groupBookingForm = new FormGroup({
@@ -34,15 +56,21 @@ export class GroupBookingFormComponent implements OnInit {
 			lessonFocus: new FormControl(''),
 			startDate: new FormControl('', [Validators.required]),
 			endDate: new FormControl('', [Validators.required]),
-			childNumber: new FormControl('', [Validators.required, Validators.maxLength(200)]),
-			adultNumber: new FormControl('', [Validators.required, Validators.maxLength(200)]),
-			lessonDuration: new FormControl('', [Validators.required, Validators.maxLength(200)]),
-			instructor: new FormControl('', [Validators.required, Validators.maxLength(200)]),
+			childNumber: new FormControl('', [Validators.required]),
+			adultNumber: new FormControl('', [Validators.required]),
+			lessonDuration: new FormControl('', [Validators.required]),
+			instructor: new FormControl(''),
 			otherRequirement: new FormControl('', [Validators.maxLength(500)]),
 
-			cardNumber: new FormControl('', [Validators.required, Validators.maxLength(200)]),
-			expiration: new FormControl('', [Validators.required, Validators.maxLength(200)]),
-			cvv: new FormControl('', [Validators.required, Validators.maxLength(200)]),
+			cardNumber: new FormControl('', [
+				Validators.required,
+				Validators.pattern(/(?<!\d)\d{16}(?!\d)|(?<!\d[ _-])(?<!\d)\d{4}(?:[_ -]\d{4}){3}(?![_ -]?\d)/),
+			]),
+			expiration: new FormControl('', [
+				Validators.required,
+				Validators.pattern(/^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/),
+			]),
+			cvv: new FormControl('', [Validators.required, Validators.pattern(/^[0-9]{3,4}$/)]),
 			cardName: new FormControl('', [Validators.required, Validators.maxLength(200)]),
 		});
 	}
@@ -55,5 +83,19 @@ export class GroupBookingFormComponent implements OnInit {
 		for (const field in this.groupBookingForm.controls) {
 			console.log(this.groupBookingForm.controls[field].value);
 		}
+	}
+
+	public showInstructorPopup(instructorName: string): void {
+		const chosenInstructorInfo = this.instructorsData.find((instructor) => instructor.name === instructorName);
+
+		chosenInstructorInfo &&
+			this.dialog.open(PopupDialogComponent, {
+				data: {
+					name: chosenInstructorInfo.name,
+					title: chosenInstructorInfo.title,
+					description: chosenInstructorInfo.description,
+					type: DialogType.GroupBooking,
+				},
+			});
 	}
 }

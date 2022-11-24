@@ -13,9 +13,9 @@
 		width: 100%;
 	}
 
-	.datepicker ::ng-deep .mat-form-field-infix {
-		display: flex;
-	}
+	// .datepicker ::ng-deep .mat-form-field-infix {
+	// 	display: flex;
+	// }
 
 	.double-field {
 		display: flex;
@@ -25,5 +25,9 @@
 		.half-width {
 			width: 50%;
 		}
+	}
+
+	.book-btn {
+		width: 200px;
 	}
 }

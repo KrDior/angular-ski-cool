@@ -9,6 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatRippleModule, MatCommonModule, MatNativeDateModule } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSelectModule } from '@angular/material/select';
 import { PhotoCardComponent } from '@shared/components/photo-card/photo-card.component';
@@ -21,6 +22,7 @@ import { PanningContainerComponent } from '@shared/components/carousel-card/pann
 import { ContactBlockComponent } from '@shared/components/contact-block/contact-block.component';
 import { ButtonConfigDirective } from '@shared/directives/button-config.directive';
 import { GroupBookingFormComponent } from '@shared/components/group-booking-form/group-booking-form.component';
+import { PopupDialogComponent } from '@shared/components/popup-dialog/popup-dialog.component';
 
 export const components: any[] = [
 	PhotoCardComponent,
@@ -31,6 +33,7 @@ export const components: any[] = [
 	PanningContainerComponent,
 	ContactBlockComponent,
 	GroupBookingFormComponent,
+	PopupDialogComponent,
 ];
 
 export const directives: any[] = [PanningItemDirective, ButtonConfigDirective];
@@ -54,4 +57,5 @@ export const materialModules: any[] = [
 	MatDatepickerModule,
 	MatDatepickerModule,
 	MatNativeDateModule,
+	MatDialogModule,
 ];

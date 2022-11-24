@@ -97,15 +97,59 @@
 						<input matEndDate formControlName="endDate" placeholder="End date" />
 					</mat-date-range-input>
 					<mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-					<mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+					<mat-datepicker-toggle matPrefix [for]="picker"></mat-datepicker-toggle>
 					<mat-date-range-picker #picker></mat-date-range-picker>
 
+					<mat-error *ngIf="checkError('startDate', 'required')">Start date is required</mat-error>
+					<mat-error *ngIf="checkError('endDate', 'required')">End date is required</mat-error>
 					<mat-error *ngIf="groupBookingForm.controls.startDate.hasError('matStartDateInvalid')"
 						>Invalid start date</mat-error
 					>
 					<mat-error *ngIf="groupBookingForm.controls.endDate.hasError('matEndDateInvalid')"
 						>Invalid end date</mat-error
 					>
+				</mat-form-field>
+			</p>
+
+			<p class="double-field">
+				<mat-form-field appearance="outline" class="half-width">
+					<mat-label>Number of children</mat-label>
+					<input matInput type="number" formControlName="firstName" />
+					<mat-error *ngIf="checkError('childNumber', 'required')">Number of children is required</mat-error>
+				</mat-form-field>
+				<mat-form-field appearance="outline" class="half-width">
+					<mat-label>Number of adults (18+)</mat-label>
+					<input matInput type="number" formControlName="adultNumber" />
+					<mat-error *ngIf="checkError('adultNumber', 'required')">Number of adults is required</mat-error>
+				</mat-form-field>
+			</p>
+
+			<p class="double-field">
+				<mat-form-field appearance="outline" class="half-width">
+					<mat-label>Duration of the lesson</mat-label>
+					<mat-select formControlName="lessonDuration">
+						<mat-option *ngFor="let duration of lessonDuration" [value]="duration">{{ duration }}</mat-option>
+					</mat-select>
+					<mat-error *ngIf="checkError('lessonDuration', 'required')">Duration of the lesson is required</mat-error>
+				</mat-form-field>
+				<mat-form-field appearance="outline" class="half-width">
+					<mat-label>Instructor</mat-label>
+					<mat-select formControlName="instructor">
+						<mat-option *ngFor="let instructor of instructors" [value]="instructor">
+							<div
+								style="display: flex; flex-direction: row; align-items: center; justify-content: space-between"
+								class="instructor-item"
+							>
+								<span>{{ instructor }}</span>
+								<mat-icon
+									(click)="showInstructorPopup(instructor)"
+									aria-hidden="true"
+									class="help-circle-svg"
+									svgIcon="help-circle"
+								></mat-icon>
+							</div>
+						</mat-option>
+					</mat-select>
 				</mat-form-field>
 			</p>
 
@@ -121,7 +165,43 @@
 			<p>
 				<img mat-card-sm-image />
 			</p>
-			<button type="submit" [disabled]="!groupBookingForm.valid">Submit</button>
+
+			<app-text-line [text]="messagePayment"></app-text-line>
+			<p class="double-field">
+				<mat-form-field appearance="outline" class="half-width">
+					<mat-label>Payment card number</mat-label>
+					<input matInput type="number" formControlName="cardNumber" />
+					<mat-error *ngIf="checkError('cardNumber', 'required')">Payment card number is required</mat-error>
+					<mat-error *ngIf="checkError('cardNumber', 'pattern')">Payment card is not correct</mat-error>
+				</mat-form-field>
+				<mat-form-field appearance="outline" class="half-width">
+					<mat-label>Expiration (MM/YY)</mat-label>
+					<input matInput formControlName="expiration" />
+					<mat-error *ngIf="checkError('expiration', 'required')">Expiration is required</mat-error>
+					<mat-error *ngIf="checkError('expiration', 'pattern')">Expiration is not correct</mat-error>
+				</mat-form-field>
+			</p>
+
+			<p class="double-field">
+				<mat-form-field appearance="outline" class="half-width">
+					<mat-label>CVV</mat-label>
+					<input matInput type="number" formControlName="cvv" />
+					<mat-error *ngIf="checkError('cvv', 'required')">CVV is required</mat-error>
+					<mat-error *ngIf="checkError('cvv', 'pattern')">CVV is not correct</mat-error>
+				</mat-form-field>
+				<mat-form-field appearance="outline" class="half-width">
+					<mat-label>Name on card</mat-label>
+					<input matInput formControlName="cardName" />
+					<mat-error *ngIf="checkError('cardName', 'required')">Name on card is required</mat-error>
+					<mat-error *ngIf="checkError('cardName', 'maxlength')"
+						>Name on card should be less than 200 characters</mat-error
+					>
+				</mat-form-field>
+			</p>
+
+			<button mat-flat-button class="book-btn" appButtonConfig [type]="'flat'" [disabled]="!groupBookingForm.valid">
+				Book
+			</button>
 		</form>
 	</div>
 </div>

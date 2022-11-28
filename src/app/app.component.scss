@@ -26,16 +26,18 @@
 	right: 100px;
 	top: 31px;
 	z-index: 1000;
-	max-width: 200px;
+	width: 200px;
 	width: 10%;
 }
 
 .lang {
 	color: $default-background;
-	align-self: flex-end;
+	align-self: self-end;
 	padding-right: 0;
 	line-height: 0px !important;
-	margin-top: 10px;
+	position: relative;
+	top: -68px;
+	right: 160px;
 }
 
 ::ng-deep {

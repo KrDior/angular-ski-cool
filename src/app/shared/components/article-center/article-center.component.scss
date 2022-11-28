@@ -1,8 +1,7 @@
 @import 'variables';
 
 .article-wrapper {
-	height: 620px;
-	background: $default-background-image;
+	height: 548px;
 	width: 100%;
 
 	.article {
@@ -14,22 +13,23 @@
 		padding: 0 25%;
 		text-align: center;
 		min-width: 600px;
+		background-repeat: round;
 
 		.header-text {
 			text-transform: uppercase;
-			color: $black-text;
+			color: $default-background;
 			padding-right: 20px;
 			white-space: nowrap;
 			margin-bottom: 20px;
 		}
 
 		.title {
-			color: $black-text;
+			color: $default-background;
 			margin-bottom: 15px;
 		}
 
 		.description {
-			color: $black-text;
+			color: $default-background;
 			margin-bottom: 44px;
 		}
 

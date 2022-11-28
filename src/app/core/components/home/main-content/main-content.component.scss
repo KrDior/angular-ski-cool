@@ -8,16 +8,17 @@
 	}
 
 	.video {
-		height: 798px;
 		background: $default-background-image;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		margin: 10px 0;
+	}
 
-		.video-svg {
-			transform: scale(5);
-			cursor: pointer;
-		}
+	.icon-nav-container {
+		padding: 50px 100px;
+		display: flex;
+		gap: 72px;
+		justify-content: center;
 	}
 }

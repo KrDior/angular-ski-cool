@@ -1,0 +1,20 @@
+@import 'variables';
+
+.icon-nav-wrapper {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+
+	.icon-svg {
+		width: 52px;
+		height: 52px;
+	}
+
+	.header-text {
+		font-weight: 600;
+		font-size: 20px;
+		line-height: 22px;
+		color: $black-text;
+		margin-left: 24px;
+	}
+}

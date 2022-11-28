@@ -11,13 +11,15 @@
 
 	.logo {
 		margin-right: 50px;
+		cursor: pointer;
+		width: 83px;
+		height: 83px;
 	}
 }
 
 .mat-tab-label-container {
 	flex: 1;
 	display: flex;
-	justify-content: center;
 	overflow: hidden;
 	align-self: stretch;
 }
@@ -31,8 +33,9 @@
 .more-button {
 	display: flex;
 	align-items: center;
-	color: $black-text;
+	color: $default-background;
 	padding-top: 2px;
+	font-weight: 400;
 }
 
 .button-stretch {
@@ -68,11 +71,13 @@
 
 .mat-tab-labels {
 	display: flex;
+	gap: 40px;
 }
 
 .mat-tab-labels a {
 	margin: 0 10px;
-	color: $black-text;
+	color: $default-background;
+	font-weight: 400;
 }
 
 .space {

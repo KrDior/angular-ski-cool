@@ -12,6 +12,7 @@ import { RoutePath } from './app-routing.module';
 import { MOBILE_LAND_WIDTH } from '@shared/constants/common-constants';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { iconNavHomeConfig } from '@shared/configs/icon-nav.config';
 
 @Component({
 	selector: 'app-root',
@@ -42,6 +43,44 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.iconRegistry.addSvgIcon(
 			'booking',
 			this.sanitizer.bypassSecurityTrustResourceUrl('assets/svg/long_up_right.svg')
+		);
+
+		iconNavHomeConfig.forEach((icon) => {
+			this.iconRegistry.addSvgIcon(icon.imageAlt, this.sanitizer.bypassSecurityTrustResourceUrl(icon.imageLink));
+		});
+
+		this.iconRegistry.addSvgIcon(
+			'help-circle',
+			this.sanitizer.bypassSecurityTrustResourceUrl('assets/svg/help_circle.svg')
+		);
+
+		this.iconRegistry.addSvgIcon(
+			'booking',
+			this.sanitizer.bypassSecurityTrustResourceUrl('assets/svg/long_up_right.svg')
+		);
+
+		this.iconRegistry.addSvgIcon('facebook', this.sanitizer.bypassSecurityTrustResourceUrl('assets/svg/facebook.svg'));
+
+		this.iconRegistry.addSvgIcon('twitter', this.sanitizer.bypassSecurityTrustResourceUrl('assets/svg/twitter.svg'));
+
+		this.iconRegistry.addSvgIcon(
+			'instagram',
+			this.sanitizer.bypassSecurityTrustResourceUrl('assets/svg/instagram.svg')
+		);
+
+		this.iconRegistry.addSvgIcon('menu', this.sanitizer.bypassSecurityTrustResourceUrl('assets/svg/menu.svg'));
+		this.iconRegistry.addSvgIcon('contact', this.sanitizer.bypassSecurityTrustResourceUrl('assets/svg/contact.svg'));
+		this.iconRegistry.addSvgIcon(
+			'booking',
+			this.sanitizer.bypassSecurityTrustResourceUrl('assets/svg/long_up_right.svg')
+		);
+		this.iconRegistry.addSvgIcon(
+			'arrow-left',
+			this.sanitizer.bypassSecurityTrustResourceUrl('assets/svg/arrow-left.svg')
+		);
+		this.iconRegistry.addSvgIcon(
+			'arrow-right',
+			this.sanitizer.bypassSecurityTrustResourceUrl('assets/svg/arrow-right.svg')
 		);
 		// app component broadasting
 		this.broadcaster.broadcast('mykey', 'myvalue');

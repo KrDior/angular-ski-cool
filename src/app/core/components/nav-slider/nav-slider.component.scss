@@ -1,23 +1,20 @@
 @import 'variables';
 
 .mat-icon {
-	height: 4vw;
-	width: 4vw;
-	min-width: 40px;
-	min-height: 40px;
+	width: 40px;
+	height: 40px;
 }
 
 .desktop-hide {
 	position: fixed;
-	left: 45px;
+	left: 160px;
 	top: 20px;
 }
 
 .slider {
-	background-image: url('/assets/img/main-background.jpg');
+	background-image: url('/assets/img/home/main-background.png');
 	height: 800px;
 	background-size: cover;
-	background-position: center;
 	opacity: 0.9;
 
 	.slider-content {
@@ -35,6 +32,7 @@
 		.bottom-content {
 			align-self: flex-start;
 			min-width: 580px;
+			margin-top: 50px;
 		}
 
 		.discover-btn {
@@ -64,8 +62,37 @@
 		line-height: 38px;
 		letter-spacing: 0.005em;
 	}
+
+	.contact-wrapper {
+		display: flex;
+		justify-content: flex-end;
+
+		.contact-btn {
+			cursor: pointer;
+			align-items: end;
+			margin-right: 100px;
+			height: 60px;
+			width: 60px;
+			border-radius: 50%;
+			background-color: $stroke-default-2;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			.contact-svg {
+				height: 34px;
+				width: 34px;
+			}
+		}
+	}
 }
 
 .marginTop {
 	margin-top: 100px;
+}
+
+@media screen and (max-width: 780px) {
+	.bottom-content {
+		margin-top: 150px !important;
+	}
 }

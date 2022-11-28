@@ -1,3 +1,5 @@
+import { RoutePath } from 'src/app/app-routing.module';
+
 export interface MainCard {
 	header: string;
 	title: string;
@@ -29,4 +31,11 @@ export interface CarouselConfig {
 	cards: CarouselCard[];
 	button: string;
 	type: 'feedback' | 'partner';
+}
+
+export interface IconNavConfig {
+	title: string;
+	imageLink: string;
+	routerLink: string | RoutePath;
+	imageAlt: string;
 }

@@ -3,14 +3,6 @@ import { RoutePath } from 'src/app/app-routing.module';
 
 export const menuItemsConfig: MenuItem[] = [
 	{
-		label: 'Home',
-		localizeField: 'Home',
-		visible: true,
-		disabled: false,
-		styleClass: 'mat-display-1',
-		routerLink: RoutePath.Home,
-	},
-	{
 		label: 'About Us',
 		localizeField: 'About Us',
 		visible: true,
@@ -49,13 +41,5 @@ export const menuItemsConfig: MenuItem[] = [
 		disabled: false,
 		styleClass: 'mat-display-1',
 		routerLink: RoutePath.Reviews,
-	},
-	{
-		label: 'Contact Us',
-		localizeField: 'Contact Us',
-		visible: true,
-		disabled: false,
-		styleClass: 'mat-display-1',
-		routerLink: RoutePath.Contact,
 	},
 ];

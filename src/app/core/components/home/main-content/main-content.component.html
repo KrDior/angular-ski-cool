@@ -1,16 +1,30 @@
 <div class="contents">
-	<ng-container *ngFor="let card of cardConfig">
-		<div class="card">
-			<app-photo-card [cardConfig]="card"></app-photo-card>
-		</div>
-	</ng-container>
+	<div class="card">
+		<app-photo-card [cardConfig]="cardConfig1"></app-photo-card>
+	</div>
+	<div class="icon-nav-container">
+		<ng-container *ngFor="let icon of iconNavConfig">
+			<app-icon-nav [iconNavConfig]="icon"></app-icon-nav>
+		</ng-container>
+	</div>
+	<div class="card">
+		<app-photo-card [cardConfig]="cardConfig2"></app-photo-card>
+	</div>
+
 	<app-article-center [articleConfig]="articleCenterConfig"></app-article-center>
+	<div class="card">
+		<app-photo-card [cardConfig]="cardConfig3"></app-photo-card>
+	</div>
 	<app-advantage-slide
 		[homeAdvantageSlideConfig]="advantageSlideConfig"
 		[message]="advantageHomeMessage"
 	></app-advantage-slide>
 	<div class="video">
-		<mat-icon class="video-svg" svgIcon="video"></mat-icon>
+		<video width="100%" height="798" controls>
+			<source src="movie.mp4" type="video/mp4" />
+			<source src="movie.ogg" type="video/ogg" />
+			Your browser does not support the video tag.
+		</video>
 	</div>
 	<app-carousel-card [carouselConfig]="carouselConfig"></app-carousel-card>
 	<app-contact-block></app-contact-block>

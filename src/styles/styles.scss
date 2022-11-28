@@ -115,3 +115,61 @@ body {
 .flat-btn:not([disabled]):focus {
 	background: $background-hover-active !important;
 }
+
+.transparent-btn {
+	min-height: 54px !important;
+	height: 54px !important;
+	color: $default-background !important;
+	background: transparent !important;
+	border: 1px solid $background-default !important;
+	margin-left: 4px !important;
+	font-weight: 600 !important;
+	font-size: 18px !important;
+	border-radius: 2px !important;
+
+	.booking-svg {
+		height: 18px !important;
+		line-height: 10px;
+		position: relative !important;
+		bottom: 4px !important;
+		left: 5px !important;
+		overflow: visible;
+
+		svg path {
+			stroke: $default-background;
+		}
+	}
+}
+
+.transparent-btn:not([disabled]):hover {
+	background: $background-hover-2 !important;
+	color: $stroke-default-2 !important;
+
+	.booking-svg {
+		svg path {
+			stroke: $stroke-default-2 !important;
+		}
+	}
+}
+
+.transparent-btn:not([disabled]):active {
+	background: $background-click !important;
+	color: $stroke-default-2 !important;
+
+	.booking-svg {
+		svg path {
+			stroke: $stroke-default-2 !important;
+		}
+	}
+}
+
+.transparent-btn:not([disabled]):focus {
+	background: $background-hover-2 !important;
+	color: $stroke-default-2 !important;
+
+	.booking-svg {
+		svg path {
+			stroke: $stroke-default-2 !important;
+		}
+	}
+}

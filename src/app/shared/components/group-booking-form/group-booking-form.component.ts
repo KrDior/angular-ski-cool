@@ -1,8 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
 import { RoutePath } from 'src/app/app-routing.module';
 import { DialogType, PopupDialogComponent } from '../popup-dialog/popup-dialog.component';
@@ -40,12 +38,7 @@ export class GroupBookingFormComponent implements OnInit, OnDestroy {
 	private instructorsData = instructorsData;
 	private onFormChangeSubscription!: Subscription;
 
-	constructor(public dialog: MatDialog, private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer) {
-		this.iconRegistry.addSvgIcon(
-			'help-circle',
-			this.sanitizer.bypassSecurityTrustResourceUrl('assets/svg/help_circle.svg')
-		);
-	}
+	constructor(public dialog: MatDialog) {}
 
 	ngOnInit() {
 		this.groupBookingForm = new FormGroup({

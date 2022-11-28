@@ -1,5 +1,5 @@
 <div class="article-wrapper">
-	<div class="article">
+	<div class="article" [style]="'background-image: url(' + articleConfig.imageLink + ');'">
 		<p class="header-text mat-display-3">
 			{{ articleConfig.header }}
 		</p>
@@ -9,7 +9,7 @@
 		<div class="description mat-display-4">
 			{{ articleConfig.description }}
 		</div>
-		<button mat-button appButtonConfig [type]="'stroked'" class="discover-btn">
+		<button mat-button appButtonConfig [type]="'transparent'" class="discover-btn">
 			{{ articleConfig.button }}
 		</button>
 	</div>

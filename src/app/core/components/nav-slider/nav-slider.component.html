@@ -6,18 +6,23 @@
 		(click)="toggleDrawer()"
 	></mat-icon>
 	<div class="slider-content">
-		<div class="top-content" [ngClass]="{ marginTop: !isDesktop || !isNavTabVisible }">
+		<div class="top-content">
 			<ng-content></ng-content>
 		</div>
 		<div class="bottom-content">
-			<h1 class="mat-headline">{{ 'Skicool' }}</h1>
+			<h1 class="mat-headline">{{ 'Ski Cool' }}</h1>
 			<p>
 				Ski Cool St. Moritz, is an elite snowsports school <br />
 				of the Engadin Valley, Switzerland.
 			</p>
 			<button mat-flat-button class="discover-btn" appButtonConfig [type]="'flat'" routerLink="{{ routes.Booking }}">
-				Discover more
+				Book now
 			</button>
+		</div>
+	</div>
+	<div class="contact-wrapper">
+		<div class="contact-btn" matTooltip="Contact us" routerLink="{{ routes.Booking }}">
+			<mat-icon class="contact-svg" svgIcon="contact"></mat-icon>
 		</div>
 	</div>
 </div>

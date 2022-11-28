@@ -17,6 +17,9 @@ export class ButtonConfigDirective implements OnInit {
 			case ButtonConfigType.Stroked:
 				this.renderer.addClass(this.elementRef.nativeElement, 'stroked-btn');
 				break;
+			case ButtonConfigType.Transparent:
+				this.renderer.addClass(this.elementRef.nativeElement, 'transparent-btn');
+				break;
 			default:
 				break;
 		}

@@ -13,6 +13,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { PhotoCardComponent } from '@shared/components/photo-card/photo-card.component';
 import { ArticleCenterComponent } from '@shared/components/article-center/article-center.component';
 import { TextLineComponent } from '@shared/components/text-line/text-line.component';
@@ -24,12 +25,14 @@ import { ContactBlockComponent } from '@shared/components/contact-block/contact-
 import { ButtonConfigDirective } from '@shared/directives/button-config.directive';
 import { GroupBookingFormComponent } from '@shared/components/group-booking-form/group-booking-form.component';
 import { PopupDialogComponent } from '@shared/components/popup-dialog/popup-dialog.component';
+import { IconNavComponent } from '@shared/components/icon-nav/icon-nav.component';
 
 export const components: any[] = [
 	PhotoCardComponent,
 	ArticleCenterComponent,
 	TextLineComponent,
 	AdvantageSlideComponent,
+	IconNavComponent,
 	CarouselCardComponent,
 	PanningContainerComponent,
 	ContactBlockComponent,
@@ -60,4 +63,5 @@ export const materialModules: any[] = [
 	MatNativeDateModule,
 	MatDialogModule,
 	MatCheckboxModule,
+	MatTooltipModule,
 ];

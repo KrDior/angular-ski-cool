@@ -154,7 +154,7 @@
 			</p>
 
 			<p>
-				<mat-form-field appearance="outline" class="full-width">
+				<mat-form-field appearance="outline" class="full-width text-field">
 					<mat-label>Request and requirements</mat-label>
 					<textarea matInput formControlName="otherRequirement"></textarea>
 					<mat-error *ngIf="checkError('otherRequirement', 'maxlength')"
@@ -162,11 +162,8 @@
 					>
 				</mat-form-field>
 			</p>
-			<p>
-				<img mat-card-sm-image />
-			</p>
 
-			<app-text-line [text]="messagePayment"></app-text-line>
+			<app-text-line class="payment-title" [text]="messagePayment"></app-text-line>
 			<p class="double-field">
 				<mat-form-field appearance="outline" class="half-width">
 					<mat-label>Payment card number</mat-label>
@@ -199,6 +196,26 @@
 				</mat-form-field>
 			</p>
 
+			<div class="payment-sum">
+				{{ "You'll pay " + paymentValue + ' CHF' }}
+			</div>
+
+			<div class="term-condition">
+				<mat-checkbox
+					class="term-checkbox"
+					[(ngModel)]="termAndConditionChecked"
+					[ngModelOptions]="{ standalone: true }"
+				></mat-checkbox>
+				<span class="condition">
+					{{ 'I agree with' | uppercase }}
+					<a class="active-link" routerLink="{{ routes.Contact }}">{{ 'Privacy Policy' | uppercase }}</a>
+					{{ "and I'm familiar with" | uppercase }}
+					<a class="active-link" routerLink="{{ routes.Contact }}"
+						>{{ 'the general Term and Conditions' | uppercase }}
+						{{ 'of our school' | uppercase }}
+					</a>
+				</span>
+			</div>
 			<button mat-flat-button class="book-btn" appButtonConfig [type]="'flat'" [disabled]="!groupBookingForm.valid">
 				Book
 			</button>

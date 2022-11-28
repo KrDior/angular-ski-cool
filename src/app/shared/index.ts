@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatRippleModule, MatCommonModule, MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSelectModule } from '@angular/material/select';
 import { PhotoCardComponent } from '@shared/components/photo-card/photo-card.component';
@@ -58,4 +59,5 @@ export const materialModules: any[] = [
 	MatDatepickerModule,
 	MatNativeDateModule,
 	MatDialogModule,
+	MatCheckboxModule,
 ];

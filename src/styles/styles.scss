@@ -66,16 +66,16 @@ body {
 	}
 }
 
-.stroked-btn:hover {
+.stroked-btn:not([disabled]):hover {
 	background: $background-hover-2 !important;
 }
 
-.stroked-btn:active {
+.stroked-btn:not([disabled]):active {
 	background: $background-hover-2 !important;
 	border: none !important;
 }
 
-.stroked-btn:focus {
+.stroked-btn:not([disabled]):focus {
 	background: $background-hover-2 !important;
 }
 
@@ -104,14 +104,14 @@ body {
 	}
 }
 
-.flat-btn:hover {
+.flat-btn:not([disabled]):hover {
 	background: $background-hover-active !important;
 }
 
-.flat-btn:active {
+.flat-btn:not([disabled]):active {
 	background: $background-click !important;
 }
 
-.flat-btn:focus {
+.flat-btn:not([disabled]):focus {
 	background: $background-hover-active !important;
 }

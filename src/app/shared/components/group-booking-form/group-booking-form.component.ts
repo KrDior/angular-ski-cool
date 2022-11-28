@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Subscription } from 'rxjs';
+import { RoutePath } from 'src/app/app-routing.module';
 import { DialogType, PopupDialogComponent } from '../popup-dialog/popup-dialog.component';
 import {
 	DisciplineList,
@@ -19,9 +21,10 @@ import {
 	templateUrl: './group-booking-form.component.html',
 	styleUrls: ['./group-booking-form.component.scss'],
 })
-export class GroupBookingFormComponent implements OnInit {
+export class GroupBookingFormComponent implements OnInit, OnDestroy {
 	public messageDetails = 'Your Details';
 	public messagePayment = 'Payment';
+	public routes: typeof RoutePath = RoutePath;
 
 	public groupBookingForm!: FormGroup;
 
@@ -31,8 +34,11 @@ export class GroupBookingFormComponent implements OnInit {
 	public lessons = LessonList;
 	public lessonDuration = LessonDurationList;
 	public instructors = InstructorsList;
+	public paymentValue = 0;
+	public termAndConditionChecked = false;
 
 	private instructorsData = instructorsData;
+	private onFormChangeSubscription!: Subscription;
 
 	constructor(public dialog: MatDialog, private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer) {
 		this.iconRegistry.addSvgIcon(
@@ -73,6 +79,14 @@ export class GroupBookingFormComponent implements OnInit {
 			cvv: new FormControl('', [Validators.required, Validators.pattern(/^[0-9]{3,4}$/)]),
 			cardName: new FormControl('', [Validators.required, Validators.maxLength(200)]),
 		});
+
+		this.onFormChangeSubscription = this.groupBookingForm.valueChanges.subscribe((value) => {
+			if (this.groupBookingForm.dirty) {
+				//calculate payment
+				console.log(value);
+				this.paymentValue = 100;
+			}
+		});
 	}
 
 	public checkError = (controlName: string, errorName: string) => {
@@ -97,5 +111,9 @@ export class GroupBookingFormComponent implements OnInit {
 					type: DialogType.GroupBooking,
 				},
 			});
+	}
+
+	ngOnDestroy() {
+		this.onFormChangeSubscription.unsubscribe();
 	}
 }

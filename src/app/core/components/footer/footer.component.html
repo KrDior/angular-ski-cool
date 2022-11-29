@@ -1,5 +1,5 @@
 <div class="footer-wrapper" color="primary">
-	<hr class="line" />
+	<!-- <hr class="line" />
 	<div class="content">
 		<div class="top-content">
 			<img class="logo" alt="Logo" src="assets/svg/Logo.svg" />
@@ -64,5 +64,9 @@
 			</span>
 			<a class="active-link mat-display-4" routerLink="{{ routes.Contact }}">{{ 'Privacy Policy' }}</a>
 		</div>
+	</div> -->
+	<app-contact-block></app-contact-block>
+	<div class="partners">
+		<app-carousel-card [carouselConfig]="carouselPartnerConfig"></app-carousel-card>
 	</div>
 </div>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { advantageHomeMessage, homeAdvantageSlideConfig } from '@shared/configs/advantage-slide.config';
 import { homePageArticleCenter } from '@shared/configs/article-center.config';
-import { homeCarouselConfig, homeCarouselPartnerConfig } from '@shared/configs/carousel.config';
+import { homeCarouselConfig } from '@shared/configs/carousel.config';
 import { homeCard_1_Config, homeCard_2_Config, homeCard_3_Config } from '@shared/configs/home-card-config';
 import { iconNavHomeConfig } from '@shared/configs/icon-nav.config';
 import { AdvantageSlide, CarouselConfig, IconNavConfig, MainCard } from '@shared/models/main-card.model';
@@ -19,7 +19,6 @@ export class MainContentComponent {
 	public advantageSlideConfig!: AdvantageSlide[];
 	public advantageHomeMessage!: string;
 	public carouselConfig!: CarouselConfig;
-	public carouselPartnerConfig!: CarouselConfig;
 	public iconNavConfig!: IconNavConfig[];
 
 	constructor() {
@@ -30,7 +29,6 @@ export class MainContentComponent {
 		this.advantageSlideConfig = homeAdvantageSlideConfig;
 		this.advantageHomeMessage = advantageHomeMessage;
 		this.carouselConfig = homeCarouselConfig;
-		this.carouselPartnerConfig = homeCarouselPartnerConfig;
 		this.iconNavConfig = iconNavHomeConfig;
 	}
 }

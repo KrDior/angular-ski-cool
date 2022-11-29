@@ -1,8 +1,6 @@
 @import 'variables';
 
 .carousel-wrapper {
-	padding: 50px 100px;
-
 	.empty {
 		height: 70px;
 	}
@@ -10,6 +8,10 @@
 	app-text-line {
 		width: 50%;
 		display: block;
+	}
+
+	.fullWidth {
+		width: 100% !important;
 	}
 
 	.title {
@@ -24,7 +26,7 @@
 
 	.navigation {
 		display: flex;
-		justify-content: space-between;
+		justify-content: flex-end;
 
 		.pagination button {
 			width: 63px;
@@ -42,6 +44,7 @@
 
 	.discover-btn {
 		width: 248px;
+		margin-right: auto;
 	}
 }
 
@@ -118,24 +121,15 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-right: 40px;
+	margin-right: 75px;
 	width: 200px;
-	height: 336px;
+	margin-bottom: 50px;
 
 	.image-block {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 200px;
-		height: 200px;
-		background: $default-background-image;
-		mix-blend-mode: luminosity;
-		border-radius: 4000px;
-		overflow: hidden;
-
-		.image {
-			height: 200px;
-		}
+		max-height: 80px;
 	}
 
 	.content {

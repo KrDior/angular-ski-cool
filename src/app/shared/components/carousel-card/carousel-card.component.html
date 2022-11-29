@@ -1,6 +1,9 @@
 <div class="carousel-wrapper">
 	<div class="empty"></div>
-	<app-text-line [text]="carouselConfig.message"></app-text-line>
+	<app-text-line
+		[text]="carouselConfig.message"
+		[ngClass]="{ fullWidth: carouselConfig.fullTitleWidth }"
+	></app-text-line>
 	<span *ngIf="carouselConfig?.title" class="title mat-display-2">{{ carouselConfig.title }}</span>
 	<app-panning-container class="card-block" #panner>
 		<ng-container *ngFor="let card of carouselConfig.cards; index as i">
@@ -23,12 +26,13 @@
 			</ng-container>
 			<ng-container *ngIf="carouselConfig.type === 'partner'">
 				<ng-container *appPanningItem>
-					<div class="card-partner item" [ngClass]="{ current: i === panner.currentIndex }">
+					<div
+						class="card-partner item"
+						routerLink="{{ card.navigateLink }}"
+						[ngClass]="{ current: i === panner.currentIndex }"
+					>
 						<div class="image-block">
 							<img class="image" [src]="card.imageLink" [alt]="card.imageAlt" />
-						</div>
-						<div class="content">
-							<span class="partner-name">{{ card.name }}</span>
 						</div>
 					</div>
 				</ng-container>
@@ -37,7 +41,14 @@
 	</app-panning-container>
 
 	<div class="navigation">
-		<button class="discover-btn" mat-button appButtonConfig [type]="'stroked'" routerLink="{{ routes.Booking }}">
+		<button
+			*ngIf="carouselConfig.button"
+			class="discover-btn"
+			mat-button
+			appButtonConfig
+			[type]="'stroked'"
+			routerLink="{{ routes.Booking }}"
+		>
 			{{ carouselConfig.button }}
 		</button>
 		<div class="pagination">

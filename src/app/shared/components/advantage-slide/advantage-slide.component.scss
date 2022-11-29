@@ -14,15 +14,18 @@
 
 	.slides-block {
 		display: flex;
-		height: 700px;
+		flex-wrap: wrap;
 		margin-top: 48px;
 
 		.slide {
-			background: $default-background-image;
 			padding: 35px 25px;
+			min-width: 310px;
+			width: 310px;
+			height: 700px;
+			box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.45);
 
 			.header-text {
-				color: $black-text;
+				color: $default-background;
 				margin-bottom: 24px;
 				font-weight: 700;
 				font-size: 34px;
@@ -30,17 +33,25 @@
 			}
 
 			.title {
-				font-weight: 600;
-				font-size: 24px;
-				line-height: 38px;
-				letter-spacing: 0.005em;
-				color: $black-text;
+				font-weight: 400;
+				font-size: 17px;
+				line-height: 27px;
+				text-align: center;
+				color: $default-background;
 			}
 		}
 
 		.slide:hover {
-			background: #d9d9d9;
 			cursor: pointer;
+			box-shadow: none;
+
+			.header-text {
+				color: $black-text;
+			}
+
+			.title {
+				color: transparent;
+			}
 		}
 	}
 }

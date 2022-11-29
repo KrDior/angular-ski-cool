@@ -3,11 +3,12 @@
 .contact-block-wrapper {
 	display: flex;
 	padding: 100px 170px;
-	height: 452px;
-	background-image: url('/assets/img/contact-block.png');
+	height: 550px;
+	background-image: url('/assets/img/home/footer.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
+	box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.45);
 
 	.content-left {
 		width: 50%;

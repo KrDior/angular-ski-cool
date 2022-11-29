@@ -23,14 +23,16 @@ export interface CarouselCard {
 	text?: string;
 	imageLink: string;
 	imageAlt?: string;
+	navigateLink?: string;
 }
 
 export interface CarouselConfig {
 	message: string;
 	title?: string;
 	cards: CarouselCard[];
-	button: string;
+	button?: string;
 	type: 'feedback' | 'partner';
+	fullTitleWidth?: boolean;
 }
 
 export interface IconNavConfig {

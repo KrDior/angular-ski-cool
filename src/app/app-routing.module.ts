@@ -5,6 +5,7 @@ import { BookingComponent } from '@core/components/booking/booking.component';
 import { ContactComponent } from '@core/components/contact/contact.component';
 import { GroupLessonComponent } from '@core/components/group-lesson/group-lesson.component';
 import { HomeComponent } from '@core/components/home/home.component';
+import { PageNotFoundComponent } from '@core/components/page-not-found/page-not-found.component';
 import { PrivateLessonComponent } from '@core/components/private-lesson/private-lesson.component';
 import { RecreationComponent } from '@core/components/recreation/recreation.component';
 import { ReviewsComponent } from '@core/components/reviews/reviews.component';
@@ -18,6 +19,7 @@ export enum RoutePath {
 	Reviews = 'review',
 	Contact = 'contacts',
 	Booking = 'booking',
+	PageNotFound = '404',
 }
 
 const routes: Routes = [
@@ -29,6 +31,8 @@ const routes: Routes = [
 	{ path: RoutePath.Reviews, component: ReviewsComponent },
 	{ path: RoutePath.Contact, component: ContactComponent },
 	{ path: RoutePath.Booking, component: BookingComponent },
+	{ path: RoutePath.Booking, component: BookingComponent },
+	{ path: RoutePath.PageNotFound, component: PageNotFoundComponent },
 	{
 		path: 'after-login',
 		loadChildren: () => import('./features/after-login/after-login.module').then((m) => m.AfterLoginModule),
@@ -38,8 +42,13 @@ const routes: Routes = [
 		loadChildren: () => import('./features/before-login/before-login.module').then((m) => m.BeforeLoginModule),
 	},
 	{
+		path: '',
+		redirectTo: RoutePath.Home,
+		pathMatch: 'full',
+	},
+	{
 		path: '**',
-		redirectTo: RoutePath.Home, // or 404 module
+		redirectTo: RoutePath.PageNotFound,
 	},
 ];
 

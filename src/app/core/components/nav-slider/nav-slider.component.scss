@@ -91,6 +91,43 @@
 	margin-top: 100px;
 }
 
+.not-found {
+	height: 580px;
+	min-width: 940px;
+
+	.title-message {
+		font-weight: 700;
+		font-size: 17px;
+		line-height: 27px;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+		color: $black-text;
+	}
+
+	.header-message {
+		font-weight: 600;
+		font-size: 120px;
+		line-height: 144px;
+		letter-spacing: 0.005em;
+	}
+
+	.not-found-number {
+		text-align: end;
+		font-size: 320px !important;
+		position: relative;
+		bottom: 230px;
+	}
+
+	.booking-btn {
+		width: 248px;
+		margin-top: 50px;
+
+		.booking-svg {
+			float: none !important;
+		}
+	}
+}
+
 @media screen and (max-width: 780px) {
 	.bottom-content {
 		margin-top: 150px !important;

@@ -28,6 +28,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	public currentLang!: string;
 	public availableLang!: LocalizationList[];
 	public navTabVisibility: boolean = true;
+	public isPageNotFound: boolean = false;
 
 	@ViewChild('drawer', { static: true })
 	public drawerContainer!: MatDrawer;
@@ -40,6 +41,53 @@ export class AppComponent implements OnInit, OnDestroy {
 		private iconRegistry: MatIconRegistry,
 		private sanitizer: DomSanitizer
 	) {
+		this.setSvg();
+
+		// app component broadcasting
+		// this.broadcaster.broadcast('mykey', 'myvalue');
+		//set dummy token just to enable auth guard for after-login module
+		// localStorage.setItem('token', 'dummy');
+
+		/**
+		 * do this in other page, for e.g I'm doing here only
+		 * use this service with takeUntil from rxJS and local Subject to prevent memory leaks like shown
+		 */
+		this.broadcaster
+			.listen('isPageNotFound')
+			.pipe(takeUntil(this.$destroy))
+			.subscribe({
+				next: (data) => {
+					this.isPageNotFound = data as boolean;
+				},
+			});
+	}
+
+	ngOnInit() {
+		this.setLocalizationList();
+		const checkScreenSize = () => document.body.offsetWidth > MOBILE_LAND_WIDTH;
+
+		const isDesktopView$ = fromEvent(window, 'resize').pipe(throttleTime(200), map(checkScreenSize));
+
+		// Start off with the initial value use the isScreenSmall$ | async in the
+		// view to get both the original value and the new value after resize.
+		this.isDesktopView$ = isDesktopView$.pipe(startWith(checkScreenSize()));
+	}
+
+	public onDrawerClick(): void {
+		this.drawerContainer.toggle();
+	}
+
+	public onLanguageChange(lang: string): void {
+		this.translateService.use(lang);
+
+		this.setLocalizationList();
+	}
+
+	public onNavTabVisibilityChange(isVisible: boolean): void {
+		this.navTabVisibility = isVisible;
+	}
+
+	private setSvg(): void {
 		this.iconRegistry.addSvgIcon(
 			'booking',
 			this.sanitizer.bypassSecurityTrustResourceUrl('assets/svg/long_up_right.svg')
@@ -82,46 +130,6 @@ export class AppComponent implements OnInit, OnDestroy {
 			'arrow-right',
 			this.sanitizer.bypassSecurityTrustResourceUrl('assets/svg/arrow-right.svg')
 		);
-		// app component broadasting
-		this.broadcaster.broadcast('mykey', 'myvalue');
-		//set dummy token just to enable auth guard for after-login module
-		localStorage.setItem('token', 'dummy');
-
-		/**
-		 * do this in other page, for e.g I'm doing here only
-		 * use this service with takeUntil from rxJS and local Subject to prevent memory leaks like shown
-		 */
-		this.broadcaster
-			.listen('mykey')
-			.pipe(takeUntil(this.$destroy))
-			.subscribe({
-				next: (data) => console.log(data), // your broadcasted value
-			});
-	}
-
-	ngOnInit() {
-		this.setLocalizationList();
-		const checkScreenSize = () => document.body.offsetWidth > MOBILE_LAND_WIDTH;
-
-		const isDesktopView$ = fromEvent(window, 'resize').pipe(throttleTime(200), map(checkScreenSize));
-
-		// Start off with the initial value use the isScreenSmall$ | async in the
-		// view to get both the original value and the new value after resize.
-		this.isDesktopView$ = isDesktopView$.pipe(startWith(checkScreenSize()));
-	}
-
-	public onDrawerClick(): void {
-		this.drawerContainer.toggle();
-	}
-
-	public onLanguageChange(lang: string): void {
-		this.translateService.use(lang);
-
-		this.setLocalizationList();
-	}
-
-	public onNavTabVisibilityChange(isVisible: boolean): void {
-		this.navTabVisibility = isVisible;
 	}
 
 	private setLocalizationList(): void {

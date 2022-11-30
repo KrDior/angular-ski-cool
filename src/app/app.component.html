@@ -12,6 +12,7 @@
 			<app-nav-slider
 				[isDesktop]="isDesktopView$ | async"
 				[isNavTabVisible]="navTabVisibility"
+				[isPageNotFound]="isPageNotFound"
 				(drawerClick)="onDrawerClick()"
 			>
 				<app-nav-tab
@@ -37,7 +38,7 @@
 				</mat-menu>
 			</app-nav-slider>
 			<router-outlet></router-outlet>
-			<app-footer></app-footer>
+			<app-footer *ngIf="!isPageNotFound"></app-footer>
 		</mat-drawer-content>
 	</mat-drawer-container>
 </app-layout>

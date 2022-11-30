@@ -13,6 +13,9 @@ export class NavSliderComponent {
 	@Input()
 	public isNavTabVisible!: boolean;
 
+	@Input()
+	public isPageNotFound!: boolean;
+
 	@Output()
 	public drawerClick: EventEmitter<void> = new EventEmitter();
 

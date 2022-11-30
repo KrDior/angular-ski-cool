@@ -18,6 +18,7 @@ import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { MenuContentWrapperDirective } from './directives/menu-content-wrapper.directive';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
 	declarations: [
@@ -36,6 +37,7 @@ import { MenuContentWrapperDirective } from './directives/menu-content-wrapper.d
 		ContactComponent,
 		HomeComponent,
 		MenuContentWrapperDirective,
+		PageNotFoundComponent,
 	],
 	imports: [CommonModule, SharedModule, RouterModule, TranslateModule.forChild({})],
 	exports: [LayoutComponent, SidenavMenuComponent, NavTabComponent, NavSliderComponent, FooterComponent],

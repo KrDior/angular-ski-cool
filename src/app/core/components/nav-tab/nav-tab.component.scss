@@ -24,6 +24,10 @@
 	align-self: stretch;
 }
 
+.nav-main-visible-item:hover {
+	border-bottom: 3px solid $default-background;
+}
+
 .nav-main-visible-item {
 	display: flex;
 	align-items: center;
@@ -36,6 +40,7 @@
 	color: $default-background;
 	padding-top: 2px;
 	font-weight: 400;
+	cursor: pointer;
 }
 
 .button-stretch {

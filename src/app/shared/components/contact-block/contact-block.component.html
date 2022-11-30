@@ -1,25 +1,68 @@
 <div class="contact-block-wrapper">
-	<div class="content-left">
-		<span class="title mat-display-2 m0">{{ 'Ski Cool St. Moritz Silvaplana-Surlej, Switzerland' }}</span>
-		<button mat-flat-button appButtonConfig [type]="'flat'" class="contact-btn" routerLink="{{ routes.Booking }}">
-			<span>{{ 'Contact Us' }}</span>
-			<mat-icon class="booking-svg" svgIcon="booking"></mat-icon>
-		</button>
+	<div class="main-section">
+		<img class="logo" alt="Logo" src="assets/img/Logo.png" routerLink="{{ routes.Home }}" />
+		<div class="column center-content">
+			<div class="column mat-display-4">
+				<a class="link" routerLink="{{ routes.AboutUs }}">
+					<span>{{ 'About us' }}</span>
+				</a>
+				<a class="link" routerLink="{{ routes.PrivateLesson }}">
+					<span>{{ 'Private lessons' }}</span>
+				</a>
+				<a class="link" routerLink="{{ routes.GroupLesson }}">
+					<span>{{ 'Group lessons' }}</span>
+				</a>
+				<a class="link" routerLink="{{ routes.Recreation }}">
+					<span>{{ 'Individual recreation' }}</span>
+				</a>
+				<a class="link" routerLink="{{ routes.AboutUs }}">
+					<span>{{ 'Our team' }}</span>
+				</a>
+				<a class="link" routerLink="{{ routes.PrivateLesson }}">
+					<span>{{ 'Become a part of our team' }}</span>
+				</a>
+				<a class="link" routerLink="{{ routes.GroupLesson }}">
+					<span>{{ 'Our partners' }}</span>
+				</a>
+				<a class="link" routerLink="{{ routes.Reviews }}">
+					<span>{{ 'Reviews' }}</span>
+				</a>
+				<a class="link" routerLink="{{ routes.Contact }}">
+					<span>{{ 'Contact us' }}</span>
+				</a>
+			</div>
+			<div class="column mat-display-4">
+				<div class="info adress">Via Sturetscha 13, CH 7513, Surlej<br /></div>
+				<div class="info email">
+					{{ 'Email' }}: <a class="mat-display-4" href="mailto:info@skicool.ch">info@skicool.ch</a>
+				</div>
+				<div class="info phone">
+					{{ 'Phone' }}: <a class="mat-display-4" href="tel:+41(0)799152989">+41 (0) 799152989</a>
+				</div>
+				<div class="info work-hours">
+					<span style="margin-bottom: 10px">Working hours winter:</span>
+					<span class="available">we are available for your inquires <br />on the phone line 24/7</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="column mat-display-4 contact">
+			<button mat-button appButtonConfig [type]="'transparent'" class="contact-btn" routerLink="{{ routes.Booking }}">
+				<span>{{ 'Contact Us' }}</span>
+				<mat-icon class="booking-svg" svgIcon="booking"></mat-icon>
+			</button>
+			<div class="icon-block">
+				<mat-icon class="contact-svg" svgIcon="facebook"></mat-icon>
+				<mat-icon class="contact-svg" svgIcon="instagram"></mat-icon>
+			</div>
+		</div>
 	</div>
-	<div class="content-right">
-		<div class="info email">
-			{{ 'Email' }}: <a class="mat-display-4" href="mailto:info@skicool.ch">info@skicool.ch</a>
-		</div>
-		<div class="info phone">
-			{{ 'Phone' }}: <a class="mat-display-4" href="tel:+41(0)799152989">+41 (0) 799152989</a>
-		</div>
-		<div class="info adress">
-			Silvaplana-Surlej,<br />
-			Via Sturetscha 13, CH 7513, Switzerland<br />
-		</div>
-		<div class="info bank">
-			Bank account: Erste Bank - IBAN: AT19 <br />
-			2011 1000 0041 8765 - BIC: GIBAATWW <br />
-		</div>
+
+	<div class="bottom-section">
+		<span class="condition mat-display-4">
+			{{ 'Copyright @ 2022 Ski Cool. All rights reserved.' }}
+			<a class="active-link mat-display-4" routerLink="{{ routes.Contact }}">{{ 'Term and Conditions' }}</a>
+		</span>
+		<a class="active-link mat-display-4" routerLink="{{ routes.Contact }}">{{ 'Privacy Policy' }}</a>
 	</div>
 </div>

@@ -27,13 +27,9 @@ body {
 	background: $default-background;
 }
 
-.ui-state-active {
-	// border-bottom: 4px solid purple !important;
-}
-
 .ui-state-active:before {
 	content: '';
-	border-bottom: 3px solid $black-text;
+	border-bottom: 3px solid $default-background;
 	width: 100%;
 	position: absolute;
 	bottom: 0;

@@ -19,6 +19,7 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { MenuContentWrapperDirective } from './directives/menu-content-wrapper.directive';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { OurTeamComponent } from './components/our-team/our-team.component';
 
 @NgModule({
 	declarations: [
@@ -29,6 +30,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 		FooterComponent,
 		MainContentComponent,
 		AboutUsComponent,
+		OurTeamComponent,
 		BookingComponent,
 		ReviewsComponent,
 		RecreationComponent,

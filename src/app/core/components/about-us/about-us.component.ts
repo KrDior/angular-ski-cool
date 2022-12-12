@@ -14,10 +14,6 @@ export class AboutUsComponent {
 	public cardConfig1!: MainCard;
 
 	constructor(private broadcaster: BroadcasterService) {
-		// this.broadcaster.broadcast(BroadcastConstant.BottomContextPage, {
-		// 	path: BottomContext.OurTeam,
-		// 	imagePath: '/assets/img/about/about_us_background.png'
-		// });
 		this.broadcaster.broadcast(BroadcastConstant.BottomContextPage, {
 			path: BottomContext.AboutUs,
 			imagePath: '',

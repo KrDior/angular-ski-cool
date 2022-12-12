@@ -8,6 +8,8 @@ export interface MainCard {
 	imageLink: string;
 	imageAlt: string;
 	direction: string;
+	routerLink?: string;
+	clickAction?: any;
 }
 
 export interface AdvantageSlide {

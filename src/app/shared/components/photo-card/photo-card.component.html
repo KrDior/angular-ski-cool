@@ -9,7 +9,14 @@
 		<div class="description mat-display-4">
 			{{ cardConfig.description }}
 		</div>
-		<button mat-button appButtonConfig [type]="'transparent'" class="discover-btn">
+		<button
+			mat-button
+			appButtonConfig
+			[type]="'transparent'"
+			class="discover-btn"
+			[routerLink]="cardConfig?.routerLink"
+			(click)="onClickButton()"
+		>
 			{{ cardConfig.button }}
 		</button>
 	</div>

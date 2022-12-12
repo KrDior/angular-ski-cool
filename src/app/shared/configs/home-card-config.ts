@@ -1,3 +1,4 @@
+import { DialogType } from '@shared/components/popup-dialog/popup-dialog.component';
 import { MainCard } from '@shared/models/main-card.model';
 
 export const homeCard_1_Config: MainCard = {
@@ -41,4 +42,20 @@ export const aboutUsCard_1_Config: MainCard = {
 	imageLink: '/assets/img/home/about-us-3.png',
 	imageAlt: 'photo',
 	direction: 'flex-direction: row-reverse',
+	routerLink: '/our-team',
+};
+
+export const ourTeamCard_1_Config: MainCard = {
+	header: 'our team',
+	title: 'Would you like to be a part of our team?',
+	description:
+		'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
+	button: 'Join Us',
+	imageLink: '/assets/img/team/photo.png',
+	imageAlt: 'photo',
+	direction: 'flex-direction: row',
+	clickAction: {
+		actionType: 'popup',
+		type: 'Contact',
+	},
 };

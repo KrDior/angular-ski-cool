@@ -10,10 +10,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatRippleModule, MatCommonModule, MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatCardModule } from '@angular/material/card';
 import { PhotoCardComponent } from '@shared/components/photo-card/photo-card.component';
 import { ArticleCenterComponent } from '@shared/components/article-center/article-center.component';
 import { TextLineComponent } from '@shared/components/text-line/text-line.component';
@@ -66,4 +68,6 @@ export const materialModules: any[] = [
 	MatDialogModule,
 	MatCheckboxModule,
 	MatTooltipModule,
+	MatPaginatorModule,
+	MatCardModule,
 ];

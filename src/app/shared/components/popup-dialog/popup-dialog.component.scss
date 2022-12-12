@@ -3,6 +3,10 @@
 .instructor-wrapper {
 	padding: 30px 55px 50px 55px;
 
+	p {
+		margin-bottom: 0;
+	}
+
 	.name {
 		padding: 10px 0 35px 0;
 		font-weight: 700;
@@ -25,8 +29,52 @@
 	.description {
 		padding-top: 20px;
 		font-weight: 400;
-		font-size: 17px;
+		font-size: 14px;
 		line-height: 27px;
 		color: $black-text;
+	}
+
+	.close {
+		margin-left: auto;
+		font-size: 60px;
+		opacity: 0.3;
+		color: $background-click;
+		width: 32px;
+	}
+
+	.close:hover {
+		opacity: 1;
+		cursor: pointer;
+	}
+
+	.annotation {
+		font-size: 17px;
+		opacity: 0.5;
+	}
+
+	.full-width,
+	.double-field {
+		width: 100%;
+	}
+
+	.double-field {
+		display: flex;
+		flex-direction: row;
+		gap: 12px;
+
+		.half-width {
+			width: 50%;
+		}
+	}
+
+	.text-field::ng-deep .mat-form-field-flex > .mat-form-field-infix {
+		height: 146px !important;
+	}
+	.text-field textarea {
+		height: 100%;
+	}
+
+	.submit-btn {
+		width: 100%;
 	}
 }

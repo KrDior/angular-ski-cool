@@ -32,3 +32,13 @@ export const homeCard_3_Config: MainCard = {
 	imageAlt: 'photo',
 	direction: 'flex-direction: row-reverse',
 };
+
+export const aboutUsCard_1_Config: MainCard = {
+	title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
+	description:
+		'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
+	button: 'Our Team',
+	imageLink: '/assets/img/home/about-us-3.png',
+	imageAlt: 'photo',
+	direction: 'flex-direction: row-reverse',
+};

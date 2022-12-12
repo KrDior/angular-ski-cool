@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { BroadcasterService } from '@core/services/broadcaster.service';
+import { aboutUsCard_1_Config } from '@shared/configs/home-card-config';
+import { BroadcastConstant } from '@shared/constants/broadcast-constants';
+import { MainCard } from '@shared/models/main-card.model';
+import { BottomContext } from '../nav-slider/nav-slider.component';
 
 @Component({
 	selector: 'app-about-us',
@@ -6,5 +11,17 @@ import { Component } from '@angular/core';
 	styleUrls: ['./about-us.component.scss'],
 })
 export class AboutUsComponent {
-	constructor() {}
+	public cardConfig1!: MainCard;
+
+	constructor(private broadcaster: BroadcasterService) {
+		// this.broadcaster.broadcast(BroadcastConstant.BottomContextPage, {
+		// 	path: BottomContext.OurTeam,
+		// 	imagePath: '/assets/img/about/about_us_background.png'
+		// });
+		this.broadcaster.broadcast(BroadcastConstant.BottomContextPage, {
+			path: BottomContext.AboutUs,
+			imagePath: '',
+		});
+		this.cardConfig1 = aboutUsCard_1_Config;
+	}
 }

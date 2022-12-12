@@ -1,6 +1,6 @@
 <div class="footer-wrapper" color="primary">
 	<app-contact-block></app-contact-block>
-	<div class="partners">
+	<div class="partners" *ngIf="isPartnersVisible">
 		<app-carousel-card [carouselConfig]="carouselPartnerConfig"></app-carousel-card>
 	</div>
 </div>

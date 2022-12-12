@@ -1,6 +1,8 @@
 <div class="card-wrapper" [style]="cardConfig.direction">
 	<div class="article">
-		<app-text-line [text]="cardConfig.header"></app-text-line>
+		<ng-container *ngIf="cardConfig?.header">
+			<app-text-line [text]="cardConfig.header || ''"></app-text-line>
+		</ng-container>
 		<div class="title mat-display-2">
 			{{ cardConfig.title }}
 		</div>

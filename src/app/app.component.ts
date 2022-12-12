@@ -13,6 +13,7 @@ import { MOBILE_LAND_WIDTH } from '@shared/constants/common-constants';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { iconNavHomeConfig } from '@shared/configs/icon-nav.config';
+import { BroadcastConstant } from '@shared/constants/broadcast-constants';
 
 @Component({
 	selector: 'app-root',
@@ -53,7 +54,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		 * use this service with takeUntil from rxJS and local Subject to prevent memory leaks like shown
 		 */
 		this.broadcaster
-			.listen('isPageNotFound')
+			.listen(BroadcastConstant.IsPageNotFound)
 			.pipe(takeUntil(this.$destroy))
 			.subscribe({
 				next: (data) => {

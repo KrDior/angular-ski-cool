@@ -79,8 +79,8 @@ body {
 	min-height: 54px !important;
 	height: 54px !important;
 	color: $default-background !important;
-	background-color: $background-default;
-	border: 1px solid $background-default !important;
+	background-color: $flat-dark-background;
+	border: 1px solid $flat-dark-background !important;
 	margin-left: 4px !important;
 	font-weight: 600 !important;
 	font-size: 18px !important;
@@ -101,7 +101,14 @@ body {
 }
 
 .flat-btn:not([disabled]):hover {
-	background: $background-hover-active !important;
+	background: $flat-light-background !important;
+	color: $black-text !important;
+
+	.booking-svg {
+		svg path {
+			stroke: $black-text;
+		}
+	}
 }
 
 .flat-btn:not([disabled]):active {

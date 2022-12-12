@@ -12,7 +12,6 @@
 }
 
 .slider {
-	background-image: url('/assets/img/home/main-background.png');
 	height: 800px;
 	background-size: cover;
 	opacity: 0.9;
@@ -32,7 +31,6 @@
 		.bottom-content {
 			align-self: flex-start;
 			min-width: 580px;
-			margin-top: 50px;
 		}
 
 		.discover-btn {
@@ -126,6 +124,15 @@
 			float: none !important;
 		}
 	}
+}
+
+.home-title,
+.about-title {
+	margin-top: 50px;
+}
+
+.our-team-title {
+	color: $black-text !important;
 }
 
 @media screen and (max-width: 780px) {

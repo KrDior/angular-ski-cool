@@ -1,7 +1,7 @@
 import { RoutePath } from 'src/app/app-routing.module';
 
 export interface MainCard {
-	header: string;
+	header?: string;
 	title: string;
 	description: string;
 	button: string;

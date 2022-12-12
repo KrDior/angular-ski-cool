@@ -16,6 +16,14 @@ export const InstructorsList = ['Mike Nike', 'Tomass Marnics'];
 
 export const LessonDurationList = ['2 hours', '5 hours'];
 
+export const NatureOfRequestList = [
+	'Question about booking',
+	'Question about service',
+	'I woudl like to be a part of the team',
+	'I would like to become a partner',
+	'Other',
+];
+
 export const instructorsData: InstructorInfo[] = [
 	{
 		name: 'Tomass Marnics',

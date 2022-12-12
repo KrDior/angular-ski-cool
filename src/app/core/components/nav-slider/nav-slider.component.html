@@ -1,4 +1,4 @@
-<div class="slider">
+<div class="slider" [ngStyle]="{ 'background-image': 'url(' + backgroundImg + ')' }">
 	<mat-icon
 		*ngIf="!isDesktop || !isNavTabVisible"
 		svgIcon="menu"
@@ -10,14 +10,28 @@
 			<ng-content></ng-content>
 		</div>
 		<div class="bottom-content" *ngIf="!isPageNotFound">
-			<h1 class="mat-headline">{{ 'Ski Cool' }}</h1>
-			<p>
-				Ski Cool St. Moritz, is an elite snowsports school <br />
-				of the Engadin Valley, Switzerland.
-			</p>
-			<button mat-flat-button class="discover-btn" appButtonConfig [type]="'flat'" routerLink="{{ routes.Booking }}">
-				Book now
-			</button>
+			<ng-container *ngIf="bottomContext === bottomContextTypes.Home">
+				<h1 class="mat-headline home-title">{{ 'Ski Cool' }}</h1>
+				<p>
+					Ski Cool St. Moritz, is an elite snowsports school <br />
+					of the Engadin Valley, Switzerland.
+				</p>
+				<button mat-flat-button class="discover-btn" appButtonConfig [type]="'flat'" routerLink="{{ routes.Booking }}">
+					Book now
+				</button>
+			</ng-container>
+
+			<ng-container *ngIf="bottomContext === bottomContextTypes.AboutUs">
+				<h1 class="mat-headline about-title">{{ 'About us' }}</h1>
+				<p>
+					Ski Cool St. Moritz, is an elite snowsports school <br />
+					of the Engadin Valley, Switzerland.
+				</p>
+			</ng-container>
+
+			<ng-container *ngIf="bottomContext === bottomContextTypes.OurTeam">
+				<h1 class="mat-headline about-title">{{ 'Our team' }}</h1>
+			</ng-container>
 		</div>
 		<div class="not-found" *ngIf="isPageNotFound">
 			<span class="title-message">
@@ -33,7 +47,7 @@
 		</div>
 	</div>
 	<div class="contact-wrapper">
-		<div class="contact-btn" matTooltip="Contact us" routerLink="{{ routes.Booking }}">
+		<div class="contact-btn" matTooltip="Contact us" (click)="showContactPopup()">
 			<mat-icon class="contact-svg" svgIcon="contact"></mat-icon>
 		</div>
 	</div>

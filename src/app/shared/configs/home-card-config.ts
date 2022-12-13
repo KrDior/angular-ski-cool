@@ -7,7 +7,7 @@ export const homeCard_1_Config: MainCard = {
 	description:
 		'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover.',
 	button: 'Discover more',
-	imageLink: '/assets/img/home/about-us-1.png',
+	imageLink: 'assets/img/home/about-us-1.png',
 	imageAlt: 'photo',
 	direction: 'flex-direction: row-reverse',
 	routerLink: '',
@@ -19,7 +19,7 @@ export const homeCard_2_Config: MainCard = {
 	description:
 		'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets.',
 	button: 'Discover more',
-	imageLink: '/assets/img/home/about-us-2.png',
+	imageLink: 'assets/img/home/about-us-2.png',
 	imageAlt: 'photo',
 	direction: 'flex-direction: row',
 	routerLink: '',
@@ -31,7 +31,7 @@ export const homeCard_3_Config: MainCard = {
 	description:
 		'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
 	button: 'Discover more',
-	imageLink: '/assets/img/home/about-us-3.png',
+	imageLink: 'assets/img/home/about-us-3.png',
 	imageAlt: 'photo',
 	direction: 'flex-direction: row-reverse',
 	routerLink: '',
@@ -42,7 +42,7 @@ export const aboutUsCard_1_Config: MainCard = {
 	description:
 		'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
 	button: 'Our Team',
-	imageLink: '/assets/img/home/about-us-3.png',
+	imageLink: 'assets/img/home/about-us-3.png',
 	imageAlt: 'photo',
 	direction: 'flex-direction: row-reverse',
 	routerLink: '/our-team',
@@ -54,7 +54,7 @@ export const ourTeamCard_1_Config: MainCard = {
 	description:
 		'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
 	button: 'Join Us',
-	imageLink: '/assets/img/team/photo.png',
+	imageLink: 'assets/img/team/photo.png',
 	imageAlt: 'photo',
 	direction: 'flex-direction: row',
 	routerLink: '',

@@ -31,7 +31,7 @@ export class OurTeamComponent implements OnInit, OnDestroy {
 	) {
 		this.broadcaster.broadcast(BroadcastConstant.BottomContextPage, {
 			path: BottomContext.AboutUs,
-			imagePath: '/assets/img/about/about_us_background.png',
+			imagePath: 'assets/img/about/about_us_background.png',
 		});
 		this.cardConfig1 = ourTeamCard_1_Config;
 	}

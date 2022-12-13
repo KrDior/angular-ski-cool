@@ -6,7 +6,7 @@ export const homePageArticleCenter: MainCard = {
 	description:
 		'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain.',
 	button: 'Discover more',
-	imageLink: '/assets/img/home/recreation.png',
+	imageLink: 'assets/img/home/recreation.png',
 	imageAlt: 'background-photo',
 	direction: '',
 };

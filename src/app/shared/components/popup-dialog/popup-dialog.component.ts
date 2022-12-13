@@ -4,9 +4,10 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { LanguageList, ResortList, NatureOfRequestList } from '../group-booking-form/group-form.config';
 
 export enum DialogType {
-	GroupBooking = 'GroupBooking',
 	Contact = 'Contact',
 	Person = 'Person',
+	PrivateBooking = 'PrivateBooking',
+	GroupBooking = 'GroupBooking',
 }
 
 @Component({

@@ -10,6 +10,7 @@ export interface MainCard {
 	direction: string;
 	routerLink?: string;
 	clickAction?: any;
+	price?: string;
 }
 
 export interface AdvantageSlide {

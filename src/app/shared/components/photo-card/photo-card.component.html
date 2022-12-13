@@ -9,6 +9,10 @@
 		<div class="description mat-display-4">
 			{{ cardConfig.description }}
 		</div>
+		<div *ngIf="cardConfig?.price" class="price mat-display-4" (click)="onClickPriceButton()">
+			<span>{{ cardConfig.price }}</span>
+			<mat-icon aria-hidden="true" class="booking-svg" svgIcon="booking"></mat-icon>
+		</div>
 		<button
 			mat-button
 			appButtonConfig

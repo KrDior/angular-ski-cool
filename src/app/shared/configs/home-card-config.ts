@@ -10,6 +10,7 @@ export const homeCard_1_Config: MainCard = {
 	imageLink: '/assets/img/home/about-us-1.png',
 	imageAlt: 'photo',
 	direction: 'flex-direction: row-reverse',
+	routerLink: '',
 };
 
 export const homeCard_2_Config: MainCard = {
@@ -21,6 +22,7 @@ export const homeCard_2_Config: MainCard = {
 	imageLink: '/assets/img/home/about-us-2.png',
 	imageAlt: 'photo',
 	direction: 'flex-direction: row',
+	routerLink: '',
 };
 
 export const homeCard_3_Config: MainCard = {
@@ -32,6 +34,7 @@ export const homeCard_3_Config: MainCard = {
 	imageLink: '/assets/img/home/about-us-3.png',
 	imageAlt: 'photo',
 	direction: 'flex-direction: row-reverse',
+	routerLink: '',
 };
 
 export const aboutUsCard_1_Config: MainCard = {
@@ -54,6 +57,7 @@ export const ourTeamCard_1_Config: MainCard = {
 	imageLink: '/assets/img/team/photo.png',
 	imageAlt: 'photo',
 	direction: 'flex-direction: row',
+	routerLink: '',
 	clickAction: {
 		actionType: 'popup',
 		type: 'Contact',

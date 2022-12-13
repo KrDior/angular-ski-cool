@@ -1,0 +1,27 @@
+@import 'variables';
+
+.contents {
+	padding-top: 100px;
+
+	.card {
+		padding: 50px 100px;
+	}
+
+	.video {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 10px 0;
+	}
+
+	.icon-nav-container {
+		padding: 50px 100px;
+		display: flex;
+		gap: 72px;
+		justify-content: center;
+	}
+
+	.carousel {
+		margin: 50px 100px;
+	}
+}

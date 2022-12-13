@@ -1,0 +1,54 @@
+<div class="slider" [ngStyle]="{ 'background-image': 'url(' + backgroundImg + ')' }">
+	<mat-icon
+		*ngIf="!isDesktop || !isNavTabVisible"
+		svgIcon="menu"
+		class="desktop-hide"
+		(click)="toggleDrawer()"
+	></mat-icon>
+	<div class="slider-content">
+		<div class="top-content">
+			<ng-content></ng-content>
+		</div>
+		<div class="bottom-content" *ngIf="!isPageNotFound">
+			<ng-container *ngIf="bottomContext === bottomContextTypes.Home">
+				<h1 class="mat-headline home-title">{{ 'Ski Cool' }}</h1>
+				<p>
+					Ski Cool St. Moritz, is an elite snowsports school <br />
+					of the Engadin Valley, Switzerland.
+				</p>
+				<button mat-flat-button class="discover-btn" appButtonConfig [type]="'flat'" routerLink="{{ routes.Booking }}">
+					Book now
+				</button>
+			</ng-container>
+
+			<ng-container *ngIf="bottomContext === bottomContextTypes.AboutUs">
+				<h1 class="mat-headline about-title">{{ 'About us' }}</h1>
+				<p>
+					Ski Cool St. Moritz, is an elite snowsports school <br />
+					of the Engadin Valley, Switzerland.
+				</p>
+			</ng-container>
+
+			<ng-container *ngIf="bottomContext === bottomContextTypes.OurTeam">
+				<h1 class="mat-headline about-title">{{ 'Our team' }}</h1>
+			</ng-container>
+		</div>
+		<div class="not-found" *ngIf="isPageNotFound">
+			<span class="title-message">
+				{{ 'Oh no, the snow is gone.' }}
+			</span>
+			<h1 class="header-message">{{ 'Something went' }}</h1>
+			<h1 class="header-message">{{ 'wrong ...' }}</h1>
+			<button mat-button appButtonConfig [type]="'flat'" class="booking-btn" routerLink="{{ routes.Home }}">
+				<span>{{ 'Back to home' }}</span>
+				<mat-icon aria-hidden="true" class="booking-svg" svgIcon="booking"></mat-icon>
+			</button>
+			<h1 class="not-found-number">{{ '404' }}</h1>
+		</div>
+	</div>
+	<div class="contact-wrapper" *ngIf="bottomContext === bottomContextTypes.Home">
+		<div class="contact-btn" matTooltip="Contact us" (click)="showContactPopup()">
+			<mat-icon class="contact-svg" svgIcon="contact"></mat-icon>
+		</div>
+	</div>
+</div>

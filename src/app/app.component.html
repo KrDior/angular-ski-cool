@@ -1,29 +1,46 @@
-<!-- Sample HTML for demo starts  -->
+<app-layout>
+	<mat-drawer-container class="layout-wrapper">
+		<mat-drawer #drawer [mode]="isShowHideFlag">
+			<app-sidenav-menu [menuItems]="menuItems" (drawerClick)="onDrawerClick()"></app-sidenav-menu>
+		</mat-drawer>
 
-<div class="flex flex-row justify-between items-center h-3/4 w-full bg-light-500">
-  <aside class="h-full w-1/4 flex flex-col justify-center items-center">
-    <img
-      src="https://repository-images.githubusercontent.com/24195339/87018c00-694b-11e9-8b5f-c34826306d36"
-      alt="angular_logo"
-    />
-  </aside>
-
-  <section class="w-3/4 h-full bg-primary-900 flex flex-col justify-center items-center">
-    <h5 class="font-bold text-xl">{{ 'Home' | translate }}</h5>
-  </section>
-
-  <footer class="h-8 bg-success-500 w-full self-end fixed bottom-0 grid place-content-center">
-    <p class="text-secondary-500 w-full text-center">
-      Thank you for using ng-new-app ❤️,
-      <a href="https://github.com/sardapv/angular-material-starter-template" class="font-semibold">
-        show your support by ⭐️ on Github Repo
-      </a>
-    </p>
-  </footer>
-</div>
-
-<!-- Sample HTML for demo ends  -->
+		<mat-drawer-content>
+			<button mat-button appButtonConfig [type]="'transparent'" class="booking-btn" routerLink="{{ routes.Booking }}">
+				<span>{{ 'Book now' }}</span>
+				<mat-icon aria-hidden="true" class="booking-svg blue" svgIcon="booking"></mat-icon>
+			</button>
+			<app-nav-slider
+				[isDesktop]="isDesktopView$ | async"
+				[isNavTabVisible]="navTabVisibility"
+				[isPageNotFound]="isPageNotFound"
+				(drawerClick)="onDrawerClick()"
+			>
+				<app-nav-tab
+					*ngIf="isDesktopView$ | async"
+					(isNavTabVisible)="onNavTabVisibilityChange($event)"
+					[menuItems]="menuItems"
+					[moreMenuItem]="{ styleClass: 'mat-display-1', icon: 'keyboard_arrow_down' }"
+				>
+				</app-nav-tab>
+				<button mat-button [matMenuTriggerFor]="belowMenu" class="lang mat-display-4">
+					{{ currentLang.slice(0, 2) | uppercase }}
+					<mat-icon aria-hidden="false">keyboard_arrow_down</mat-icon>
+				</button>
+				<mat-menu class="lang-menu" #belowMenu="matMenu" yPosition="below">
+					<button
+						class="mat-display-4"
+						*ngFor="let lang of availableLang"
+						(click)="onLanguageChange(lang)"
+						mat-menu-item
+					>
+						{{ lang.slice(0, 2) | uppercase }}
+					</button>
+				</mat-menu>
+			</app-nav-slider>
+			<router-outlet></router-outlet>
+			<app-footer *ngIf="!isPageNotFound"></app-footer>
+		</mat-drawer-content>
+	</mat-drawer-container>
+</app-layout>
 
 <ngx-loading-bar [includeSpinner]="false" color="red"></ngx-loading-bar>
-
-<router-outlet></router-outlet>

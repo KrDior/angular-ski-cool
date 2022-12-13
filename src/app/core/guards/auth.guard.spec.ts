@@ -5,10 +5,10 @@ import { AuthGuard } from './auth.guard';
 let guard: AuthGuard;
 
 beforeEach(() => {
-  TestBed.configureTestingModule({ providers: [AuthGuard], imports: [HttpClientTestingModule] });
+	TestBed.configureTestingModule({ providers: [AuthGuard], imports: [HttpClientTestingModule] });
 });
 
 it('should create', () => {
-  guard = TestBed.inject(AuthGuard);
-  expect(guard).toBeTruthy();
+	guard = TestBed.inject(AuthGuard);
+	expect(guard).toBeTruthy();
 });

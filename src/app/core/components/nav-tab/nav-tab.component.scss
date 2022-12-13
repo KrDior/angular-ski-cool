@@ -1,0 +1,97 @@
+@import 'variables';
+
+.nav-tab-wrapper {
+	display: flex;
+	position: relative;
+	border: none;
+	align-items: center;
+	margin: 28px 0px;
+	height: 60px;
+	background: none;
+
+	.logo {
+		margin-right: 50px;
+		cursor: pointer;
+		width: 83px;
+		height: 83px;
+	}
+}
+
+.mat-tab-label-container {
+	flex: 1;
+	display: flex;
+	overflow: hidden;
+	align-self: stretch;
+}
+
+.nav-main-visible-item:hover {
+	border-bottom: 3px solid $default-background;
+}
+
+.nav-main-visible-item {
+	display: flex;
+	align-items: center;
+	padding-top: 2px !important;
+}
+
+.more-button {
+	display: flex;
+	align-items: center;
+	color: $default-background;
+	padding-top: 2px;
+	font-weight: 400;
+	cursor: pointer;
+}
+
+.button-stretch {
+	align-self: stretch;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-bottom: -1px !important;
+	min-height: 48px;
+	padding-bottom: 1px !important;
+	background: 0 0;
+	margin: 0;
+	display: flex;
+	align-items: center;
+
+	border: none;
+	position: relative;
+	outline: 0;
+	text-align: left;
+	text-decoration: none;
+}
+
+.no-navigate {
+	pointer-events: none;
+}
+
+.mat-tab-list {
+	display: flex;
+	justify-content: flex-end;
+	position: relative;
+	transition: transform 500ms cubic-bezier(0.35, 0, 0.25, 1);
+}
+
+.mat-tab-labels {
+	display: flex;
+	gap: 40px;
+}
+
+.mat-tab-labels a {
+	margin: 0 10px;
+	color: $default-background;
+	font-weight: 400;
+}
+
+.space {
+	flex: 1;
+	justify-content: space-between;
+}
+
+@media screen and (max-width: 1140px) {
+	.mat-tab-label-container {
+		justify-content: start;
+	}
+}

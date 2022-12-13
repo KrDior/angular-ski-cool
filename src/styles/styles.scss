@@ -5,3 +5,180 @@
 @import './variables';
 @import './mat-theme/mat_core';
 @import './mat-theme/mat_override';
+
+html,
+body {
+	height: 100%;
+}
+body {
+	margin: 0;
+	font-family: mat-font-family($custom-typography);
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	background: $default-background;
+}
+
+.ui-state-active:before {
+	content: '';
+	border-bottom: 3px solid $default-background;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.ui-state-active-sub {
+	color: $black-text;
+}
+
+.stroked-btn {
+	min-height: 54px !important;
+	height: 54px !important;
+	color: $stroke-default-2 !important;
+	background-color: $background-hover-2;
+	border: 1px solid $stroke-default-2 !important;
+	margin-left: 4px !important;
+	font-weight: 600 !important;
+	font-size: 18px !important;
+	border-radius: 2px !important;
+
+	.booking-svg {
+		height: 18px !important;
+		line-height: 10px;
+		position: relative !important;
+		bottom: 4px !important;
+		left: 5px !important;
+		overflow: visible;
+	}
+}
+
+.stroked-btn:not([disabled]):hover {
+	background: $background-hover-2 !important;
+}
+
+.stroked-btn:not([disabled]):active {
+	background: $background-hover-2 !important;
+	border: none !important;
+}
+
+.stroked-btn:not([disabled]):focus {
+	background: $background-hover-2 !important;
+}
+
+.flat-btn {
+	min-height: 54px !important;
+	height: 54px !important;
+	color: $default-background !important;
+	background-color: $flat-dark-background;
+	border: 1px solid $flat-dark-background !important;
+	margin-left: 4px !important;
+	font-weight: 600 !important;
+	font-size: 18px !important;
+	border-radius: 2px !important;
+
+	.booking-svg {
+		height: 18px !important;
+		line-height: 10px;
+		position: relative !important;
+		bottom: 4px !important;
+		left: 5px !important;
+		overflow: visible;
+
+		svg path {
+			stroke: $default-background;
+		}
+	}
+}
+
+.flat-btn:not([disabled]):hover {
+	background: $flat-light-background !important;
+	color: $black-text !important;
+
+	.booking-svg {
+		svg path {
+			stroke: $black-text;
+		}
+	}
+}
+
+.flat-btn:not([disabled]):active {
+	background: $background-click !important;
+}
+
+.flat-btn:not([disabled]):focus {
+	background: $background-hover-active !important;
+}
+
+.transparent-btn {
+	min-height: 54px !important;
+	height: 54px !important;
+	color: $default-background !important;
+	background: transparent !important;
+	border: 1px solid $background-default !important;
+	margin-left: 4px !important;
+	font-weight: 600 !important;
+	font-size: 18px !important;
+	border-radius: 2px !important;
+
+	.booking-svg {
+		height: 18px !important;
+		line-height: 10px;
+		position: relative !important;
+		bottom: 4px !important;
+		left: 5px !important;
+		overflow: visible;
+
+		svg path {
+			stroke: $default-background;
+		}
+	}
+
+	.booking-svg.blue {
+		svg path {
+			stroke: $flat-light-background;
+		}
+	}
+}
+
+.transparent-btn:not([disabled]):hover {
+	background: $background-hover-2 !important;
+	color: $stroke-default-2 !important;
+
+	.booking-svg {
+		svg path {
+			stroke: $stroke-default-2 !important;
+		}
+	}
+}
+
+.transparent-btn:not([disabled]):active {
+	background: $background-click !important;
+	color: $stroke-default-2 !important;
+
+	.booking-svg {
+		svg path {
+			stroke: $stroke-default-2 !important;
+		}
+	}
+}
+
+.transparent-btn:not([disabled]):focus {
+	background: $background-hover-2 !important;
+	color: $stroke-default-2 !important;
+
+	.booking-svg {
+		svg path {
+			stroke: $stroke-default-2 !important;
+		}
+	}
+}

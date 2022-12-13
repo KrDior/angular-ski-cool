@@ -1,0 +1,103 @@
+<div mat-dialog-content>
+	<div *ngIf="data.type === types.GroupBooking" class="group-wrapper">
+		<div class="name">{{ data.name }}</div>
+		<div class="title">{{ data.title }}</div>
+		<div class="description">{{ data.description }}</div>
+	</div>
+	<div *ngIf="data.type === types.Person" class="person-wrapper">
+		<div class="close" (click)="closePopup()">&times;</div>
+		<div class="name">{{ data.name }}</div>
+		<div class="title">{{ data.title }}</div>
+		<div class="description">{{ data.description }}</div>
+	</div>
+	<div *ngIf="data.type === types.Contact" class="instructor-wrapper">
+		<div class="close" (click)="closePopup()">&times;</div>
+		<span class="annotation">{{ 'Form Contact us' }}</span>
+		<div class="form-container">
+			<form [formGroup]="contactForm" (ngSubmit)="onSubmitContact()" class="group-form">
+				<p class="double-field">
+					<mat-form-field appearance="outline" class="half-width">
+						<mat-label>First name</mat-label>
+						<input matInput formControlName="firstName" />
+						<mat-error *ngIf="checkError('firstName', 'required')">First name is required</mat-error>
+						<mat-error *ngIf="checkError('firstName', 'maxlength')"
+							>First name should be less than 100 characters</mat-error
+						>
+					</mat-form-field>
+					<mat-form-field appearance="outline" class="half-width">
+						<mat-label>Last name</mat-label>
+						<input matInput formControlName="lastName" />
+						<mat-error *ngIf="checkError('lastName', 'required')">Last name is required</mat-error>
+						<mat-error *ngIf="checkError('lastName', 'maxlength')"
+							>Last name should be less than 100 characters</mat-error
+						>
+					</mat-form-field>
+				</p>
+
+				<p>
+					<mat-form-field appearance="outline" class="full-width">
+						<mat-label>Email</mat-label>
+						<input matInput type="email" name="email" ngModel email formControlName="email" />
+						<mat-error *ngIf="checkError('email', 'required')">Email is required</mat-error>
+						<mat-error *ngIf="contactForm.get('email')?.hasError('email')"
+							>Please enter a valid email address</mat-error
+						>
+						<mat-error *ngIf="checkError('email', 'maxlength')">Email should be less than 200 characters</mat-error>
+					</mat-form-field>
+				</p>
+
+				<p>
+					<mat-form-field appearance="outline" class="full-width">
+						<mat-label>Phone number</mat-label>
+						<ngx-mat-intl-tel-input
+							formControlName="phoneNumber"
+							[preferredCountries]="['de', 'us']"
+							[enablePlaceholder]="true"
+							[enableSearch]="true"
+							name="phone"
+							#phone
+						>
+						</ngx-mat-intl-tel-input>
+						<mat-hint>eg : {{ phone.selectedCountry?.placeHolder }}</mat-hint>
+						<mat-error *ngIf="checkError('phoneNumber', 'required')">Phone number is required</mat-error>
+						<mat-error
+							*ngIf="contactForm.controls['phoneNumber'].touched && contactForm.controls['phoneNumber'].invalid"
+							>Please enter a valid phone number</mat-error
+						>
+					</mat-form-field>
+				</p>
+
+				<p class="double-field">
+					<mat-form-field appearance="outline" class="half-width">
+						<mat-label>Language</mat-label>
+						<mat-select formControlName="language">
+							<mat-option *ngFor="let lang of languages" [value]="lang">{{ lang }}</mat-option>
+						</mat-select>
+						<mat-error *ngIf="checkError('language', 'required')">Language is required</mat-error>
+					</mat-form-field>
+					<mat-form-field appearance="outline" class="half-width">
+						<mat-label>Nature of the request</mat-label>
+						<mat-select formControlName="natureOfRequest">
+							<mat-option *ngFor="let nature of natureOfRequest" [value]="nature">{{ nature }}</mat-option>
+						</mat-select>
+						<mat-error *ngIf="checkError('natureOfRequest', 'required')">Nature of the request is required</mat-error>
+					</mat-form-field>
+				</p>
+
+				<p>
+					<mat-form-field appearance="outline" class="full-width text-field">
+						<mat-label>Request and requirements</mat-label>
+						<textarea matInput formControlName="otherRequirement"></textarea>
+						<mat-error *ngIf="checkError('otherRequirement', 'maxlength')"
+							>Request and requirements should be less than 500 characters</mat-error
+						>
+					</mat-form-field>
+				</p>
+
+				<button mat-flat-button class="submit-btn" appButtonConfig [type]="'flat'" [disabled]="!contactForm.valid">
+					Submit
+				</button>
+			</form>
+		</div>
+	</div>
+</div>

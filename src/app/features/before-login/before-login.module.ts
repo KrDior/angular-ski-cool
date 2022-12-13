@@ -6,7 +6,7 @@ import { BeforeLoginComponent } from './before-login.component';
 import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
-  declarations: [BeforeLoginComponent],
-  imports: [CommonModule, BeforeLoginRoutingModule, SharedModule],
+	declarations: [BeforeLoginComponent],
+	imports: [CommonModule, BeforeLoginRoutingModule, SharedModule],
 })
 export class BeforeLoginModule {}

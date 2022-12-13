@@ -1,0 +1,73 @@
+@import 'variables';
+
+.layout-wrapper {
+	background-color: $default-background !important;
+}
+
+.mat-drawer {
+	width: 100%;
+	background-color: $default-background;
+}
+
+.mat-drawer:not(.mat-drawer-side) {
+	position: fixed;
+}
+
+.mat-drawer-backdrop {
+	position: fixed !important;
+}
+
+.body {
+	margin-top: 60px;
+}
+
+.booking-btn {
+	position: fixed;
+	right: 100px;
+	top: 31px;
+	z-index: 1000;
+	width: 200px;
+	color: $flat-light-background !important;
+}
+
+.lang {
+	color: $default-background;
+	align-self: self-end;
+	padding-right: 0;
+	line-height: 0px !important;
+	position: relative;
+	top: -68px;
+	right: 160px;
+}
+
+::ng-deep {
+	.mat-menu-panel.lang-menu {
+		min-width: 60px;
+		width: 60px;
+		background: none;
+		color: $default-background;
+
+		.mat-menu-content {
+			padding-top: 0px;
+		}
+
+		button {
+			color: $default-background;
+			height: 33px;
+			padding: 0px 5px 0px 17px;
+			margin: 0;
+		}
+	}
+}
+
+@media screen and (max-width: 1400px) {
+	.booking-btn {
+		width: 132px;
+	}
+}
+
+@media screen and (min-width: 1400px) {
+	.lang {
+		right: 220px;
+	}
+}

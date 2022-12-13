@@ -1,0 +1,48 @@
+@import 'variables';
+
+.card-wrapper {
+	display: flex;
+	flex: 1;
+	gap: 50px;
+	height: 700px;
+	min-width: 800px;
+
+	.article {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 50%;
+		min-width: 370px;
+		padding-left: 55px;
+
+		.app-text-line {
+			margin-bottom: 10px;
+		}
+
+		.title {
+			color: $black-text;
+			margin-bottom: 20px;
+		}
+
+		.description {
+			color: $black-text;
+			margin-bottom: 44px;
+		}
+
+		.discover-btn {
+			width: 248px;
+			color: $flat-dark-background !important;
+		}
+	}
+
+	.image-block {
+		width: 50%;
+		min-width: 370px;
+		max-width: 605px;
+	}
+
+	.image {
+		width: 100%;
+		max-height: 700px;
+	}
+}

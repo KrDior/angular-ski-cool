@@ -5,9 +5,9 @@ import { AuthService } from '@core/services/auth.service';
 
 @Injectable({ providedIn: 'root' })
 export class AuthGuard implements CanActivate {
-  constructor(private _authservice: AuthService) {}
+	constructor(private _authservice: AuthService) {}
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    return this._authservice.isLoggedIn();
-  }
+	canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+		return this._authservice.isLoggedIn();
+	}
 }

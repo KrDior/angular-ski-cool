@@ -1,0 +1,63 @@
+<div class="carousel-wrapper">
+	<div class="empty"></div>
+	<app-text-line
+		[text]="carouselConfig.message"
+		[ngClass]="{ fullWidth: carouselConfig.fullTitleWidth }"
+	></app-text-line>
+	<span *ngIf="carouselConfig?.title" class="title mat-display-2">{{ carouselConfig.title }}</span>
+	<app-panning-container class="card-block" #panner>
+		<ng-container *ngFor="let card of carouselConfig.cards; index as i">
+			<ng-container *ngIf="carouselConfig.type === 'feedback'">
+				<ng-container *appPanningItem>
+					<div class="card-feedback item" [ngClass]="{ current: i === panner.currentIndex }">
+						<div class="image-block">
+							<img class="image" [src]="card.imageLink" [alt]="card.imageAlt" />
+						</div>
+						<div class="feedback-content">
+							<span class="feedback-name">{{ card.name }}</span>
+							<span class="feedback-text mat-display-4">{{ card.text }}</span>
+							<div class="date">
+								<img class="img" alt="Date" src="assets/svg/calendar.svg" />
+								<span class="feedback-date mat-display-4">{{ card.date }}</span>
+							</div>
+						</div>
+					</div>
+				</ng-container>
+			</ng-container>
+			<ng-container *ngIf="carouselConfig.type === 'partner'">
+				<ng-container *appPanningItem>
+					<div
+						class="card-partner item"
+						routerLink="{{ card.navigateLink }}"
+						[ngClass]="{ current: i === panner.currentIndex }"
+					>
+						<div class="image-block">
+							<img class="image" [src]="card.imageLink" [alt]="card.imageAlt" />
+						</div>
+					</div>
+				</ng-container>
+			</ng-container>
+		</ng-container>
+	</app-panning-container>
+
+	<div class="navigation">
+		<button
+			*ngIf="carouselConfig.button"
+			class="discover-btn"
+			mat-button
+			appButtonConfig
+			[type]="'stroked'"
+			routerLink="{{ routes.Booking }}"
+		>
+			{{ carouselConfig.button }}
+		</button>
+		<div class="pagination">
+			<button (click)="panner.shift(-1)" aria-label="Example icon button with a home icon">
+				<mat-icon svgIcon="arrow-left">home</mat-icon>
+			</button>
+			<button (click)="panner.shift(1)" aria-label="Example icon button with a home icon">
+				<mat-icon svgIcon="arrow-right">home</mat-icon>
+			</button>
+		</div>
+	</div>
+</div>

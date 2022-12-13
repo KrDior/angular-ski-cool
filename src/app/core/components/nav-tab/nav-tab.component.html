@@ -1,0 +1,166 @@
+<div class="nav-tab-wrapper">
+	<img class="logo" alt="Logo" src="assets/img/Logo.png" routerLink="{{ routes.Home }}" />
+	<div class="mat-tab-label-container" #tabListContainer>
+		<div class="mat-tab-list" #tabList role="tablist" [style.justify-content]="position">
+			<div class="mat-tab-labels" #labels [class.space]="space">
+				<!-- Start going through the top level items in the Menu Item list -->
+				<ng-container *ngFor="let item of menuItems; let i = index">
+					<!-- if the item contains a nested menu array, we need to put those in a menu -->
+					<ng-container *ngIf="item.items; else Item">
+						<!-- Here is the visible button (if the item is not overflowing) -->
+						<button
+							matRipple
+							appMenuContentWrapper
+							[item]="item"
+							*ngIf="item.visible"
+							[matRippleDisabled]="item.disabled || false"
+							[ngClass]="item?.styleClass"
+							[disabled]="item.disabled"
+							[matMenuTriggerFor]="menu"
+							class="button-stretch"
+						>
+							<span class="fa fa-fw" *ngIf="item.icon" [ngClass]="item.icon"></span>
+							{{ item.label }}
+							<i class="fa fa-caret-down" style="padding-left: 4px"></i>
+						</button>
+
+						<mat-menu #menu="matMenu" [overlapTrigger]="false">
+							<ng-container *ngFor="let sub of item.items">
+								<!-- All of the sub-menu items get rolled out in here.  See bottom for template -->
+								<ng-container
+									[ngTemplateOutlet]="subMenuLinks"
+									[ngTemplateOutletContext]="{ $implicit: sub }"
+								></ng-container>
+							</ng-container>
+						</mat-menu>
+					</ng-container>
+
+					<!-- Items that don't have a sub array get rendered here -->
+					<ng-template #Item>
+						<a
+							*ngIf="item.visible && item.routerLink"
+							appMenuContentWrapper
+							matRipple
+							[item]="item"
+							[ngClass]="item?.styleClass"
+							[class.disabled]="item.disabled"
+							[ngStyle]="item.style"
+							class="button-stretch nav-main-visible-item"
+							routerLink="{{ item.routerLink }}"
+							[queryParams]="item.queryParams"
+							[routerLinkActive]="uiStateActive"
+							[routerLinkActiveOptions]="item.routerLinkActiveOptions || { exact: false }"
+							[matRippleDisabled]="item.disabled || false"
+							[attr.title]="item.title"
+							[attr.id]="item.id"
+							[attr.target]="item.target"
+						>
+							<span class="fa fa-fw" style="margin-right: 4px" *ngIf="item.icon" [ngClass]="item.icon"></span
+							>{{ item.localizeField }}
+						</a>
+						<a
+							*ngIf="item.visible && !item.routerLink"
+							appMenuContentWrapper
+							matRipple
+							[item]="item"
+							[ngClass]="item?.styleClass"
+							[class.disabled]="item.disabled"
+							class="button-stretch nav-main-visible-item"
+							[href]="item.url || '#'"
+							[matRippleDisabled]="item.disabled || false"
+							[ngStyle]="item.style"
+							[attr.title]="item.title"
+							[attr.id]="item.id"
+							[attr.target]="item.target"
+						>
+							<span class="fa fa-fw" style="margin-right: 4px" *ngIf="item.icon" [ngClass]="item.icon"></span
+							>{{ item.label }}
+						</a>
+					</ng-template>
+				</ng-container>
+
+				<div style="display: flex; align-items: center" *ngIf="showMoreButton">
+					<!-- All the options for how you can layout the "more" button -->
+
+					<button
+						#moreButton
+						*ngIf="moreMenuItem && !moreMenuItem.visible"
+						class="button-stretch more-button"
+						[matMenuTriggerFor]="more"
+						[ngClass]="moreMenuItem.styleClass"
+						[ngStyle]="moreMenuItem.style"
+					>
+						{{ 'More' }}
+						<mat-icon *ngIf="moreMenuItem.icon" aria-hidden="false" [ngClass]="moreMenuItem.icon">{{
+							moreMenuItem.icon
+						}}</mat-icon>
+					</button>
+
+					<!-- Here is where we start the same process above only every thing is now part of a sub-menu -->
+					<mat-menu #more="matMenu" [overlapTrigger]="false" xPosition="before">
+						<ng-container *ngFor="let item of menuItems; let i = index">
+							<ng-container *ngIf="item.items; else subsItem">
+								<ng-container *ngIf="!item.visible">
+									<button mat-menu-item [matMenuTriggerFor]="i" [disabled]="item.disabled">{{ item.label }}</button>
+
+									<mat-menu #i="matMenu">
+										<ng-container *ngFor="let sub of item.items">
+											<ng-container
+												[ngTemplateOutlet]="subMenuLinks"
+												[ngTemplateOutletContext]="{ $implicit: sub }"
+											></ng-container>
+										</ng-container>
+									</mat-menu>
+								</ng-container>
+							</ng-container>
+							<ng-template #subsItem>
+								<ng-container *ngIf="!item.visible">
+									<ng-container
+										[ngTemplateOutlet]="subMenuLinks"
+										[ngTemplateOutletContext]="{ $implicit: item }"
+									></ng-container>
+								</ng-container>
+							</ng-template>
+						</ng-container>
+					</mat-menu>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Template for rendering menu items -->
+<ng-template #subMenuLinks let-sub>
+	<a
+		mat-menu-item
+		class=""
+		*ngIf="sub.routerLink"
+		[class.disabled]="sub.disabled"
+		routerLink="{{ sub.routerLink }}"
+		[queryParams]="sub.queryParams"
+		[routerLinkActive]="uiStateActiveSub"
+		[routerLinkActiveOptions]="sub.routerLinkActiveOptions || { exact: false }"
+		[disabled]="sub.disabled"
+		[ngStyle]="sub.style"
+		[attr.title]="sub.title"
+		[attr.id]="sub.id"
+		[attr.target]="sub.target"
+	>
+		<span class="fa fa-fw" *ngIf="sub.icon" [ngClass]="sub.icon"></span> {{ sub.label }}
+	</a>
+
+	<a
+		mat-menu-item
+		class=""
+		*ngIf="!sub.routerLink"
+		[class.disabled]="sub.disabled"
+		[ngStyle]="sub.style"
+		[href]="sub.url || '#'"
+		[disabled]="sub.disabled"
+		[attr.title]="sub.title"
+		[attr.id]="sub.id"
+		[attr.target]="sub.target"
+	>
+		<span class="fa fa-fw" *ngIf="sub.icon" [ngClass]="sub.icon"></span> {{ sub.label }}
+	</a>
+</ng-template>

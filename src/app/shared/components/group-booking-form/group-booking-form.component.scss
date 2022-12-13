@@ -1,0 +1,98 @@
+@import 'variables';
+
+.group-booking-wrapper {
+	padding: 50px 100px;
+
+	.title .annotation,
+	.payment-sum {
+		font-weight: 700;
+		font-size: 34px;
+		line-height: 50px;
+		color: $black-text;
+		letter-spacing: 0.005em;
+	}
+
+	.payment-sum {
+		font-size: 24px;
+		margin: 40px 0 16px 0;
+	}
+
+	.title {
+		padding: 20px 0 60px 0;
+		font-size: 34px;
+		text-align: center;
+	}
+
+	.annotation {
+		font-size: 24px;
+		padding-bottom: 26px;
+	}
+
+	app-text-line {
+		width: 100%;
+		display: block;
+	}
+
+	.payment-title {
+		margin-top: 48px;
+	}
+
+	.form-container {
+		margin-top: 26px;
+	}
+
+	.full-width,
+	.double-field {
+		width: 100%;
+	}
+
+	.double-field {
+		display: flex;
+		flex-direction: row;
+		gap: 12px;
+
+		.half-width {
+			width: 50%;
+		}
+	}
+
+	.book-btn {
+		width: 200px;
+	}
+
+	.term-condition {
+		display: flex;
+		gap: 15px;
+		margin: 20px 0 40px 0;
+		font-weight: 600;
+		font-size: 17px;
+
+		.condition {
+			letter-spacing: 0.008em;
+			color: $black-text;
+		}
+
+		.active-link {
+			color: $background-default;
+		}
+	}
+
+	.link,
+	.info,
+	.info a {
+		color: $black-text;
+		margin-bottom: 10px;
+		text-decoration: none;
+	}
+
+	.link span:hover {
+		border-bottom: 2px solid $black-text;
+	}
+}
+
+.text-field::ng-deep .mat-form-field-flex > .mat-form-field-infix {
+	height: 146px !important;
+}
+.text-field textarea {
+	height: 100%;
+}

@@ -1,0 +1,147 @@
+@import 'variables';
+
+.carousel-wrapper {
+	.empty {
+		height: 70px;
+	}
+
+	app-text-line {
+		width: 50%;
+		display: block;
+	}
+
+	.fullWidth {
+		width: 100% !important;
+	}
+
+	.title {
+		color: $black-text;
+		margin-bottom: 20px;
+	}
+
+	.card-block {
+		display: block;
+		margin-top: 30px;
+	}
+
+	.navigation {
+		display: flex;
+		justify-content: flex-end;
+
+		.pagination button {
+			width: 63px;
+			height: 63px;
+			margin-left: 32px;
+			border: 0.4px solid $background-click;
+			background: none;
+			cursor: pointer;
+		}
+	}
+
+	.item {
+		transition: background-color 0.25s ease;
+	}
+
+	.discover-btn {
+		width: 248px;
+		margin-right: auto;
+		color: $flat-dark-background !important;
+	}
+}
+
+.card-feedback {
+	margin-right: 56px;
+	margin-bottom: 56px;
+	padding: 45px 32px;
+	width: 515px;
+	height: 300px;
+	left: 363px;
+	top: 242px;
+	background: linear-gradient(
+			270deg,
+			rgba(51, 51, 51, 0.45) 0%,
+			rgba(0, 0, 0, 0.380875) 0.01%,
+			rgba(51, 51, 51, 0.341718) 20.05%,
+			rgba(51, 51, 51, 0.313302) 40.88%,
+			rgba(51, 51, 51, 0.256652) 53.38%,
+			rgba(51, 51, 51, 0) 100%
+		),
+		#d2d9e2;
+	border: 0.5px solid $background-default;
+	border-radius: 4px;
+	display: flex;
+
+	.image-block {
+		height: 130px;
+		background: $default-background-image;
+		margin-right: 26px;
+
+		.image {
+			height: 100%;
+		}
+	}
+
+	.feedback-content {
+		display: flex;
+		flex-direction: column;
+		align-content: space-around;
+
+		.feedback-name {
+			font-weight: 700;
+			font-size: 24px;
+			line-height: 38px;
+			letter-spacing: 0.005em;
+			color: $black-text;
+		}
+
+		.feedback-text {
+			color: $black-text;
+			display: -webkit-box;
+			max-width: 270px;
+			-webkit-line-clamp: 5;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			margin: 0;
+		}
+
+		.date {
+			display: flex;
+			align-items: flex-start;
+			gap: 10px;
+			margin-top: 10px;
+
+			.feedback-date {
+				color: $background-default;
+				margin: 0;
+			}
+		}
+	}
+}
+
+.card-partner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-right: 75px;
+	width: 200px;
+	margin-bottom: 50px;
+
+	.image-block {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		max-height: 80px;
+	}
+
+	.content {
+		.partner-name {
+			margin-top: 25px;
+			display: block;
+			font-weight: 700;
+			font-size: 24px;
+			line-height: 38px;
+			letter-spacing: 0.005em;
+			color: $black-text;
+		}
+	}
+}

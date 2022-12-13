@@ -1,0 +1,41 @@
+@import 'variables';
+
+.article-wrapper {
+	height: 548px;
+	width: 100%;
+
+	.article {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		padding: 0 25%;
+		text-align: center;
+		min-width: 600px;
+		background-repeat: round;
+
+		.header-text {
+			text-transform: uppercase;
+			color: $default-background;
+			padding-right: 20px;
+			white-space: nowrap;
+			margin-bottom: 20px;
+		}
+
+		.title {
+			color: $default-background;
+			margin-bottom: 15px;
+		}
+
+		.description {
+			color: $default-background;
+			margin-bottom: 44px;
+		}
+
+		.discover-btn {
+			width: 248px;
+			color: $flat-light-background !important;
+		}
+	}
+}

@@ -1,0 +1,21 @@
+<mat-icon aria-hidden="false" class="close" (click)="toggleDrawer()">close</mat-icon>
+<br />
+<h1>Ski Cool</h1>
+<mat-list role="list">
+	<ng-container *ngFor="let item of menuItems; let i = index">
+		<mat-list-item role="listitem" [disabled]="item.disabled">
+			<a
+				mat-button
+				[class.disabled]="item.disabled"
+				[ngStyle]="item.style"
+				routerLink="{{ item.routerLink }}"
+				[queryParams]="item.queryParams"
+				[attr.title]="item.title"
+				[attr.id]="item.id"
+				[attr.target]="item.target"
+				(click)="toggleDrawer()"
+				>{{ item.label }}</a
+			>
+		</mat-list-item>
+	</ng-container>
+</mat-list>

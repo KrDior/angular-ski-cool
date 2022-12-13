@@ -1,0 +1,46 @@
+@import 'variables';
+
+.card-wrapper {
+	display: flex;
+	flex-direction: column;
+	height: 440px;
+	width: 215px;
+	background-color: $blue-light-background;
+	padding: 10px;
+	align-items: center;
+
+	.title {
+		color: $black-text;
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 38px;
+	}
+
+	.description {
+		color: $black-text;
+		font-weight: 700;
+		font-size: 17px;
+		line-height: 27px;
+		margin-bottom: 15px;
+	}
+
+	.discover-btn {
+		width: 185px;
+		color: $stroke-default-2 !important;
+	}
+
+	.image-block {
+		width: 196px;
+		height: 280px;
+		background-color: $default-background-image;
+	}
+
+	.image {
+		width: 100%;
+	}
+
+	.plus {
+		font-size: 30px;
+		margin-right: 5px;
+	}
+}

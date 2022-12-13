@@ -1,0 +1,15 @@
+<div class="card-wrapper">
+	<div class="image-block">
+		<img class="image" [src]="cardConfig.image" [alt]="cardConfig?.imageAlt" />
+	</div>
+	<div class="title">
+		{{ cardConfig.title }}
+	</div>
+	<div class="description">
+		{{ cardConfig.subtitle }}
+	</div>
+	<button mat-button appButtonConfig [type]="'transparent'" class="discover-btn" (click)="onClickButton()">
+		<span class="plus">&#43;</span>
+		<span>{{ cardConfig.buttonText }}</span>
+	</button>
+</div>

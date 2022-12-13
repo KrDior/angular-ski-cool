@@ -1,7 +1,7 @@
 @import 'variables';
 
-.instructor-wrapper {
-	padding: 30px 55px 50px 55px;
+.group-wrapper {
+	padding: 30px;
 
 	p {
 		margin-bottom: 0;
@@ -33,19 +33,10 @@
 		line-height: 27px;
 		color: $black-text;
 	}
+}
 
-	.close {
-		margin-left: auto;
-		font-size: 60px;
-		opacity: 0.3;
-		color: $background-click;
-		width: 32px;
-	}
-
-	.close:hover {
-		opacity: 1;
-		cursor: pointer;
-	}
+.instructor-wrapper {
+	padding: 30px;
 
 	.annotation {
 		font-size: 17px;
@@ -77,4 +68,51 @@
 	.submit-btn {
 		width: 100%;
 	}
+}
+
+.person-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 30px;
+
+	.name {
+		padding-bottom: 14px;
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 38px;
+		text-align: center;
+		color: $black-text;
+	}
+
+	.title {
+		font-weight: 700;
+		font-size: 17px;
+		line-height: 27px;
+		text-align: center;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+		color: $black-text;
+	}
+
+	.description {
+		padding-top: 20px;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 27px;
+		color: $black-text;
+	}
+}
+
+.close {
+	margin-left: auto;
+	font-size: 60px;
+	opacity: 0.3;
+	color: $background-click;
+	width: 32px;
+}
+
+.close:hover {
+	opacity: 1;
+	cursor: pointer;
 }

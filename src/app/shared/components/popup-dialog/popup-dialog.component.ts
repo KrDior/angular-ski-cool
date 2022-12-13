@@ -1,11 +1,12 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { LanguageList, ResortList, DisciplineList, NatureOfRequestList } from '../group-booking-form/group-form.config';
+import { LanguageList, ResortList, NatureOfRequestList } from '../group-booking-form/group-form.config';
 
 export enum DialogType {
 	GroupBooking = 'GroupBooking',
 	Contact = 'Contact',
+	Person = 'Person',
 }
 
 @Component({

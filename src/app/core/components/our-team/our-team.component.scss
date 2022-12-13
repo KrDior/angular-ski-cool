@@ -5,6 +5,18 @@
 		padding: 50px 100px;
 	}
 
+	.title-block {
+		padding: 90px 100px 0px 100px;
+		width: 70%;
+
+		.title {
+			font-weight: 700;
+			font-size: 34px;
+			line-height: 50px;
+			margin-top: 114px;
+		}
+	}
+
 	.example-card {
 		max-width: 200px;
 	}
@@ -13,4 +25,15 @@
 		background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
 		background-size: cover;
 	}
+
+	.card-section {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 35px;
+		margin: 50px 100px;
+	}
+}
+
+mat-paginator::ng-deep .mat-paginator-outer-container .mat-paginator-container {
+	padding: 0 100px !important;
 }

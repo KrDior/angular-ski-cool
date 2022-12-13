@@ -29,6 +29,7 @@ import { GroupBookingFormComponent } from '@shared/components/group-booking-form
 import { PopupDialogComponent } from '@shared/components/popup-dialog/popup-dialog.component';
 import { IconNavComponent } from '@shared/components/icon-nav/icon-nav.component';
 import { ContactMiddleBlockComponent } from '@shared/components/contact-middle-block/contact-middle-block.component';
+import { PersonPhotoCardComponent } from '@shared/components/person-photo-card/person-photo-card.component';
 
 export const components: any[] = [
 	PhotoCardComponent,
@@ -42,6 +43,7 @@ export const components: any[] = [
 	ContactMiddleBlockComponent,
 	GroupBookingFormComponent,
 	PopupDialogComponent,
+	PersonPhotoCardComponent,
 ];
 
 export const directives: any[] = [PanningItemDirective, ButtonConfigDirective];

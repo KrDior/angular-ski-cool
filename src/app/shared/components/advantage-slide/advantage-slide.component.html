@@ -3,7 +3,7 @@
 	<app-text-line [text]="message"></app-text-line>
 	<div class="slides-block">
 		<ng-container *ngFor="let slide of homeAdvantageSlideConfig">
-			<div class="slide" [style]="'background-image: url(' + slide.imageLink + ');'">
+			<div class="slide" [style]="'background-image: url(' + '~src/' + slide.imageLink + ');'">
 				<p class="header-text">
 					{{ slide.header }}
 				</p>

@@ -1,1 +1,10 @@
 @import 'variables';
+
+.lesson-wrapper {
+	.card-block {
+		padding: 50px 100px;
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+	}
+}

@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatRippleModule, MatCommonModule, MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -30,6 +31,9 @@ import { PopupDialogComponent } from '@shared/components/popup-dialog/popup-dial
 import { IconNavComponent } from '@shared/components/icon-nav/icon-nav.component';
 import { ContactMiddleBlockComponent } from '@shared/components/contact-middle-block/contact-middle-block.component';
 import { PersonPhotoCardComponent } from '@shared/components/person-photo-card/person-photo-card.component';
+import { FileDragNDropDirective } from '@shared/directives/file-drag-n-drop.directive';
+import { PrivateBookingFormComponent } from '@shared/components/private-booking-form/private-booking-form.component';
+import { RecreationBookingFormComponent } from '@shared/components/recreation-bookin-form/recreation-booking-form.component';
 
 export const components: any[] = [
 	PhotoCardComponent,
@@ -42,11 +46,13 @@ export const components: any[] = [
 	ContactBlockComponent,
 	ContactMiddleBlockComponent,
 	GroupBookingFormComponent,
+	PrivateBookingFormComponent,
 	PopupDialogComponent,
 	PersonPhotoCardComponent,
+	RecreationBookingFormComponent,
 ];
 
-export const directives: any[] = [PanningItemDirective, ButtonConfigDirective];
+export const directives: any[] = [PanningItemDirective, ButtonConfigDirective, FileDragNDropDirective];
 
 export const pipes: any[] = [];
 
@@ -72,4 +78,5 @@ export const materialModules: any[] = [
 	MatTooltipModule,
 	MatPaginatorModule,
 	MatCardModule,
+	MatSnackBarModule,
 ];

@@ -10,3 +10,18 @@ export const homePageArticleCenter: MainCard = {
 	imageAlt: 'background-photo',
 	direction: '',
 };
+
+export const reviewPageArticleCenter: MainCard = {
+	header: '',
+	title: 'We want to always be in good shape',
+	description:
+		"If you have already booked the service, please fill out the form and leave your feedback. If you haven't booked the service yet, then unfortunately you won't be able to leave a review.",
+	button: 'Leave a review',
+	imageLink: '/assets/img/home/recreation.png',
+	imageAlt: 'background-photo',
+	direction: '',
+	clickAction: {
+		actionType: 'popup',
+		type: 'Feedback',
+	},
+};

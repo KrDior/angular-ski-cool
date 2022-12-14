@@ -26,10 +26,39 @@
 
 		.description {
 			color: $black-text;
-			margin-bottom: 44px;
+			margin-bottom: 25px;
+		}
+
+		.priceText {
+			font-family: 'Nunito Sans';
+			font-weight: 600;
+			font-size: 17px;
+			line-height: 27px;
+			margin-bottom: 20px;
+			text-transform: uppercase;
+			color: $black-text;
+		}
+
+		.price {
+			width: fit-content;
+			font-style: italic;
+			font-size: 24px;
+			color: $background-click;
+			margin-bottom: 10px;
+
+			.booking-svg {
+				height: 20px;
+				margin-left: 10px;
+			}
+		}
+
+		.price:hover {
+			border-bottom: 0.5px solid $background-click;
+			cursor: pointer;
 		}
 
 		.discover-btn {
+			margin-top: 20px;
 			width: 248px;
 			color: $flat-dark-background !important;
 		}

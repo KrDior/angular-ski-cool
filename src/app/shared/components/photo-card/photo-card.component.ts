@@ -23,4 +23,8 @@ export class PhotoCardComponent {
 			});
 		}
 	}
+
+	public onClickPriceButton(): void {
+		this.dialog.open(PopupDialogComponent, {});
+	}
 }

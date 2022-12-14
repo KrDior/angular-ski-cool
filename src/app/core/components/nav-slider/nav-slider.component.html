@@ -1,4 +1,4 @@
-<div class="slider" [ngStyle]="{ 'background-image': 'url(' + backgroundImg + ')' }">
+<div class="slider" [ngStyle]="{ 'background-image': getCurrentSlideUrl() }">
 	<mat-icon
 		*ngIf="!isDesktop || !isNavTabVisible"
 		svgIcon="menu"
@@ -19,6 +19,70 @@
 				<button mat-flat-button class="discover-btn" appButtonConfig [type]="'flat'" routerLink="{{ routes.Booking }}">
 					Book now
 				</button>
+			</ng-container>
+
+			<ng-container *ngIf="bottomContext === bottomContextTypes.Review">
+				<div class="carousel">
+					<app-carousel-card [carouselConfig]="carouselConfig"></app-carousel-card>
+				</div>
+			</ng-container>
+
+			<ng-container *ngIf="bottomContext === bottomContextTypes.Booking">
+				<div class="booking-section">
+					<span class="title">{{
+						'You have arrived at the booking page, please select the type of lessons you are interested in'
+					}}</span>
+					<button mat-button [matMenuTriggerFor]="belowMenu" class="booking-menu mat-display-4">
+						<div class="wrapper">
+							<span>{{ currentBooking }}</span>
+							<div class="booking-icon">
+								<mat-icon aria-hidden="false">keyboard_arrow_down</mat-icon>
+							</div>
+						</div>
+					</button>
+					<mat-menu class="booking-menu-option" #belowMenu="matMenu" yPosition="below">
+						<button
+							class="mat-display-4"
+							*ngFor="let bookType of bookingOption"
+							(click)="onBookingTypeChange(bookType)"
+							mat-menu-item
+						>
+							{{ bookType }}
+						</button>
+					</mat-menu>
+				</div>
+			</ng-container>
+
+			<ng-container
+				*ngIf="
+					bottomContext === bottomContextTypes.PrivateLesson ||
+					bottomContext === bottomContextTypes.GroupLesson ||
+					bottomContext === bottomContextTypes.Recreation
+				"
+			>
+				<h1 class="mat-headline private-lesson-title">{{ 'Ski Cool' }}</h1>
+				<p class="private-lesson-title">
+					Ski Cool St. Moritz, is an elite snowsports school <br />
+					of the Engadin Valley, Switzerland.
+				</p>
+				<button mat-button [matMenuTriggerFor]="belowMenu" class="resort mat-display-4">
+					<div class="wrapper">
+						<span>{{ currentResort }}</span>
+						<div class="resort-icon">
+							<mat-icon aria-hidden="false">keyboard_arrow_down</mat-icon>
+						</div>
+					</div>
+				</button>
+				<mat-menu class="resort-menu" #belowMenu="matMenu" yPosition="below">
+					<button
+						class="mat-display-4"
+						*ngFor="let resort of resortOption"
+						(click)="onResortChange(resort)"
+						mat-menu-item
+					>
+						{{ resort }}
+					</button>
+				</mat-menu>
 			</ng-container>
 
 			<ng-container *ngIf="bottomContext === bottomContextTypes.AboutUs">
@@ -51,4 +115,12 @@
 			<mat-icon class="contact-svg" svgIcon="contact"></mat-icon>
 		</div>
 	</div>
+	<div *ngIf="!backgroundImg">
+		<div (click)="goToPrevious()" class="leftArrow">❯</div>
+		<div (click)="goToNext()" class="rightArrow">❮</div>
+	</div>
+	<div class="dotsContainer" *ngIf="!backgroundImg">
+		<div *ngFor="let slide of slides; let slideIndex = index" class="dot" (click)="goToSlide(slideIndex)">●</div>
+	</div>
+	<div class="empty" *ngIf="!backgroundImg"></div>
 </div>

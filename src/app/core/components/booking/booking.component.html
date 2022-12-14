@@ -1,3 +1,11 @@
 <div class="booking-wrapper">
-	<app-group-booking-form class="group-form"></app-group-booking-form>
+	<ng-container *ngIf="bookingType === bookingTypes.PrivateLesson">
+		<app-private-booking-form class="private-form"></app-private-booking-form>
+	</ng-container>
+	<ng-container *ngIf="bookingType === bookingTypes.GroupLesson">
+		<app-group-booking-form class="group-form"></app-group-booking-form>
+	</ng-container>
+	<ng-container *ngIf="bookingType === bookingTypes.IndividualRecreation">
+		<app-recreation-booking-form class="recreation-form"></app-recreation-booking-form>
+	</ng-container>
 </div>

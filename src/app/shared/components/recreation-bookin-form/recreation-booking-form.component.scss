@@ -1,0 +1,59 @@
+@import 'variables';
+
+.recreation-booking-wrapper {
+	padding: 50px 100px;
+
+	.title .annotation {
+		font-weight: 700;
+		font-size: 34px;
+		line-height: 50px;
+		color: $black-text;
+		letter-spacing: 0.005em;
+	}
+
+	.title {
+		padding: 20px 0 60px 0;
+		font-size: 34px;
+		text-align: center;
+	}
+
+	.annotation {
+		font-size: 24px;
+		padding-bottom: 26px;
+	}
+
+	app-text-line {
+		width: 100%;
+		display: block;
+	}
+
+	.form-container {
+		margin-top: 26px;
+	}
+
+	.full-width,
+	.double-field {
+		width: 100%;
+	}
+
+	.double-field {
+		display: flex;
+		flex-direction: row;
+		gap: 12px;
+
+		.half-width {
+			width: 50%;
+		}
+	}
+
+	.book-btn {
+		margin: 20px 0;
+		width: 420px;
+		font-size: 16px !important;
+	}
+
+	.button-wrapper {
+		display: flex;
+		justify-content: center;
+	}
+}

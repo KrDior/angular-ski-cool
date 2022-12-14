@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BroadcasterService } from '@core/services/broadcaster.service';
 import { aboutUsCard_1_Config } from '@shared/configs/home-card-config';
 import { BroadcastConstant } from '@shared/constants/broadcast-constants';
+import { DEFAULT_BACKGROUND_PATH } from '@shared/constants/images-constants';
 import { MainCard } from '@shared/models/main-card.model';
 import { BottomContext } from '../nav-slider/nav-slider.component';
 
@@ -16,7 +17,7 @@ export class AboutUsComponent {
 	constructor(private broadcaster: BroadcasterService) {
 		this.broadcaster.broadcast(BroadcastConstant.BottomContextPage, {
 			path: BottomContext.AboutUs,
-			imagePath: '',
+			imagePath: DEFAULT_BACKGROUND_PATH,
 		});
 		this.cardConfig1 = aboutUsCard_1_Config;
 	}

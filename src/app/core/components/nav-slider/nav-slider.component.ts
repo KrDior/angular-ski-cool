@@ -8,6 +8,7 @@ import { DEFAULT_BACKGROUND_PATH } from '@shared/constants/images-constants';
 import { CarouselConfig } from '@shared/models/main-card.model';
 import { Subject, takeUntil } from 'rxjs';
 import { RoutePath } from 'src/app/app-routing.module';
+import { BookingType } from '../booking/booking.component';
 
 export enum BottomContext {
 	Home = 'home',
@@ -17,6 +18,7 @@ export enum BottomContext {
 	GroupLesson = 'groupLesson',
 	Recreation = 'recreation',
 	Review = 'review',
+	Booking = 'booking',
 }
 
 export interface SlideInterface {
@@ -53,7 +55,9 @@ export class NavSliderComponent implements OnInit, OnDestroy {
 	public currentIndex: number = 0;
 	public timeoutId?: number;
 	public resortOption: string[] = ['St. Moritz', 'Kloster', 'Davos', 'Zermatt', 'Verbies'];
+	public bookingOption: BookingType[] = Object.values(BookingType);
 	public currentResort!: string;
+	public currentBooking!: string;
 	public carouselConfig!: CarouselConfig;
 
 	private $destroy: Subject<void> = new Subject();
@@ -73,6 +77,7 @@ export class NavSliderComponent implements OnInit, OnDestroy {
 
 	public ngOnInit(): void {
 		this.currentResort = this.resortOption[0];
+		this.currentBooking = this.bookingOption[0];
 		this.resetTimer();
 	}
 
@@ -125,6 +130,11 @@ export class NavSliderComponent implements OnInit, OnDestroy {
 
 	public onResortChange(resort: string): void {
 		this.currentResort = resort;
+	}
+
+	public onBookingTypeChange(type: string): void {
+		this.currentBooking = type;
+		this.broadcaster.broadcast(BroadcastConstant.BookingType, type);
 	}
 
 	public ngOnDestroy() {

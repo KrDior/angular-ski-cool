@@ -27,6 +27,32 @@
 				</div>
 			</ng-container>
 
+			<ng-container *ngIf="bottomContext === bottomContextTypes.Booking">
+				<div class="booking-section">
+					<span class="title">{{
+						'You have arrived at the booking page, please select the type of lessons you are interested in'
+					}}</span>
+					<button mat-button [matMenuTriggerFor]="belowMenu" class="booking-menu mat-display-4">
+						<div class="wrapper">
+							<span>{{ currentBooking }}</span>
+							<div class="booking-icon">
+								<mat-icon aria-hidden="false">keyboard_arrow_down</mat-icon>
+							</div>
+						</div>
+					</button>
+					<mat-menu class="booking-menu-option" #belowMenu="matMenu" yPosition="below">
+						<button
+							class="mat-display-4"
+							*ngFor="let bookType of bookingOption"
+							(click)="onBookingTypeChange(bookType)"
+							mat-menu-item
+						>
+							{{ bookType }}
+						</button>
+					</mat-menu>
+				</div>
+			</ng-container>
+
 			<ng-container
 				*ngIf="
 					bottomContext === bottomContextTypes.PrivateLesson ||

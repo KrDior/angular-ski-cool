@@ -1,0 +1,113 @@
+<div class="recreation-booking-wrapper">
+	<h2 class="title">{{ 'Please fill out the form. If you have any suggestions, be sure to let us know' }}</h2>
+	<span class="annotation">{{ 'Please fill out the form. If you have any suggestions, be sure to let us know' }}</span>
+	<div class="form-container">
+		<form [formGroup]="recreationBookingForm" (ngSubmit)="onSubmit()" class="recreation-form">
+			<p class="double-field">
+				<mat-form-field appearance="outline" class="half-width">
+					<mat-label>First name</mat-label>
+					<input matInput formControlName="firstName" />
+					<mat-error *ngIf="checkError('firstName', 'required')">First name is required</mat-error>
+					<mat-error *ngIf="checkError('firstName', 'maxlength')"
+						>First name should be less than 100 characters</mat-error
+					>
+				</mat-form-field>
+				<mat-form-field appearance="outline" class="half-width">
+					<mat-label>Last name</mat-label>
+					<input matInput formControlName="lastName" />
+					<mat-error *ngIf="checkError('lastName', 'required')">Last name is required</mat-error>
+					<mat-error *ngIf="checkError('lastName', 'maxlength')"
+						>Last name should be less than 100 characters</mat-error
+					>
+				</mat-form-field>
+			</p>
+
+			<p>
+				<mat-form-field appearance="outline" class="full-width">
+					<mat-label>Email</mat-label>
+					<input matInput type="email" name="email" ngModel email formControlName="email" />
+					<mat-error *ngIf="checkError('email', 'required')">Email is required</mat-error>
+					<mat-error *ngIf="recreationBookingForm.get('email')?.hasError('email')"
+						>Please enter a valid email address</mat-error
+					>
+					<mat-error *ngIf="checkError('email', 'maxlength')">Email should be less than 200 characters</mat-error>
+				</mat-form-field>
+			</p>
+
+			<p>
+				<mat-form-field appearance="outline" class="full-width">
+					<mat-label>Phone number</mat-label>
+					<ngx-mat-intl-tel-input
+						formControlName="phoneNumber"
+						[preferredCountries]="['de', 'us']"
+						[enablePlaceholder]="true"
+						[enableSearch]="true"
+						name="phone"
+						#phone
+					>
+					</ngx-mat-intl-tel-input>
+					<mat-hint>eg : {{ phone.selectedCountry?.placeHolder }}</mat-hint>
+					<mat-error *ngIf="checkError('phoneNumber', 'required')">Phone number is required</mat-error>
+					<mat-error
+						*ngIf="
+							recreationBookingForm.controls['phoneNumber'].touched &&
+							recreationBookingForm.controls['phoneNumber'].invalid
+						"
+						>Please enter a valid phone number</mat-error
+					>
+				</mat-form-field>
+			</p>
+
+			<p class="double-field">
+				<mat-form-field appearance="outline" class="half-width">
+					<mat-label>Language</mat-label>
+					<mat-select formControlName="language">
+						<mat-option *ngFor="let lang of languages" [value]="lang">{{ lang }}</mat-option>
+					</mat-select>
+					<mat-error *ngIf="checkError('language', 'required')">Language is required</mat-error>
+				</mat-form-field>
+				<mat-form-field appearance="outline" class="half-width">
+					<mat-label>Resort</mat-label>
+					<mat-select formControlName="resort">
+						<mat-option *ngFor="let resort of resorts" [value]="resort">{{ resort }}</mat-option>
+					</mat-select>
+					<mat-error *ngIf="checkError('resort', 'required')">Resort is required</mat-error>
+				</mat-form-field>
+			</p>
+
+			<p>
+				<mat-form-field appearance="outline" class="full-width datepicker">
+					<mat-label>Dates</mat-label>
+					<mat-date-range-input [formGroup]="recreationBookingForm" [rangePicker]="picker">
+						<input matStartDate formControlName="startDate" placeholder="Start date" />
+						<input matEndDate formControlName="endDate" placeholder="End date" />
+					</mat-date-range-input>
+					<mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+					<mat-datepicker-toggle matPrefix [for]="picker"></mat-datepicker-toggle>
+					<mat-date-range-picker #picker></mat-date-range-picker>
+
+					<mat-error *ngIf="checkError('startDate', 'required')">Start date is required</mat-error>
+					<mat-error *ngIf="checkError('endDate', 'required')">End date is required</mat-error>
+					<mat-error *ngIf="recreationBookingForm.controls.startDate.hasError('matStartDateInvalid')"
+						>Invalid start date</mat-error
+					>
+					<mat-error *ngIf="recreationBookingForm.controls.endDate.hasError('matEndDateInvalid')"
+						>Invalid end date</mat-error
+					>
+				</mat-form-field>
+			</p>
+
+			<div class="button-wrapper">
+				<button
+					mat-flat-button
+					class="book-btn"
+					appButtonConfig
+					[type]="'flat'"
+					[disabled]="!recreationBookingForm.valid"
+				>
+					{{ 'order a call for booking' | uppercase }}
+				</button>
+			</div>
+		</form>
+	</div>
+</div>

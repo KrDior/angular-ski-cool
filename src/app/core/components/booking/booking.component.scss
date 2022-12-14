@@ -3,6 +3,8 @@
 .booking-wrapper {
 	display: flex;
 
+	.private-form,
+	.recreation-form,
 	.group-form {
 		width: 100%;
 	}

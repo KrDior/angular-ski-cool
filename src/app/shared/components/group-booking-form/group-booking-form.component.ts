@@ -1,18 +1,18 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import {
+	LanguageList,
+	ResortList,
+	DisciplineList,
+	LessonList,
+	LessonDurationList,
+	InstructorsList,
+	instructorsData,
+} from '@shared/configs/form.config';
 import { Subscription } from 'rxjs';
 import { RoutePath } from 'src/app/app-routing.module';
 import { DialogType, PopupDialogComponent } from '../popup-dialog/popup-dialog.component';
-import {
-	DisciplineList,
-	instructorsData,
-	InstructorsList,
-	LanguageList,
-	LessonDurationList,
-	LessonList,
-	ResortList,
-} from './group-form.config';
 
 @Component({
 	selector: 'app-group-booking-form',
@@ -42,9 +42,6 @@ export class GroupBookingFormComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.groupBookingForm = new FormGroup({
-			shopName: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]),
-			shopAddress: new FormControl('', [Validators.required, Validators.maxLength(200)]),
-
 			firstName: new FormControl('', [Validators.required, Validators.maxLength(100)]),
 			lastName: new FormControl('', [Validators.required, Validators.maxLength(100)]),
 			email: new FormControl('', [Validators.required, Validators.maxLength(200)]),
@@ -90,6 +87,11 @@ export class GroupBookingFormComponent implements OnInit, OnDestroy {
 		for (const field in this.groupBookingForm.controls) {
 			console.log(this.groupBookingForm.controls[field].value);
 		}
+		this.dialog.open(PopupDialogComponent, {
+			data: {
+				type: DialogType.BookingConfirmation,
+			},
+		});
 	}
 
 	public showInstructorPopup(instructorName: string): void {

@@ -10,6 +10,9 @@
 		<div class="title">{{ data.title }}</div>
 		<div class="description">{{ data.description }}</div>
 	</div>
+	<div *ngIf="data.type === types.Feedback" class="feedback-wrapper">
+		<div class="close" (click)="closePopup()">&times;</div>
+	</div>
 	<div *ngIf="data.type === types.Contact" class="instructor-wrapper">
 		<div class="close" (click)="closePopup()">&times;</div>
 		<span class="annotation">{{ 'Form Contact us' }}</span>

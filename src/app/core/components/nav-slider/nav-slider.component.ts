@@ -2,8 +2,10 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { MatDialog } from '@angular/material/dialog';
 import { BroadcasterService } from '@core/services/broadcaster.service';
 import { DialogType, PopupDialogComponent } from '@shared/components/popup-dialog/popup-dialog.component';
+import { reviewCarouselConfig } from '@shared/configs/carousel.config';
 import { BroadcastConstant } from '@shared/constants/broadcast-constants';
 import { DEFAULT_BACKGROUND_PATH } from '@shared/constants/images-constants';
+import { CarouselConfig } from '@shared/models/main-card.model';
 import { Subject, takeUntil } from 'rxjs';
 import { RoutePath } from 'src/app/app-routing.module';
 
@@ -12,6 +14,9 @@ export enum BottomContext {
 	AboutUs = 'aboutUs',
 	OurTeam = 'ourTeam',
 	PrivateLesson = 'privateLesson',
+	GroupLesson = 'groupLesson',
+	Recreation = 'recreation',
+	Review = 'review',
 }
 
 export interface SlideInterface {
@@ -49,6 +54,7 @@ export class NavSliderComponent implements OnInit, OnDestroy {
 	public timeoutId?: number;
 	public resortOption: string[] = ['St. Moritz', 'Kloster', 'Davos', 'Zermatt', 'Verbies'];
 	public currentResort!: string;
+	public carouselConfig!: CarouselConfig;
 
 	private $destroy: Subject<void> = new Subject();
 
@@ -62,6 +68,7 @@ export class NavSliderComponent implements OnInit, OnDestroy {
 					this.backgroundImg = (data as any)?.imagePath || null;
 				},
 			});
+		this.carouselConfig = reviewCarouselConfig;
 	}
 
 	public ngOnInit(): void {

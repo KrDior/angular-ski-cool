@@ -1,4 +1,3 @@
-import { DialogType } from '@shared/components/popup-dialog/popup-dialog.component';
 import { MainCard } from '@shared/models/main-card.model';
 
 export const homeCard_1_Config: MainCard = {
@@ -65,6 +64,102 @@ export const ourTeamCard_1_Config: MainCard = {
 };
 
 export const privateLesson_Config: MainCard[] = [
+	{
+		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
+		description:
+			'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
+		button: 'Book now',
+		imageLink: 'assets/img/home/about-us-3.png',
+		imageAlt: 'photo',
+		direction: 'flex-direction: row',
+		routerLink: '/booking',
+		price: 'View the price list',
+	},
+	{
+		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
+		description:
+			'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
+		button: 'Book now',
+		imageLink: 'assets/img/home/about-us-3.png',
+		imageAlt: 'photo',
+		direction: 'flex-direction: row-reverse',
+		routerLink: '/booking',
+		price: 'View the price list',
+	},
+	{
+		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
+		description:
+			'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
+		button: 'Book now',
+		imageLink: 'assets/img/home/about-us-3.png',
+		imageAlt: 'photo',
+		direction: 'flex-direction: row',
+		routerLink: '/booking',
+		price: 'View the price list',
+	},
+	{
+		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
+		description:
+			'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
+		button: 'Book now',
+		imageLink: 'assets/img/home/about-us-3.png',
+		imageAlt: 'photo',
+		direction: 'flex-direction: row-reverse',
+		routerLink: '/booking',
+		price: 'View the price list',
+	},
+];
+
+export const recreation_Config: MainCard[] = [
+	{
+		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
+		description:
+			'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
+		button: 'Book now',
+		imageLink: 'assets/img/home/about-us-3.png',
+		imageAlt: 'photo',
+		direction: 'flex-direction: row',
+		routerLink: '/booking',
+		priceText: 'Price:  250 CHF per person',
+	},
+	{
+		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
+		description:
+			'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
+		button: 'Book now',
+		imageLink: 'assets/img/home/about-us-3.png',
+		imageAlt: 'photo',
+		direction: 'flex-direction: row-reverse',
+		routerLink: '/booking',
+		priceText:
+			'Price:  sleigh for 4 people – 1 hr trip – 110 CHF; 160 CHF – return trip to the valleys (including 1 hr stay)',
+	},
+	{
+		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
+		description:
+			'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
+		button: 'Book now',
+		imageLink: 'assets/img/home/about-us-3.png',
+		imageAlt: 'photo',
+		direction: 'flex-direction: row',
+		routerLink: '/booking',
+		priceText: 'Price:  250 CHF per person',
+	},
+	{
+		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
+		description:
+			'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
+		button: 'Book now',
+		imageLink: 'assets/img/home/about-us-3.png',
+		imageAlt: 'photo',
+		direction: 'flex-direction: row-reverse',
+		routerLink: '/booking',
+		priceText:
+			'Price:  sleigh for 4 people – 1 hr trip – 110 CHF; 160 CHF – return trip to the valleys (including 1 hr stay)',
+	},
+];
+
+export const groupLesson_Config: MainCard[] = [
 	{
 		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
 		description:

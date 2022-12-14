@@ -11,6 +11,7 @@ export interface MainCard {
 	routerLink?: string;
 	clickAction?: any;
 	price?: string;
+	priceText?: string;
 }
 
 export interface AdvantageSlide {

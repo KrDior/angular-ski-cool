@@ -1,6 +1,7 @@
 <div class="carousel-wrapper">
 	<div class="empty"></div>
 	<app-text-line
+		*ngIf="carouselConfig?.message"
 		[text]="carouselConfig.message"
 		[ngClass]="{ fullWidth: carouselConfig.fullTitleWidth }"
 	></app-text-line>

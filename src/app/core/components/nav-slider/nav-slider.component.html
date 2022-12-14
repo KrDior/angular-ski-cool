@@ -21,7 +21,19 @@
 				</button>
 			</ng-container>
 
-			<ng-container *ngIf="bottomContext === bottomContextTypes.PrivateLesson">
+			<ng-container *ngIf="bottomContext === bottomContextTypes.Review">
+				<div class="carousel">
+					<app-carousel-card [carouselConfig]="carouselConfig"></app-carousel-card>
+				</div>
+			</ng-container>
+
+			<ng-container
+				*ngIf="
+					bottomContext === bottomContextTypes.PrivateLesson ||
+					bottomContext === bottomContextTypes.GroupLesson ||
+					bottomContext === bottomContextTypes.Recreation
+				"
+			>
 				<h1 class="mat-headline private-lesson-title">{{ 'Ski Cool' }}</h1>
 				<p class="private-lesson-title">
 					Ski Cool St. Moritz, is an elite snowsports school <br />

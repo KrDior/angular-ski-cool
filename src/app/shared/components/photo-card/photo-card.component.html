@@ -13,6 +13,9 @@
 			<span>{{ cardConfig.price }}</span>
 			<mat-icon aria-hidden="true" class="booking-svg" svgIcon="booking"></mat-icon>
 		</div>
+		<div *ngIf="cardConfig?.priceText" class="priceText mat-display-4">
+			<span>{{ cardConfig.priceText }}</span>
+		</div>
 		<button
 			mat-button
 			appButtonConfig

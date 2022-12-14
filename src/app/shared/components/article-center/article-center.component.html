@@ -1,6 +1,6 @@
 <div class="article-wrapper">
-	<div class="article" [style]="'background-image: url(' + '~src/' + articleConfig.imageLink + ');'">
-		<p class="header-text mat-display-3">
+	<div class="article" [style]="'background-image: url(' + articleConfig.imageLink + ');'">
+		<p *ngIf="articleConfig?.header" class="header-text mat-display-3">
 			{{ articleConfig.header }}
 		</p>
 		<div class="title mat-display-2">
@@ -9,7 +9,7 @@
 		<div class="description mat-display-4">
 			{{ articleConfig.description }}
 		</div>
-		<button mat-button appButtonConfig [type]="'transparent'" class="discover-btn">
+		<button mat-button appButtonConfig [type]="'transparent'" class="discover-btn" (click)="onClickButton()">
 			{{ articleConfig.button }}
 		</button>
 	</div>

@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MainCard } from '@shared/models/main-card.model';
+import { PopupDialogComponent, DialogType } from '../popup-dialog/popup-dialog.component';
 
 @Component({
 	selector: 'app-article-center',
@@ -10,5 +12,15 @@ export class ArticleCenterComponent {
 	@Input()
 	public articleConfig!: MainCard;
 
-	constructor() {}
+	constructor(public dialog: MatDialog) {}
+
+	public onClickButton(): void {
+		if (this.articleConfig?.clickAction?.actionType === 'popup') {
+			this.dialog.open(PopupDialogComponent, {
+				data: {
+					type: this.articleConfig.clickAction.type as DialogType,
+				},
+			});
+		}
+	}
 }

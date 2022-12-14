@@ -8,6 +8,7 @@ export enum DialogType {
 	Person = 'Person',
 	PrivateBooking = 'PrivateBooking',
 	GroupBooking = 'GroupBooking',
+	Feedback = 'Feedback',
 }
 
 @Component({

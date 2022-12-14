@@ -1,1 +1,7 @@
-<h2>Group Lesson Component</h2>
+<div class="lesson-wrapper">
+	<div class="card-block">
+		<ng-container *ngFor="let card of cardConfig">
+			<app-photo-card class="card" [cardConfig]="card"></app-photo-card>
+		</ng-container>
+	</div>
+</div>

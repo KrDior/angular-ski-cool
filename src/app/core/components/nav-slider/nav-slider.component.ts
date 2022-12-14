@@ -125,7 +125,7 @@ export class NavSliderComponent implements OnInit, OnDestroy {
 	}
 
 	public getCurrentSlideUrl() {
-		return this.backgroundImg ? `url('${this.backgroundImg}')` : `url('${this.slides[this.currentIndex].url}')`;
+		return this.backgroundImg ? `url('~src${this.backgroundImg}')` : `url('~src${this.slides[this.currentIndex].url}')`;
 	}
 
 	public onResortChange(resort: string): void {

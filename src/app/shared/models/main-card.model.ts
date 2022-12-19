@@ -8,7 +8,7 @@ export interface MainCard {
 	imageLink: string;
 	imageAlt: string;
 	direction: string;
-	routerLink?: string;
+	routerLink?: string | RoutePath;
 	clickAction?: any;
 	price?: string;
 	priceText?: string;
@@ -35,6 +35,7 @@ export interface CarouselConfig {
 	title?: string;
 	cards: CarouselCard[];
 	button?: string;
+	routerLink?: string | RoutePath;
 	type: 'feedback' | 'partner';
 	fullTitleWidth?: boolean;
 }

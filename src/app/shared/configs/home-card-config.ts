@@ -1,3 +1,4 @@
+import { BookingType } from '@core/components/booking/booking.component';
 import { MainCard } from '@shared/models/main-card.model';
 
 export const homeCard_1_Config: MainCard = {
@@ -9,7 +10,7 @@ export const homeCard_1_Config: MainCard = {
 	imageLink: 'assets/img/home/about-us-1.png',
 	imageAlt: 'photo',
 	direction: 'flex-direction: row-reverse',
-	routerLink: '',
+	routerLink: 'private-lesson',
 };
 
 export const homeCard_2_Config: MainCard = {
@@ -21,7 +22,7 @@ export const homeCard_2_Config: MainCard = {
 	imageLink: 'assets/img/home/about-us-2.png',
 	imageAlt: 'photo',
 	direction: 'flex-direction: row',
-	routerLink: '',
+	routerLink: 'private-lesson',
 };
 
 export const homeCard_3_Config: MainCard = {
@@ -33,7 +34,7 @@ export const homeCard_3_Config: MainCard = {
 	imageLink: 'assets/img/home/about-us-3.png',
 	imageAlt: 'photo',
 	direction: 'flex-direction: row-reverse',
-	routerLink: '',
+	routerLink: 'group-lesson',
 };
 
 export const aboutUsCard_1_Config: MainCard = {
@@ -74,6 +75,10 @@ export const privateLesson_Config: MainCard[] = [
 		direction: 'flex-direction: row',
 		routerLink: '/booking',
 		price: 'View the price list',
+		clickAction: {
+			actionType: 'navigate',
+			type: BookingType.PrivateLesson,
+		},
 	},
 	{
 		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
@@ -85,6 +90,10 @@ export const privateLesson_Config: MainCard[] = [
 		direction: 'flex-direction: row-reverse',
 		routerLink: '/booking',
 		price: 'View the price list',
+		clickAction: {
+			actionType: 'navigate',
+			type: BookingType.PrivateLesson,
+		},
 	},
 	{
 		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
@@ -96,6 +105,10 @@ export const privateLesson_Config: MainCard[] = [
 		direction: 'flex-direction: row',
 		routerLink: '/booking',
 		price: 'View the price list',
+		clickAction: {
+			actionType: 'navigate',
+			type: BookingType.PrivateLesson,
+		},
 	},
 	{
 		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
@@ -107,6 +120,10 @@ export const privateLesson_Config: MainCard[] = [
 		direction: 'flex-direction: row-reverse',
 		routerLink: '/booking',
 		price: 'View the price list',
+		clickAction: {
+			actionType: 'navigate',
+			type: BookingType.PrivateLesson,
+		},
 	},
 ];
 
@@ -121,6 +138,10 @@ export const recreation_Config: MainCard[] = [
 		direction: 'flex-direction: row',
 		routerLink: '/booking',
 		priceText: 'Price:  250 CHF per person',
+		clickAction: {
+			actionType: 'navigate',
+			type: BookingType.IndividualRecreation,
+		},
 	},
 	{
 		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
@@ -133,6 +154,10 @@ export const recreation_Config: MainCard[] = [
 		routerLink: '/booking',
 		priceText:
 			'Price:  sleigh for 4 people – 1 hr trip – 110 CHF; 160 CHF – return trip to the valleys (including 1 hr stay)',
+		clickAction: {
+			actionType: 'navigate',
+			type: BookingType.IndividualRecreation,
+		},
 	},
 	{
 		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
@@ -144,6 +169,10 @@ export const recreation_Config: MainCard[] = [
 		direction: 'flex-direction: row',
 		routerLink: '/booking',
 		priceText: 'Price:  250 CHF per person',
+		clickAction: {
+			actionType: 'navigate',
+			type: BookingType.IndividualRecreation,
+		},
 	},
 	{
 		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
@@ -156,6 +185,10 @@ export const recreation_Config: MainCard[] = [
 		routerLink: '/booking',
 		priceText:
 			'Price:  sleigh for 4 people – 1 hr trip – 110 CHF; 160 CHF – return trip to the valleys (including 1 hr stay)',
+		clickAction: {
+			actionType: 'navigate',
+			type: BookingType.IndividualRecreation,
+		},
 	},
 ];
 
@@ -170,6 +203,10 @@ export const groupLesson_Config: MainCard[] = [
 		direction: 'flex-direction: row',
 		routerLink: '/booking',
 		price: 'View the price list',
+		clickAction: {
+			actionType: 'navigate',
+			type: BookingType.GroupLesson,
+		},
 	},
 	{
 		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
@@ -181,6 +218,10 @@ export const groupLesson_Config: MainCard[] = [
 		direction: 'flex-direction: row-reverse',
 		routerLink: '/booking',
 		price: 'View the price list',
+		clickAction: {
+			actionType: 'navigate',
+			type: BookingType.GroupLesson,
+		},
 	},
 	{
 		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
@@ -192,6 +233,10 @@ export const groupLesson_Config: MainCard[] = [
 		direction: 'flex-direction: row',
 		routerLink: '/booking',
 		price: 'View the price list',
+		clickAction: {
+			actionType: 'navigate',
+			type: BookingType.GroupLesson,
+		},
 	},
 	{
 		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
@@ -203,5 +248,9 @@ export const groupLesson_Config: MainCard[] = [
 		direction: 'flex-direction: row-reverse',
 		routerLink: '/booking',
 		price: 'View the price list',
+		clickAction: {
+			actionType: 'navigate',
+			type: BookingType.GroupLesson,
+		},
 	},
 ];

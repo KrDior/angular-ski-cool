@@ -1,18 +1,17 @@
 import { Observable, BehaviorSubject } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
-
 import { Injectable } from '@angular/core';
+import { BookingType } from '@core/components/booking/booking.component';
 
 @Injectable({ providedIn: 'root' })
-
-/* just single subject to emit across application key-value pair */
 export class NavigationService {
 	private linkBreaks: BehaviorSubject<number[]>;
 	private linkWidths: BehaviorSubject<number[]>;
+	private bookingType: BehaviorSubject<BookingType>;
 
 	constructor() {
 		this.linkBreaks = new BehaviorSubject<number[]>([]);
 		this.linkWidths = new BehaviorSubject<number[]>([]);
+		this.bookingType = new BehaviorSubject<BookingType>(BookingType.PrivateLesson);
 	}
 
 	updateLineBreaks(values: number[]): void {
@@ -29,5 +28,13 @@ export class NavigationService {
 
 	getLinkWidths(): Observable<number[]> {
 		return this.linkWidths.asObservable();
+	}
+
+	setCurrentBookingType(type: BookingType): void {
+		this.bookingType.next(type);
+	}
+
+	getCurrentBookingType(): Observable<BookingType> {
+		return this.bookingType.asObservable();
 	}
 }

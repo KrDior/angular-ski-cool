@@ -16,14 +16,7 @@
 		<div *ngIf="cardConfig?.priceText" class="priceText mat-display-4">
 			<span>{{ cardConfig.priceText }}</span>
 		</div>
-		<button
-			mat-button
-			appButtonConfig
-			[type]="'transparent'"
-			class="discover-btn"
-			[routerLink]="cardConfig.routerLink"
-			(click)="onClickButton()"
-		>
+		<button mat-button appButtonConfig [type]="'transparent'" class="discover-btn" (click)="onClickButton()">
 			{{ cardConfig.button }}
 		</button>
 	</div>

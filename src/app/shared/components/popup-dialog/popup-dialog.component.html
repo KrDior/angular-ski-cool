@@ -21,6 +21,11 @@
 			{{ 'Go to home' }}
 		</button>
 	</div>
+	<div *ngIf="data.type === types.PricePrivateLesson" class="thank-wrapper">
+		<div class="text">
+			{{ 'There should be price list...' }}
+		</div>
+	</div>
 	<div *ngIf="data.type === types.BookingConfirmation" class="thank-booking-wrapper">
 		<div class="text">
 			{{

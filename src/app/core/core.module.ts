@@ -20,6 +20,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MenuContentWrapperDirective } from './directives/menu-content-wrapper.directive';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { OurTeamComponent } from './components/our-team/our-team.component';
+import { TermAndConditionComponent } from './components/term-and-condition/term-and-condition.component';
 
 @NgModule({
 	declarations: [
@@ -40,6 +41,7 @@ import { OurTeamComponent } from './components/our-team/our-team.component';
 		HomeComponent,
 		MenuContentWrapperDirective,
 		PageNotFoundComponent,
+		TermAndConditionComponent,
 	],
 	imports: [CommonModule, SharedModule, RouterModule, TranslateModule.forChild({})],
 	exports: [LayoutComponent, SidenavMenuComponent, NavTabComponent, NavSliderComponent, FooterComponent],

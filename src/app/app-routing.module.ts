@@ -10,6 +10,7 @@ import { PageNotFoundComponent } from '@core/components/page-not-found/page-not-
 import { PrivateLessonComponent } from '@core/components/private-lesson/private-lesson.component';
 import { RecreationComponent } from '@core/components/recreation/recreation.component';
 import { ReviewsComponent } from '@core/components/reviews/reviews.component';
+import { TermAndConditionComponent } from '@core/components/term-and-condition/term-and-condition.component';
 
 export enum RoutePath {
 	Home = 'home',
@@ -21,6 +22,7 @@ export enum RoutePath {
 	Reviews = 'review',
 	Contact = 'contacts',
 	Booking = 'booking',
+	TermAndCondition = 'term',
 	PageNotFound = '404',
 }
 
@@ -34,7 +36,7 @@ const routes: Routes = [
 	{ path: RoutePath.Reviews, component: ReviewsComponent },
 	{ path: RoutePath.Contact, component: ContactComponent },
 	{ path: RoutePath.Booking, component: BookingComponent },
-	{ path: RoutePath.Booking, component: BookingComponent },
+	{ path: RoutePath.TermAndCondition, component: TermAndConditionComponent },
 	{ path: RoutePath.PageNotFound, component: PageNotFoundComponent },
 	{
 		path: 'after-login',

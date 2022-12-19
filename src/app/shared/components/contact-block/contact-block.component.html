@@ -15,13 +15,13 @@
 				<a class="link" routerLink="{{ routes.Recreation }}">
 					<span>{{ 'Individual recreation' }}</span>
 				</a>
-				<a class="link" routerLink="{{ routes.AboutUs }}">
+				<a class="link" routerLink="{{ routes.OurTeam }}">
 					<span>{{ 'Our team' }}</span>
 				</a>
-				<a class="link" routerLink="{{ routes.PrivateLesson }}">
+				<a class="link" routerLink="{{ routes.OurTeam }}">
 					<span>{{ 'Become a part of our team' }}</span>
 				</a>
-				<a class="link" routerLink="{{ routes.GroupLesson }}">
+				<a class="link" routerLink="{{ routes.Home }}">
 					<span>{{ 'Our partners' }}</span>
 				</a>
 				<a class="link" routerLink="{{ routes.Reviews }}">
@@ -47,13 +47,18 @@
 		</div>
 
 		<div class="column mat-display-4 contact">
-			<button mat-button appButtonConfig [type]="'transparent'" class="contact-btn" routerLink="{{ routes.Booking }}">
+			<button mat-button appButtonConfig [type]="'transparent'" class="contact-btn" (click)="showContactPopup()">
 				<span>{{ 'Contact Us' }}</span>
 				<mat-icon class="booking-svg" svgIcon="booking"></mat-icon>
 			</button>
 			<div class="icon-block">
-				<mat-icon class="contact-svg" svgIcon="facebook"></mat-icon>
-				<mat-icon class="contact-svg" svgIcon="instagram"></mat-icon>
+				<a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+					<mat-icon class="contact-svg" svgIcon="facebook"></mat-icon>
+				</a>
+
+				<a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
+					<mat-icon class="contact-svg" svgIcon="instagram"></mat-icon>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -61,8 +66,8 @@
 	<div class="bottom-section">
 		<span class="condition mat-display-4">
 			{{ 'Copyright @ 2022 Ski Cool. All rights reserved.' }}
-			<a class="active-link mat-display-4" routerLink="{{ routes.Contact }}">{{ 'Term and Conditions' }}</a>
+			<a class="active-link mat-display-4" routerLink="{{ routes.TermAndCondition }}">{{ 'Term and Conditions' }}</a>
 		</span>
-		<a class="active-link mat-display-4" routerLink="{{ routes.Contact }}">{{ 'Privacy Policy' }}</a>
+		<a class="active-link mat-display-4" routerLink="{{ routes.TermAndCondition }}">{{ 'Privacy Policy' }}</a>
 	</div>
 </div>

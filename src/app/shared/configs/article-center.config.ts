@@ -8,6 +8,7 @@ export const homePageArticleCenter: MainCard = {
 	button: 'Discover more',
 	imageLink: '/assets/img/home/recreation.png',
 	imageAlt: 'background-photo',
+	routerLink: 'recreation',
 	direction: '',
 };
 

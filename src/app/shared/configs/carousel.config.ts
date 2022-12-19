@@ -65,6 +65,7 @@ export const homeCarouselConfig: CarouselConfig = {
 	title: 'You can also read reviews about our school',
 	cards: feedbacks,
 	button: 'Discover more',
+	routerLink: '/review',
 };
 
 export const reviewCarouselConfig: CarouselConfig = {

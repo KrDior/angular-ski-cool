@@ -1,12 +1,13 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { BroadcasterService } from '@core/services/broadcaster.service';
+import { NavigationService } from '@core/services/navigation.service';
 import { DialogType, PopupDialogComponent } from '@shared/components/popup-dialog/popup-dialog.component';
 import { reviewCarouselConfig } from '@shared/configs/carousel.config';
 import { BroadcastConstant } from '@shared/constants/broadcast-constants';
 import { DEFAULT_BACKGROUND_PATH } from '@shared/constants/images-constants';
 import { CarouselConfig } from '@shared/models/main-card.model';
-import { Subject, takeUntil } from 'rxjs';
+import { Subject, Subscription, takeUntil } from 'rxjs';
 import { RoutePath } from 'src/app/app-routing.module';
 import { BookingType } from '../booking/booking.component';
 
@@ -61,8 +62,13 @@ export class NavSliderComponent implements OnInit, OnDestroy {
 	public carouselConfig!: CarouselConfig;
 
 	private $destroy: Subject<void> = new Subject();
+	private subscriptions: Subscription[] = [];
 
-	constructor(private broadcaster: BroadcasterService, public dialog: MatDialog) {
+	constructor(
+		private broadcaster: BroadcasterService,
+		public dialog: MatDialog,
+		private navigationService: NavigationService
+	) {
 		this.broadcaster
 			.listen(BroadcastConstant.BottomContextPage)
 			.pipe(takeUntil(this.$destroy))
@@ -72,6 +78,11 @@ export class NavSliderComponent implements OnInit, OnDestroy {
 					this.backgroundImg = (data as any)?.imagePath || null;
 				},
 			});
+
+		this.subscriptions.push(
+			this.navigationService.getCurrentBookingType().subscribe((val) => (this.currentBooking = val))
+		);
+
 		this.carouselConfig = reviewCarouselConfig;
 	}
 

@@ -37,6 +37,10 @@ body {
 	right: 0;
 }
 
+.ui-state-active:hover {
+	border-bottom: none !important;
+}
+
 .ui-state-active-sub {
 	color: $black-text;
 }

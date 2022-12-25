@@ -38,6 +38,7 @@ export interface CarouselConfig {
 	routerLink?: string | RoutePath;
 	type: 'feedback' | 'partner';
 	fullTitleWidth?: boolean;
+	isScrollable: boolean;
 }
 
 export interface IconNavConfig {

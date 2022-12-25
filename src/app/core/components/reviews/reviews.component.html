@@ -1,3 +1,7 @@
 <div class="review-wrapper">
-	<app-article-center [articleConfig]="articleCenterConfig"></app-article-center>
+	<div class="carousel">
+		<app-carousel-card [carouselConfig]="carouselConfig"></app-carousel-card>
+	</div>
+	<app-article-center class="article" [articleConfig]="articleCenterConfig"></app-article-center>
+	<div class="empty"></div>
 </div>

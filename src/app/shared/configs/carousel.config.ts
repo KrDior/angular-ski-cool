@@ -66,6 +66,7 @@ export const homeCarouselConfig: CarouselConfig = {
 	cards: feedbacks,
 	button: 'Discover more',
 	routerLink: '/review',
+	isScrollable: true,
 };
 
 export const reviewCarouselConfig: CarouselConfig = {
@@ -74,12 +75,14 @@ export const reviewCarouselConfig: CarouselConfig = {
 	title: 'You can also read reviews about our school',
 	cards: feedbacks,
 	button: 'Discover more',
+	isScrollable: true,
 };
 
 export const homeCarouselPartnerConfig: CarouselConfig = {
 	message: 'our partners',
 	type: 'partner',
 	fullTitleWidth: true,
+	isScrollable: false,
 	cards: [
 		{
 			name: 'Name partner',

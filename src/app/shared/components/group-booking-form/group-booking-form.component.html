@@ -217,7 +217,8 @@
 				</span>
 			</div>
 			<button mat-flat-button class="book-btn" appButtonConfig [type]="'flat'" [disabled]="!groupBookingForm.valid">
-				Book
+				<span>{{ 'Book' }}</span>
+				<mat-icon aria-hidden="true" class="booking-svg" svgIcon="booking"></mat-icon>
 			</button>
 		</form>
 	</div>

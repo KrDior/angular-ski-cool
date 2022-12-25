@@ -105,7 +105,8 @@
 					[type]="'flat'"
 					[disabled]="!recreationBookingForm.valid"
 				>
-					{{ 'order a call for booking' | uppercase }}
+					<span>{{ 'order a call for booking' | uppercase }}</span>
+					<mat-icon aria-hidden="true" class="booking-svg" svgIcon="booking"></mat-icon>
 				</button>
 			</div>
 		</form>

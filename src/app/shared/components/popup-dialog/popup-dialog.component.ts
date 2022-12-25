@@ -14,6 +14,7 @@ export enum DialogType {
 	FeedbackThank = 'FeedbackThank',
 	BookingConfirmation = 'BookingConfirmation',
 	PricePrivateLesson = 'PricePrivateLesson',
+	FeedbackMore = 'FeedbackMore',
 }
 
 @Component({

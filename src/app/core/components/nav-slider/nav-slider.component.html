@@ -1,10 +1,7 @@
 <div class="slider" [ngStyle]="{ 'background-image': getCurrentSlideUrl() }">
-	<mat-icon
-		*ngIf="!isDesktop || !isNavTabVisible"
-		svgIcon="menu"
-		class="desktop-hide"
-		(click)="toggleDrawer()"
-	></mat-icon>
+	<div class="desktop-hide" *ngIf="!isDesktop || !isNavTabVisible">
+		<mat-icon svgIcon="menu" (click)="toggleDrawer()"></mat-icon>
+	</div>
 	<div class="slider-content">
 		<div class="top-content">
 			<ng-content></ng-content>
@@ -22,9 +19,11 @@
 			</ng-container>
 
 			<ng-container *ngIf="bottomContext === bottomContextTypes.Review">
-				<div class="carousel">
-					<app-carousel-card [carouselConfig]="carouselConfig"></app-carousel-card>
-				</div>
+				<h1 class="mat-headline home-title">{{ 'Review' }}</h1>
+				<p>
+					Ski Cool St. Moritz, is an elite snowsports school <br />
+					of the Engadin Valley, Switzerland.
+				</p>
 			</ng-container>
 
 			<ng-container *ngIf="bottomContext === bottomContextTypes.Booking">
@@ -105,7 +104,6 @@
 			<h1 class="header-message">{{ 'wrong ...' }}</h1>
 			<button mat-button appButtonConfig [type]="'flat'" class="booking-btn" routerLink="{{ routes.Home }}">
 				<span>{{ 'Back to home' }}</span>
-				<mat-icon aria-hidden="true" class="booking-svg" svgIcon="booking"></mat-icon>
 			</button>
 			<h1 class="not-found-number">{{ '404' }}</h1>
 		</div>

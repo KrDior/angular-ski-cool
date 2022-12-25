@@ -23,8 +23,10 @@ export class MainContentComponent {
 
 	@HostListener('window:scroll', []) onWindowScroll() {
 		const elemStyle = this.fixBar!.nativeElement.style;
+		const topPoint = document.body.clientWidth < 1000 ? 1300 : 1000;
+		const bottomPoint = document.body.clientWidth < 1000 ? 6300 : 5200;
 
-		elemStyle.visibility = window.pageYOffset < 1000 || window.pageYOffset > 6300 ? 'hidden' : 'visible';
+		elemStyle.visibility = window.pageYOffset < topPoint || window.pageYOffset > bottomPoint ? 'hidden' : 'visible';
 	}
 
 	@ViewChild('fixBar')

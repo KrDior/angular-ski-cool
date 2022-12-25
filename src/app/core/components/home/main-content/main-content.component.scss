@@ -1,7 +1,7 @@
 @import 'variables';
 
 .contents {
-	padding-top: 100px;
+	padding-top: 50px;
 
 	.card {
 		padding: 50px 100px;
@@ -24,6 +24,7 @@
 		bottom: -12px;
 		width: 100vw;
 		visibility: hidden;
+		z-index: 100000;
 	}
 
 	.carousel {

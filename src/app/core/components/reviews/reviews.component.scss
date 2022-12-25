@@ -1,5 +1,11 @@
 @import 'variables';
 
 .review-wrapper {
-	margin: 50px 0;
+	.carousel {
+		padding: 30px 100px 50px 100px;
+	}
+
+	.empty {
+		height: 50px;
+	}
 }

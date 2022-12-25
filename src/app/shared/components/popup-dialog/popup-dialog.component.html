@@ -46,6 +46,11 @@
 	<div *ngIf="data.type === types.Person" class="person-wrapper">
 		<div class="close" (click)="closePopup()">&times;</div>
 		<div class="name">{{ data.name }}</div>
+		<div class="description">{{ data.description }}</div>
+	</div>
+	<div *ngIf="data.type === types.FeedbackMore" class="person-wrapper">
+		<div class="close" (click)="closePopup()">&times;</div>
+		<div class="name">{{ data.name }}</div>
 		<div class="title">{{ data.title }}</div>
 		<div class="description">{{ data.description }}</div>
 	</div>
@@ -159,7 +164,8 @@
 				</p>
 
 				<button mat-flat-button class="submit-btn" appButtonConfig [type]="'flat'" [disabled]="!feedbackForm.valid">
-					Submit
+					<span>{{ 'Submit' }}</span>
+					<mat-icon aria-hidden="true" class="booking-svg" svgIcon="booking"></mat-icon>
 				</button>
 			</form>
 		</div>
@@ -252,7 +258,8 @@
 				</p>
 
 				<button mat-flat-button class="submit-btn" appButtonConfig [type]="'flat'" [disabled]="!contactForm.valid">
-					Submit
+					<span>{{ 'Submit' }}</span>
+					<mat-icon aria-hidden="true" class="booking-svg" svgIcon="booking"></mat-icon>
 				</button>
 			</form>
 		</div>

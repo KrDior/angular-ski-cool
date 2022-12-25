@@ -10,7 +10,11 @@
 		<ng-container *ngFor="let card of carouselConfig.cards; index as i">
 			<ng-container *ngIf="carouselConfig.type === 'feedback'">
 				<ng-container *appPanningItem>
-					<div class="card-feedback item" [ngClass]="{ current: i === panner.currentIndex }">
+					<div
+						class="card-feedback item"
+						[ngClass]="{ current: i === panner.currentIndex }"
+						(click)="showFeedback(card)"
+					>
 						<div class="image-block">
 							<img class="image" [src]="card.imageLink" [alt]="card.imageAlt" />
 						</div>
@@ -52,7 +56,7 @@
 		>
 			{{ carouselConfig.button }}
 		</button>
-		<div class="pagination">
+		<div class="pagination" *ngIf="carouselConfig.isScrollable">
 			<button (click)="panner.shift(-1)" aria-label="Example icon button with a home icon">
 				<mat-icon svgIcon="arrow-left">home</mat-icon>
 			</button>

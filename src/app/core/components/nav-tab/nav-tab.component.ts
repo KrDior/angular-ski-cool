@@ -134,17 +134,17 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 	}
 
 	public getAvailableSpace(): number {
-		let bookingOffset = 0;
+		let bookingOffset = 10;
 
-		if (window.innerWidth < 1450) {
-			bookingOffset = (window.screen.width / 100) * 24;
+		if (window.innerWidth < 1550) {
+			bookingOffset = (window.screen.width / 100) * 32;
 		}
 
 		if (window.innerWidth < 1200) {
-			bookingOffset = (window.screen.width / 100) * 22;
+			bookingOffset = (window.screen.width / 100) * 35;
 		}
 
-		return this.tabListContainer.nativeElement.offsetWidth - this.moreButtonWidth - 10 - bookingOffset;
+		return this.tabListContainer.nativeElement.offsetWidth - this.moreButtonWidth - bookingOffset;
 	}
 
 	public updateNav() {

@@ -2,11 +2,12 @@
 	<div class="card">
 		<app-photo-card [cardConfig]="cardConfig1"></app-photo-card>
 	</div>
-	<div class="icon-nav-container">
+	<div class="icon-nav-container" #fixBar>
 		<ng-container *ngFor="let icon of iconNavConfig">
 			<app-icon-nav [iconNavConfig]="icon"></app-icon-nav>
 		</ng-container>
 	</div>
+
 	<div class="card">
 		<app-photo-card [cardConfig]="cardConfig2"></app-photo-card>
 	</div>

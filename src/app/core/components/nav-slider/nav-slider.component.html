@@ -110,8 +110,13 @@
 			<h1 class="not-found-number">{{ '404' }}</h1>
 		</div>
 	</div>
-	<div class="contact-wrapper" *ngIf="bottomContext === bottomContextTypes.Home">
-		<div class="contact-btn" matTooltip="Contact us" (click)="showContactPopup()">
+	<div class="contact-wrapper">
+		<div
+			class="contact-btn"
+			matTooltip="Contact us"
+			(click)="showContactPopup()"
+			[ngClass]="{ 'fixed-btn': bottomContext !== bottomContextTypes.Home }"
+		>
 			<mat-icon class="contact-svg" svgIcon="contact"></mat-icon>
 		</div>
 	</div>

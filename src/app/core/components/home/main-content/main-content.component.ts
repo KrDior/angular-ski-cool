@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { advantageHomeMessage, homeAdvantageSlideConfig } from '@shared/configs/advantage-slide.config';
 import { homePageArticleCenter } from '@shared/configs/article-center.config';
 import { homeCarouselConfig } from '@shared/configs/carousel.config';
@@ -20,6 +20,16 @@ export class MainContentComponent {
 	public advantageHomeMessage!: string;
 	public carouselConfig!: CarouselConfig;
 	public iconNavConfig!: IconNavConfig[];
+
+	@HostListener('window:scroll', []) onWindowScroll() {
+		console.log('!!!!!!!!!!', window.pageYOffset);
+		const elemStyle = this.fixBar!.nativeElement.style;
+
+		elemStyle.visibility = window.pageYOffset < 1000 || window.pageYOffset > 6300 ? 'hidden' : 'visible';
+	}
+
+	@ViewChild('fixBar')
+	public fixBar!: ElementRef;
 
 	constructor() {
 		this.cardConfig1 = homeCard_1_Config;

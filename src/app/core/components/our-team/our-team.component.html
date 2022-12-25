@@ -12,7 +12,7 @@
 			*ngFor="let card of personCardData$ | async"
 		></app-person-photo-card>
 	</div>
-	<mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+	<mat-paginator [pageSizeOptions]="[5, 10, 20]" [hidePageSize]="true"></mat-paginator>
 	<div class="card">
 		<app-photo-card [cardConfig]="cardConfig1"></app-photo-card>
 	</div>

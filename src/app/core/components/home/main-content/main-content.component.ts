@@ -22,7 +22,6 @@ export class MainContentComponent {
 	public iconNavConfig!: IconNavConfig[];
 
 	@HostListener('window:scroll', []) onWindowScroll() {
-		console.log('!!!!!!!!!!', window.pageYOffset);
 		const elemStyle = this.fixBar!.nativeElement.style;
 
 		elemStyle.visibility = window.pageYOffset < 1000 || window.pageYOffset > 6300 ? 'hidden' : 'visible';

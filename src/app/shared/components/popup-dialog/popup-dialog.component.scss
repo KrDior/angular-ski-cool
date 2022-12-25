@@ -61,10 +61,6 @@
 .feedback-wrapper {
 	max-width: 750px;
 
-	.close {
-		margin-bottom: 15px;
-	}
-
 	.feedback-title {
 		font-weight: 700;
 		font-size: 24px;
@@ -151,10 +147,12 @@
 
 .close {
 	margin-left: auto;
-	font-size: 60px;
+	margin-bottom: 15px;
+	font-size: 40px;
 	opacity: 0.3;
 	color: $background-click;
 	width: 32px;
+	text-align: end;
 }
 
 .close:hover {

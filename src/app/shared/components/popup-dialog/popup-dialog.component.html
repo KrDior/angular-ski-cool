@@ -166,7 +166,6 @@
 	</div>
 	<div *ngIf="data.type === types.Contact" class="instructor-wrapper">
 		<div class="close" (click)="closePopup()">&times;</div>
-		<span class="annotation">{{ 'Form Contact us' }}</span>
 		<div class="form-container">
 			<form [formGroup]="contactForm" (ngSubmit)="onSubmitContact()" class="group-form">
 				<p class="double-field">

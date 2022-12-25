@@ -19,7 +19,8 @@ export class FooterComponent {
 		this.carouselPartnerConfig = homeCarouselPartnerConfig;
 
 		this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe((event) => {
-			this.isPartnersVisible = (event as NavigationEnd).url.split('/')[1] === this.routes.Home;
+			this.isPartnersVisible =
+				(event as NavigationEnd).url.split('/')[1] === this.routes.Home || !(event as NavigationEnd).url.split('/')[1];
 		});
 	}
 }

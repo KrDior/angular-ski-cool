@@ -1,4 +1,4 @@
-<div class="icon-nav-wrapper" routerLink="{{ iconNavConfig.imageLink }}">
+<div class="icon-nav-wrapper" (click)="onClickButton()">
 	<mat-icon class="icon-svg" [svgIcon]="iconNavConfig.imageAlt"></mat-icon>
 	<span class="header-text">
 		{{ iconNavConfig.title }}

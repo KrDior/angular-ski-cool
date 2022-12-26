@@ -46,4 +46,5 @@ export interface IconNavConfig {
 	imageLink: string;
 	routerLink: string | RoutePath;
 	imageAlt: string;
+	clickAction?: any;
 }

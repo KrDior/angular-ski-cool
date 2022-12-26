@@ -16,14 +16,6 @@ export class ArticleCenterComponent {
 	constructor(public dialog: MatDialog, private router: Router) {}
 
 	public onClickButton(): void {
-		if (this.articleConfig?.clickAction?.actionType === 'popup') {
-			this.dialog.open(PopupDialogComponent, {
-				data: {
-					type: this.articleConfig.clickAction.type as DialogType,
-				},
-			});
-		}
-
 		const action = this.articleConfig?.clickAction?.actionType;
 
 		switch (action) {

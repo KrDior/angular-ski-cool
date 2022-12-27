@@ -12,6 +12,7 @@ import {
 	HostBinding,
 	Output,
 	EventEmitter,
+	HostListener,
 } from '@angular/core';
 
 import { ViewportRuler } from '@angular/cdk/scrolling';
@@ -41,13 +42,6 @@ enum Direction {
 	templateUrl: './nav-tab.component.html',
 	styleUrls: ['./nav-tab.component.scss'],
 	changeDetection: ChangeDetectionStrategy.Default,
-	animations: [
-		trigger('toggle', [
-			state(VisibilityState.Hidden, style({ opacity: 0, transform: 'translateY(-100%)' })), // display: 'none'
-			state(VisibilityState.Visible, style({ opacity: 1, transform: 'translateY(0)' })), // display: 'flex'
-			transition('* => *', animate('200ms ease-in')),
-		]),
-	],
 })
 export class NavTabComponent implements AfterViewInit, OnDestroy {
 	@Input()
@@ -80,6 +74,14 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 	@HostBinding('@toggle')
 	get toggle(): VisibilityState {
 		return this.isVisible ? VisibilityState.Visible : VisibilityState.Hidden;
+	}
+
+	@HostListener('window:scroll', []) onWindowScroll() {
+		console.debug('Scroll Event', window.pageYOffset);
+
+		if (window.pageYOffset <= 200) {
+			this.isNavTabVisible.emit(true);
+		}
 	}
 
 	public routes: typeof RoutePath = RoutePath;

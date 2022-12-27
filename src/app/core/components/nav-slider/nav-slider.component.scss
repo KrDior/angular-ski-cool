@@ -16,6 +16,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	z-index: 10000000;
 }
 
 .slider::before {
@@ -83,29 +84,26 @@
 		letter-spacing: 0.005em;
 	}
 
-	.contact-wrapper {
-		display: flex;
-		justify-content: flex-end;
-		position: relative;
-		bottom: 100px;
+	.contact-btn {
+		cursor: pointer;
+		align-items: flex-end;
 		height: 60px;
+		width: 60px;
+		border-radius: 50%;
+		background-color: $blue-light-background;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 10000000;
 
-		.contact-btn {
-			cursor: pointer;
-			align-items: flex-end;
-			margin-right: 100px;
-			height: 60px;
-			width: 60px;
-			border-radius: 50%;
-			background-color: $blue-light-background;
-			display: flex;
-			align-items: center;
-			justify-content: center;
+		position: relative;
+		margin-left: auto;
+		bottom: 100px;
+		right: 100px;
 
-			.contact-svg {
-				height: 34px;
-				width: 34px;
-			}
+		.contact-svg {
+			height: 34px;
+			width: 34px;
 		}
 	}
 }
@@ -354,7 +352,9 @@
 }
 
 .fixed-btn {
-	position: fixed;
+	position: fixed !important;
+	right: 100px;
+	bottom: 100px;
 }
 
 @media screen and (max-width: 780px) {

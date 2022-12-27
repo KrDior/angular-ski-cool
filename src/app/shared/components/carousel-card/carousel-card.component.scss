@@ -36,6 +36,10 @@
 			background: none;
 			cursor: pointer;
 		}
+
+		.pagination button:hover {
+			background: $background-hover-2;
+		}
 	}
 
 	.item {

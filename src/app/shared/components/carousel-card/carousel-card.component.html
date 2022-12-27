@@ -57,10 +57,10 @@
 			{{ carouselConfig.button }}
 		</button>
 		<div class="pagination" *ngIf="carouselConfig.isScrollable">
-			<button (click)="panner.shift(-1)" aria-label="Example icon button with a home icon">
+			<button class="pagination-btn" (click)="panner.shift(-1)" aria-label="Example icon button with a home icon">
 				<mat-icon svgIcon="arrow-left">home</mat-icon>
 			</button>
-			<button (click)="panner.shift(1)" aria-label="Example icon button with a home icon">
+			<button class="pagination-btn" (click)="panner.shift(1)" aria-label="Example icon button with a home icon">
 				<mat-icon svgIcon="arrow-right">home</mat-icon>
 			</button>
 		</div>

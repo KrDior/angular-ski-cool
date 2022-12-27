@@ -12,9 +12,10 @@
 
 	.header-text {
 		font-weight: 600;
-		font-size: 20px;
+		font-size: 17px;
 		line-height: 22px;
 		color: $black-text;
 		margin-left: 24px;
+		white-space: nowrap;
 	}
 }

@@ -71,14 +71,7 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 	@ViewChild('moreButton')
 	public moreButton!: ElementRef;
 
-	@HostBinding('@toggle')
-	get toggle(): VisibilityState {
-		return this.isVisible ? VisibilityState.Visible : VisibilityState.Hidden;
-	}
-
 	@HostListener('window:scroll', []) onWindowScroll() {
-		console.debug('Scroll Event', window.pageYOffset);
-
 		if (window.pageYOffset <= 200) {
 			this.isNavTabVisible.emit(true);
 		}

@@ -186,3 +186,40 @@ body {
 		}
 	}
 }
+
+.transparent-light-btn {
+	min-height: 54px !important;
+	height: 54px !important;
+	color: $blue-light-background !important;
+	background: transparent !important;
+	border: 1px solid $blue-light-background !important;
+	margin-left: 4px !important;
+	font-weight: 600 !important;
+	font-size: 18px !important;
+	border-radius: 2px !important;
+}
+
+.transparent-light-btn:not([disabled]):hover {
+	background: $background-hover-2 !important;
+	color: $stroke-default-2 !important;
+}
+
+.transparent-light-btn:not([disabled]):active {
+	background: $background-click !important;
+	color: $stroke-default-2 !important;
+}
+
+.transparent-light-btn:not([disabled]):focus {
+	background: $background-hover-2 !important;
+	color: $stroke-default-2 !important;
+}
+
+.router-btn {
+	font-family: 'Nunito Sans';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 22px;
+	line-height: 22px;
+	text-align: center;
+	letter-spacing: 0.033em;
+}

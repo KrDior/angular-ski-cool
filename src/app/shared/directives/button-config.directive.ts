@@ -20,6 +20,9 @@ export class ButtonConfigDirective implements OnInit {
 			case ButtonConfigType.Transparent:
 				this.renderer.addClass(this.elementRef.nativeElement, 'transparent-btn');
 				break;
+			case ButtonConfigType.TransparentLight:
+				this.renderer.addClass(this.elementRef.nativeElement, 'transparent-light-btn');
+				break;
 			default:
 				break;
 		}

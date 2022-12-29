@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MenuItem } from '@core/models/menu-item.model';
+import { RoutePath } from 'src/app/app-routing.module';
 
 @Component({
 	selector: 'app-sidenav-menu',
@@ -12,6 +13,8 @@ export class SidenavMenuComponent {
 
 	@Output()
 	public drawerClick: EventEmitter<void> = new EventEmitter();
+
+	public routes: typeof RoutePath = RoutePath;
 
 	constructor() {}
 

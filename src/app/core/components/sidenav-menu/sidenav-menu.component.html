@@ -1,11 +1,19 @@
 <mat-icon aria-hidden="false" class="close" (click)="toggleDrawer()">close</mat-icon>
 <br />
-<h1>Ski Cool</h1>
+<div class="title-wrapper">
+	<img class="logo" alt="Logo" src="assets/img/Logo.png" routerLink="{{ routes.Home }}" />
+	<h1 class="title">Ski Cool</h1>
+</div>
+
 <mat-list role="list">
+	<mat-list-item role="listitem">
+		<a mat-button class="router-btn" routerLink="{{ routes.Home }}" (click)="toggleDrawer()">{{ 'Main page' }}</a>
+	</mat-list-item>
 	<ng-container *ngFor="let item of menuItems; let i = index">
 		<mat-list-item role="listitem" [disabled]="item.disabled">
 			<a
 				mat-button
+				class="router-btn"
 				[class.disabled]="item.disabled"
 				[ngStyle]="item.style"
 				routerLink="{{ item.routerLink }}"

@@ -14,6 +14,31 @@ h1 {
 	color: $primary;
 }
 
+mat-list-item::ng-deep {
+	margin-bottom: 22px !important;
+}
+
+.title-wrapper {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+
+	.title {
+		font-weight: 600;
+		font-size: 120px;
+		line-height: 144px;
+		letter-spacing: 0.005em;
+	}
+
+	.logo {
+		margin-right: 60px;
+		margin-left: 20px;
+		cursor: pointer;
+		width: 130px;
+		height: 130px;
+	}
+}
+
 .mat-list-base {
 	display: block !important;
 	margin: 0 auto;

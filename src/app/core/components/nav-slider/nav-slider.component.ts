@@ -141,6 +141,7 @@ export class NavSliderComponent implements OnInit, OnDestroy {
 	public onBookingTypeChange(type: string): void {
 		this.currentBooking = type;
 		this.broadcaster.broadcast(BroadcastConstant.BookingType, type);
+		this.navigationService.setCurrentBookingType(type as BookingType);
 	}
 
 	public ngOnDestroy() {

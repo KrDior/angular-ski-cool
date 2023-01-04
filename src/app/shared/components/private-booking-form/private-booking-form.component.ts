@@ -20,9 +20,9 @@ export class PrivateBookingFormComponent implements OnInit {
 
 	ngOnInit() {
 		this.privateBookingForm = new FormGroup({
-			firstName: new FormControl('', [Validators.required, Validators.maxLength(100)]),
-			lastName: new FormControl('', [Validators.required, Validators.maxLength(100)]),
-			email: new FormControl('', [Validators.required, Validators.maxLength(200)]),
+			firstName: new FormControl('', [Validators.required, Validators.maxLength(30)]),
+			lastName: new FormControl('', [Validators.required, Validators.maxLength(30)]),
+			email: new FormControl('', [Validators.required, Validators.maxLength(100)]),
 			phoneNumber: new FormControl('', [Validators.required]),
 			language: new FormControl('', [Validators.required]),
 			resort: new FormControl('', [Validators.required]),

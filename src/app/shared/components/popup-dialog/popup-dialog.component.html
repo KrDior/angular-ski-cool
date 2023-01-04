@@ -1,14 +1,12 @@
 <div mat-dialog-content>
 	<div *ngIf="data.type === types.GroupBooking" class="group-wrapper">
 		<div class="name">{{ data.name }}</div>
-		<div class="title">{{ data.title }}</div>
-		<div class="description">{{ data.description }}</div>
+		<div class="title">{{ data.title | translate }}</div>
+		<div class="description">{{ data.description | translate }}</div>
 	</div>
 	<div *ngIf="data.type === types.FeedbackThank" class="thank-wrapper">
 		<div class="text">
-			{{
-				'Thank you for the payment, the booking confirmation will be sent to your email.And if you have any questions, please contact us and we will help you solve them as soon as possible.'
-			}}
+			{{ 'FeedbackThankForm.ThankForPayment' | translate }}
 		</div>
 		<button
 			mat-flat-button
@@ -18,19 +16,17 @@
 			routerLink="{{ routes.Home }}"
 			(click)="closePopup()"
 		>
-			{{ 'Go to home' }}
+			{{ 'FeedbackThankForm.GoHome' | translate }}
 		</button>
 	</div>
 	<div *ngIf="data.type === types.PricePrivateLesson" class="thank-wrapper">
 		<div class="text">
-			{{ 'There should be price list...' }}
+			{{ 'PriceListAwait' | translate }}
 		</div>
 	</div>
 	<div *ngIf="data.type === types.BookingConfirmation" class="thank-booking-wrapper">
 		<div class="text">
-			{{
-				'Thank you for the payment, the booking confirmation will be sent to your email.And if you have any questions, please contact us and we will help you solve them as soon as possible.'
-			}}
+			{{ 'BookingConfirmationForm.ThankForPayment' | translate }}
 		</div>
 		<button
 			mat-flat-button
@@ -40,67 +36,67 @@
 			routerLink="{{ routes.Home }}"
 			(click)="closePopup()"
 		>
-			{{ 'Go to home' }}
+			{{ 'BookingConfirmationForm.GoHome' | translate }}
 		</button>
 	</div>
 	<div *ngIf="data.type === types.Person" class="person-wrapper">
 		<div class="close" (click)="closePopup()">&times;</div>
 		<div class="name">{{ data.name }}</div>
-		<div class="description">{{ data.description }}</div>
+		<div class="description">{{ data.description | translate }}</div>
 	</div>
 	<div *ngIf="data.type === types.FeedbackMore" class="person-wrapper">
 		<div class="close" (click)="closePopup()">&times;</div>
 		<div class="name">{{ data.name }}</div>
-		<div class="title">{{ data.title }}</div>
-		<div class="description">{{ data.description }}</div>
+		<div class="title">{{ data.title | translate }}</div>
+		<div class="description">{{ data.description | translate }}</div>
 	</div>
 	<div *ngIf="data.type === types.Feedback" class="feedback-wrapper">
 		<div class="close" (click)="closePopup()">&times;</div>
-		<span class="feedback-title">{{
-			'After booking, a link will be sent to your email, it must be entered in the input field to be able to leave a review'
-		}}</span>
+		<span class="feedback-title">{{ 'FormFields.BookingLink' | translate }}</span>
 		<div class="form-container">
 			<form [formGroup]="feedbackForm" (ngSubmit)="onSubmitFeedback()" class="group-form">
 				<p class="double-field">
 					<mat-form-field appearance="outline" class="half-width">
-						<mat-label>First name</mat-label>
+						<mat-label>{{ 'FormFields.FirstName' | translate }}</mat-label>
 						<input matInput formControlName="firstNameFeedback" />
-						<mat-error *ngIf="checkError(feedbackForm, 'firstNameFeedback', 'required')"
-							>First name is required</mat-error
-						>
-						<mat-error *ngIf="checkError(feedbackForm, 'firstNameFeedback', 'maxlength')"
-							>First name should be less than 100 characters</mat-error
-						>
+						<mat-error *ngIf="checkError(feedbackForm, 'firstNameFeedback', 'required')">{{
+							'FormFields.FirstRequired' | translate
+						}}</mat-error>
+						<mat-error *ngIf="checkError(feedbackForm, 'firstNameFeedback', 'maxlength')">{{
+							'FormFields.FirstNameLength' | translate: { value: '30' }
+						}}</mat-error>
 					</mat-form-field>
 					<mat-form-field appearance="outline" class="half-width">
-						<mat-label>Last name</mat-label>
+						<mat-label>{{ 'FormFields.LastName' | translate }}</mat-label>
 						<input matInput formControlName="lastNameFeedback" />
-						<mat-error *ngIf="checkError(feedbackForm, 'lastNameFeedback', 'required')"
-							>Last name is required</mat-error
-						>
-						<mat-error *ngIf="checkError(feedbackForm, 'lastNameFeedback', 'maxlength')"
-							>Last name should be less than 100 characters</mat-error
-						>
+						<mat-error *ngIf="checkError(feedbackForm, 'lastNameFeedback', 'required')">{{
+							'FormFields.LastRequired' | translate
+						}}</mat-error>
+						<mat-error *ngIf="checkError(feedbackForm, 'lastNameFeedback', 'maxlength')">{{
+							'FormFields.LastNameLength' | translate: { value: '30' }
+						}}</mat-error>
 					</mat-form-field>
 				</p>
 
 				<p>
 					<mat-form-field appearance="outline" class="full-width">
-						<mat-label>Email</mat-label>
+						<mat-label>{{ 'FormFields.Email' | translate }}</mat-label>
 						<input matInput type="email" name="email" ngModel email formControlName="emailFeedback" />
-						<mat-error *ngIf="checkError(feedbackForm, 'emailFeedback', 'required')">Email is required</mat-error>
-						<mat-error *ngIf="feedbackForm.get('emailFeedback')?.hasError('email')"
-							>Please enter a valid email address</mat-error
-						>
-						<mat-error *ngIf="checkError(feedbackForm, 'emailFeedback', 'maxlength')"
-							>Email should be less than 200 characters</mat-error
-						>
+						<mat-error *ngIf="checkError(feedbackForm, 'emailFeedback', 'required')">{{
+							'FormFields.EmailRequired' | translate
+						}}</mat-error>
+						<mat-error *ngIf="feedbackForm.get('emailFeedback')?.hasError('email')">{{
+							'FormFields.EmailValid' | translate
+						}}</mat-error>
+						<mat-error *ngIf="checkError(feedbackForm, 'emailFeedback', 'maxlength')">{{
+							'FormFields.EmailLength' | translate: { value: '100' }
+						}}</mat-error>
 					</mat-form-field>
 				</p>
 
 				<p>
 					<mat-form-field appearance="outline" class="full-width">
-						<mat-label>Phone number</mat-label>
+						<mat-label>{{ 'FormFields.PhoneNumber' | translate }}</mat-label>
 						<ngx-mat-intl-tel-input
 							formControlName="phoneNumberFeedback"
 							[preferredCountries]="['de', 'us']"
@@ -110,15 +106,17 @@
 							#phone
 						>
 						</ngx-mat-intl-tel-input>
-						<mat-hint>eg : {{ phone.selectedCountry?.placeHolder }}</mat-hint>
+						<mat-hint>{{ 'FormFields.eg' | translate }} {{ phone.selectedCountry?.placeHolder }}</mat-hint>
 					</mat-form-field>
 				</p>
 
 				<p>
 					<mat-form-field appearance="outline" class="full-width">
-						<mat-label>Enter the link</mat-label>
+						<mat-label>{{ 'FormFields.EnterLink' | translate }}</mat-label>
 						<input matInput formControlName="inviteLink" />
-						<mat-error *ngIf="checkError(feedbackForm, 'inviteLink', 'required')">Link is required</mat-error>
+						<mat-error *ngIf="checkError(feedbackForm, 'inviteLink', 'required')">{{
+							'FormFields.LinkRequired' | translate
+						}}</mat-error>
 					</mat-form-field>
 				</p>
 
@@ -130,7 +128,7 @@
 									<input type="file" name="file" id="file" (change)="onFileChange($event)" multiple />
 									<mat-icon aria-hidden="true" class="file-svg" fontIcon="file_present"></mat-icon>
 									<label class="file-lable" for="file">
-										<span class="textLink">Select your file</span>
+										<span class="textLink">{{ 'FormFields.SelectFile' | translate }}</span>
 									</label>
 								</div>
 							</div>
@@ -154,17 +152,19 @@
 
 				<p>
 					<mat-form-field appearance="outline" class="full-width text-field">
-						<mat-label>Message</mat-label>
+						<mat-label>{{ 'FormFields.Message' | translate }}</mat-label>
 						<textarea matInput formControlName="messageFeedback"></textarea>
-						<mat-error *ngIf="checkError(feedbackForm, 'messageFeedback', 'required')">Message is required</mat-error>
-						<mat-error *ngIf="checkError(feedbackForm, 'messageFeedback', 'maxlength')"
-							>Message should be less than 500 characters</mat-error
-						>
+						<mat-error *ngIf="checkError(feedbackForm, 'messageFeedback', 'required')">{{
+							'FormFields.MessageRequired' | translate
+						}}</mat-error>
+						<mat-error *ngIf="checkError(feedbackForm, 'messageFeedback', 'maxlength')">{{
+							'FormFields.MessageLength' | translate: { value: '500' }
+						}}</mat-error>
 					</mat-form-field>
 				</p>
 
 				<button mat-flat-button class="submit-btn" appButtonConfig [type]="'flat'" [disabled]="!feedbackForm.valid">
-					<span>{{ 'Submit' }}</span>
+					<span>{{ 'Submit' | translate }}</span>
 					<mat-icon aria-hidden="true" class="booking-svg" svgIcon="booking"></mat-icon>
 				</button>
 			</form>
@@ -176,40 +176,46 @@
 			<form [formGroup]="contactForm" (ngSubmit)="onSubmitContact()" class="group-form">
 				<p class="double-field">
 					<mat-form-field appearance="outline" class="half-width">
-						<mat-label>First name</mat-label>
+						<mat-label>{{ 'FormFields.FirstName' | translate }}</mat-label>
 						<input matInput formControlName="firstName" />
-						<mat-error *ngIf="checkError(contactForm, 'firstName', 'required')">First name is required</mat-error>
-						<mat-error *ngIf="checkError(contactForm, 'firstName', 'maxlength')"
-							>First name should be less than 100 characters</mat-error
-						>
+						<mat-error *ngIf="checkError(contactForm, 'firstName', 'required')">{{
+							'FormFields.FirstRequired' | translate
+						}}</mat-error>
+						<mat-error *ngIf="checkError(contactForm, 'firstName', 'maxlength')">{{
+							'FormFields.FirstNameLength' | translate: { value: '30' }
+						}}</mat-error>
 					</mat-form-field>
 					<mat-form-field appearance="outline" class="half-width">
-						<mat-label>Last name</mat-label>
+						<mat-label>{{ 'FormFields.LastName' | translate }}</mat-label>
 						<input matInput formControlName="lastName" />
-						<mat-error *ngIf="checkError(contactForm, 'lastName', 'required')">Last name is required</mat-error>
-						<mat-error *ngIf="checkError(contactForm, 'lastName', 'maxlength')"
-							>Last name should be less than 100 characters</mat-error
-						>
+						<mat-error *ngIf="checkError(contactForm, 'lastName', 'required')">{{
+							'FormFields.LastRequired' | translate
+						}}</mat-error>
+						<mat-error *ngIf="checkError(contactForm, 'lastName', 'maxlength')">{{
+							'FormFields.LastNameLength' | translate
+						}}</mat-error>
 					</mat-form-field>
 				</p>
 
 				<p>
 					<mat-form-field appearance="outline" class="full-width">
-						<mat-label>Email</mat-label>
+						<mat-label>{{ 'FormFields.Email' | translate }}</mat-label>
 						<input matInput type="email" name="email" ngModel email formControlName="email" />
-						<mat-error *ngIf="checkError(contactForm, 'email', 'required')">Email is required</mat-error>
-						<mat-error *ngIf="contactForm.get('email')?.hasError('email')"
-							>Please enter a valid email address</mat-error
-						>
-						<mat-error *ngIf="checkError(contactForm, 'email', 'maxlength')"
-							>Email should be less than 200 characters</mat-error
-						>
+						<mat-error *ngIf="checkError(contactForm, 'email', 'required')">{{
+							'FormFields.EmailRequired' | translate
+						}}</mat-error>
+						<mat-error *ngIf="contactForm.get('email')?.hasError('email')">{{
+							'FormFields.EmailValid' | translate
+						}}</mat-error>
+						<mat-error *ngIf="checkError(contactForm, 'email', 'maxlength')">{{
+							'FormFields.EmailLength' | translate: { value: '100' }
+						}}</mat-error>
 					</mat-form-field>
 				</p>
 
 				<p>
 					<mat-form-field appearance="outline" class="full-width">
-						<mat-label>Phone number</mat-label>
+						<mat-label>{{ 'FormFields.EmailValid' | translate }}</mat-label>
 						<ngx-mat-intl-tel-input
 							formControlName="phoneNumber"
 							[preferredCountries]="['de', 'us']"
@@ -219,46 +225,50 @@
 							#phone
 						>
 						</ngx-mat-intl-tel-input>
-						<mat-hint>eg : {{ phone.selectedCountry?.placeHolder }}</mat-hint>
-						<mat-error *ngIf="checkError(contactForm, 'phoneNumber', 'required')">Phone number is required</mat-error>
+						<mat-hint>{{ 'FormFields.eg' | translate }} {{ phone.selectedCountry?.placeHolder }}</mat-hint>
+						<mat-error *ngIf="checkError(contactForm, 'phoneNumber', 'PhoneNumberRequired')">{{
+							'FormFields.eg' | translate
+						}}</mat-error>
 						<mat-error
 							*ngIf="contactForm.controls['phoneNumber'].touched && contactForm.controls['phoneNumber'].invalid"
-							>Please enter a valid phone number</mat-error
+							>{{ 'FormFields.PhoneNumberValid' | translate }}</mat-error
 						>
 					</mat-form-field>
 				</p>
 
 				<p class="double-field">
 					<mat-form-field appearance="outline" class="half-width">
-						<mat-label>Language</mat-label>
+						<mat-label>{{ 'FormFields.Language' | translate }}</mat-label>
 						<mat-select formControlName="language">
-							<mat-option *ngFor="let lang of languages" [value]="lang">{{ lang }}</mat-option>
+							<mat-option *ngFor="let lang of languages" [value]="lang">{{ lang | translate }}</mat-option>
 						</mat-select>
-						<mat-error *ngIf="checkError(contactForm, 'language', 'required')">Language is required</mat-error>
+						<mat-error *ngIf="checkError(contactForm, 'language', 'required')">{{
+							'FormFields.LanguageRequired' | translate
+						}}</mat-error>
 					</mat-form-field>
 					<mat-form-field appearance="outline" class="half-width">
-						<mat-label>Nature of the request</mat-label>
+						<mat-label>{{ 'FormFields.NatureOfRequest' | translate }}</mat-label>
 						<mat-select formControlName="natureOfRequest">
-							<mat-option *ngFor="let nature of natureOfRequest" [value]="nature">{{ nature }}</mat-option>
+							<mat-option *ngFor="let nature of natureOfRequest" [value]="nature">{{ nature | translate }}</mat-option>
 						</mat-select>
-						<mat-error *ngIf="checkError(contactForm, 'natureOfRequest', 'required')"
-							>Nature of the request is required</mat-error
-						>
+						<mat-error *ngIf="checkError(contactForm, 'natureOfRequest', 'required')">{{
+							'FormFields.NatureOfRequestRequired' | translate
+						}}</mat-error>
 					</mat-form-field>
 				</p>
 
 				<p>
 					<mat-form-field appearance="outline" class="full-width text-field">
-						<mat-label>Request and requirements</mat-label>
+						<mat-label>{{ 'FormFields.RequestAndRequirements' | translate }}</mat-label>
 						<textarea matInput formControlName="otherRequirement"></textarea>
-						<mat-error *ngIf="checkError(contactForm, 'otherRequirement', 'maxlength')"
-							>Request and requirements should be less than 500 characters</mat-error
-						>
+						<mat-error *ngIf="checkError(contactForm, 'otherRequirement', 'maxlength')">{{
+							'FormFields.RequestAndRequirementsLength' | translate: { value: '500' }
+						}}</mat-error>
 					</mat-form-field>
 				</p>
 
 				<button mat-flat-button class="submit-btn" appButtonConfig [type]="'flat'" [disabled]="!contactForm.valid">
-					<span>{{ 'Submit' }}</span>
+					<span>{{ 'FormFields.Submit' | translate }}</span>
 					<mat-icon aria-hidden="true" class="booking-svg" svgIcon="booking"></mat-icon>
 				</button>
 			</form>

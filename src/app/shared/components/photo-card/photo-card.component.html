@@ -14,7 +14,7 @@
 			<mat-icon aria-hidden="true" class="booking-svg" svgIcon="booking"></mat-icon>
 		</div>
 		<div *ngIf="cardConfig?.priceText as priceText" class="priceText mat-display-4">
-			<span>{{ priceText | translate }}</span>
+			<span>{{ 'Price' | translate }}: {{ priceText }}</span>
 		</div>
 		<button mat-button appButtonConfig [type]="'transparent'" class="discover-btn" (click)="onClickButton()">
 			{{ cardConfig.button | translate }}

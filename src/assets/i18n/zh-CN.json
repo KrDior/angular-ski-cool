@@ -1,3 +1,270 @@
 {
-	"Home": "Home CN"
+	"Menu": {
+		"More": "More Cn",
+		"AboutUs": "About Us",
+		"PrivateLessons": "Private Lessons",
+		"GroupLesson": "Group Lesson",
+		"IndividualRecreation": "Individual Recreation",
+		"MainPage": "Main page",
+		"OurTeam": "Our team",
+		"CareersJobs": "Careers & Jobs",
+		"Reviews": "Reviews"
+	},
+	"en-US": "En",
+	"de-DE": "De",
+	"zh-CN": "Zh",
+	"BookNow": "Book now",
+	"ContactUs": "Contact us",
+	"ContactBlock": {
+		"WorkingHours": "Working hours winter:",
+		"AvailableInquires": "we are available for your inquires <br />on the phone line 24/7",
+		"BankAccount": "Bank account",
+		"Email": "Email",
+		"Phone": "Phone"
+	},
+	"TermAndConditions": "Term and Conditions",
+	"TermCondition": {
+		"AgreeWith": "I agree with",
+		"FamiliarWith": "and I'm familiar with",
+		"Conditions": "the general Term and Conditions",
+		"OurSchool": "of our school"
+	},
+	"YouPay": "You'll pay ",
+	"PrivacyPolicy": "Privacy Policy",
+	"HomeCarouselPartnerConfig": {
+		"Message": "our partners"
+	},
+	"HomeCarouselConfig": {
+		"Message": "our reviews",
+		"Title": "You can also read reviews about our school"
+	},
+	"DiscoverMore": "Discover more",
+	"HomeCard_1_Config": {
+		"Header": "private lessons",
+		"Title": "Our elite school provides excellent individual lessons",
+		"Description": "Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover."
+	},
+	"HomeCard_2_Config": {
+		"Header": "group lessons",
+		"Title": "Our elite school provides excellent group lessons",
+		"Description": "Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets."
+	},
+	"HomeCard_3_Config": {
+		"Header": "about us",
+		"Title": "Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland",
+		"Description": "Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz."
+	},
+	"IconNavHomeConfig": {
+		"Weather": "Weather",
+		"SlopesFacilities": "Slopes & Facilities",
+		"Livecams": "Livecams",
+		"ContactUs": "Contact Us",
+		"Map": "Map"
+	},
+	"HomePageArticleCenter": {
+		"Header": "Individual recreation",
+		"Title": "Ski Cool St. Moritz, is an elite snowsports school",
+		"Description": "Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain."
+	},
+	"ReviewPageArticleCenter": {
+		"Title": "We want to always be in good shape",
+		"Description": "If you have already booked the service, please fill out the form and leave your feedback. If you haven't booked the service yet, then unfortunately you won't be able to leave a review.",
+		"Button": "Leave a review"
+	},
+	"HomeAdvantageSlideConfig": {
+		"slide1": "Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main.",
+		"slide2": "Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main.",
+		"slide3": "Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main.",
+		"slide4": "Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main."
+	},
+	"PageNotFound": {
+		"Title": "Oh no, the snow is gone.",
+		"Header1": "Something went",
+		"Header2": "wrong ...",
+		"Button": "Back to home"
+	},
+	"SkiCoolEliteSchool": "Ski Cool St. Moritz, is an elite snowsports school <br /> of the Engadin Valley, Switzerland.",
+	"Ski Cool": "Ski Cool",
+	"BookingPageTitle": "You have arrived at the booking page, please select the type of lessons you are interested in",
+	"AboutUsCard_1_Config": {
+		"Title": "Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland",
+		"Description": "Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.",
+		"Button": "Our Team"
+	},
+	"OurTeamCard_1_Config": {
+		"Header": "our team",
+		"Title": "Would you like to be a part of our team?",
+		"Description": "Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.",
+		"Button": "Join Us"
+	},
+	"PrivateLesson_Config": {
+		"Card1": {
+			"Title": "Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland",
+			"Description": "Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.",
+			"Button": "Book now"
+		},
+		"Card2": {
+			"Title": "Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland",
+			"Description": "Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.",
+			"Button": "Book now"
+		},
+		"Card3": {
+			"Title": "Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland",
+			"Description": "Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.",
+			"Button": "Book now"
+		},
+		"Card4": {
+			"Title": "Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland",
+			"Description": "Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.",
+			"Button": "Book now"
+		}
+	},
+	"Recreation_Config": {
+		"Card1": {
+			"Title": "Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland",
+			"Description": "Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.",
+			"Button": "Book now"
+		},
+		"Card2": {
+			"Title": "Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland",
+			"Description": "Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.",
+			"Button": "Book now"
+		},
+		"Card3": {
+			"Title": "Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland",
+			"Description": "Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.",
+			"Button": "Book now"
+		},
+		"Card4": {
+			"Title": "Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland",
+			"Description": "Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.",
+			"Button": "Book now"
+		}
+	},
+	"GroupLesson_Config": {
+		"Card1": {
+			"Title": "Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland",
+			"Description": "Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.",
+			"Button": "Book now"
+		},
+		"Card2": {
+			"Title": "Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland",
+			"Description": "Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.",
+			"Button": "Book now"
+		},
+		"Card3": {
+			"Title": "Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland",
+			"Description": "Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.",
+			"Button": "Book now"
+		},
+		"Card4": {
+			"Title": "Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland",
+			"Description": "Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.",
+			"Button": "Book now"
+		}
+	},
+	"ViewPrice": "View the price list",
+	"Price": "Price",
+	"FormFields": {
+		"FirstName": "First name",
+		"FirstRequired": "First name is required",
+		"FirstNameLength": "First name should be less than {{value}} characters",
+		"LastName": "Last name",
+		"LastRequired": "Last name is required",
+		"LastNameLength": "Last name should be less than {{value}} characters",
+		"Email": "Email",
+		"EmailRequired": "Email is required",
+		"EmailValid": "Please enter a valid email address",
+		"EmailLength": "Email should be less than {{value}} characters",
+		"PhoneNumber": "Phone number",
+		"eg": "eg :",
+		"PhoneNumberRequired": "Phone number is required",
+		"PhoneNumberValid": "Please enter a valid phone number",
+		"Language": "Language",
+		"LanguageRequired": "Language is required",
+		"NatureOfRequest": "Nature of the request",
+		"NatureOfRequestRequired": "Nature of the request is required",
+		"RequestAndRequirements": "Request and requirements",
+		"RequestAndRequirementsLength": "Request and requirements should be less than {{value}} characters",
+		"EnterLink": "Enter the link",
+		"LinkRequired": "Link is required",
+		"SelectFile": "Select your file",
+		"Message": "Message",
+		"MessageRequired": "Message is required",
+		"MessageLength": "Message should be less than {{value}} characters",
+		"BookingLink": "After booking, a link will be sent to your email, it must be entered in the input field to be able to leave a review",
+		"Resort": "Resort",
+		"ResortRequired": "Resort is required",
+		"Discipline": "Discipline",
+		"DisciplineRequired": "Discipline is required",
+		"LessonFocus": "Lesson focus",
+		"Book": "Book",
+		"Submit": "Submit",
+		"Dates": "Dates",
+		"DateFormat": "MM/DD/YYYY – MM/DD/YYYY",
+		"StartDateRequired": "Start date is required",
+		"EndDateRequired": "End date is required",
+		"InvalidStartDate": "Invalid start date",
+		"InvalidEndDate": "Invalid end date",
+		"NumberChildren": "Number of children",
+		"NumberChildrenRequired": "Number of children is required",
+		"NumberAdults": "Number of adults (18+)",
+		"NumberAdultsRequired": "Number of adults is required",
+		"DurationLesson": "Duration of the lesson",
+		"DurationLessonRequired": "Duration of the lesson is required",
+		"Instructor": "Instructor",
+		"PaymentCard": "Payment card number",
+		"PaymentCardRequired": "Payment card number is required",
+		"PaymentCardNotCorrect": "Payment card is not correct",
+		"Expiration": "Expiration (MM/YY)",
+		"ExpirationRequired": "Expiration is required",
+		"ExpirationNotCorrect": "Expiration is not correct",
+		"CVV": "CVV",
+		"CVVrequired": "CVV is required",
+		"CVVnotCorrect": "CVV is not correct",
+		"NameOnCard": "Name on card",
+		"NameOnCardRequired": "Name on card is required",
+		"NameOnCardLength": "Name on card should be less than {{value}} characters"
+	},
+	"NatureOfRequestList": {
+		"question1": "Question about booking",
+		"question2": "Question about service",
+		"question3": "I woudl like to be a part of the team",
+		"question4": "I would like to become a partner",
+		"question5": "Other"
+	},
+	"LanguageList": {
+		"French": "French",
+		"English": "English",
+		"German": "German",
+		"Spanish": "Spanish"
+	},
+	"InstructorsData": {
+		"Trainer": "Trainer",
+		"TomassMarnics": {
+			"Description": "Tomass is Russian, who originally comes from Latvia. He lives the majority of the year in Switzerland. He has been professional athlete all his life. First his passion was judo, after that he was a member of the Latvian national team in beach volleyball. Since 2003 he’s been professional extreme kayaker; he is the member of the Adidas Sickline Team, which is the only one professional kayak team in the whole world.\n Tomass began skiing when he was 5 and since that time he skied in such destinations like Russia, Ukraine, Germany, Austria, Switzerland, Italy, Slovakia, USA, Japan and Canada. Tomass worked as a trainer for NRLI (National Russian league of instructors- 2013-2017) for many years and he was as well official representative of NRLI in ISIA Technical Commission (International Ski Instructors Association). He also holds ISIA card and he is qualified United States Ski Association alpine ski coach. He is UPS method certified ski teacher and holds BASI (British Association of Snowsport Instructors) qualification in cross-country skiing.\n He studied psychology in university, which helps him to find a right contact with the people. Speaks Russian, Latvian and English. Learning Italian.Tomass is very stable and strong in his mind and this is a big part of his success in extreme sports."
+		},
+		"MikeNike": {
+			"Description": "Tomass is Russian, who originally comes from Latvia. He lives the majority of the year in Switzerland. He has been professional athlete all his life. First his passion was judo, after that he was a member of the Latvian national team in beach volleyball. Since 2003 he’s been professional extreme kayaker; he is the member of the Adidas Sickline Team, which is the only one professional kayak team in the whole world.\n Tomass began skiing when he was 5 and since that time he skied in such destinations like Russia, Ukraine, Germany, Austria, Switzerland, Italy, Slovakia, USA, Japan and Canada. Tomass worked as a trainer for NRLI (National Russian league of instructors- 2013-2017) for many years and he was as well official representative of NRLI in ISIA Technical Commission (International Ski Instructors Association). He also holds ISIA card and he is qualified United States Ski Association alpine ski coach. He is UPS method certified ski teacher and holds BASI (British Association of Snowsport Instructors) qualification in cross-country skiing.\n He studied psychology in university, which helps him to find a right contact with the people. Speaks Russian, Latvian and English. Learning Italian.Tomass is very stable and strong in his mind and this is a big part of his success in extreme sports."
+		}
+	},
+	"PrivateLesson": "Private Lesson",
+	"GroupLesson": "Group Lesson",
+	"IndividualRecreation": "Individual Recreation",
+	"FeedbackThankForm": {
+		"GoHome": "Go to home",
+		"ThankForPayment": "Thank you for the payment, the booking confirmation will be sent to your email.And if you have any questions, please contact us and we will help you solve them as soon as possible."
+	},
+	"PriceListAwait": "There should be price list...",
+	"BookingConfirmationForm": {
+		"ThankForPayment": "Thank you for the payment, the booking confirmation will be sent to your email.And if you have any questions, please contact us and we will help you solve them as soon as possible.",
+		"GoHome": "Go to home"
+	},
+	"Ski": "Ski",
+	"Snowboarding": "Snowboarding",
+	"FreeRide": "Free ride",
+	"Relaxing": "Relaxing",
+	"FillForm": "Please fill out the form. If you have any suggestions, be sure to let us know",
+	"BookingGroupLessons": "Booking group lessons",
+	"OrderCall": "order a call for booking"
 }

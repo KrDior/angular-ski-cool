@@ -127,7 +127,7 @@ export const recreation_Config: MainCard[] = [
 		imageAlt: 'photo',
 		direction: 'flex-direction: row',
 		routerLink: '/booking',
-		priceText: 'Price:  250 CHF per person',
+		priceText: '250 CHF per person',
 		clickAction: {
 			actionType: 'navigate',
 			type: BookingType.IndividualRecreation,
@@ -141,8 +141,7 @@ export const recreation_Config: MainCard[] = [
 		imageAlt: 'photo',
 		direction: 'flex-direction: row-reverse',
 		routerLink: '/booking',
-		priceText:
-			'Price:  sleigh for 4 people – 1 hr trip – 110 CHF; 160 CHF – return trip to the valleys (including 1 hr stay)',
+		priceText: 'sleigh for 4 people – 1 hr trip – 110 CHF; 160 CHF – return trip to the valleys (including 1 hr stay)',
 		clickAction: {
 			actionType: 'navigate',
 			type: BookingType.IndividualRecreation,
@@ -156,7 +155,7 @@ export const recreation_Config: MainCard[] = [
 		imageAlt: 'photo',
 		direction: 'flex-direction: row',
 		routerLink: '/booking',
-		priceText: 'Price:  250 CHF per person',
+		priceText: '250 CHF per person',
 		clickAction: {
 			actionType: 'navigate',
 			type: BookingType.IndividualRecreation,
@@ -170,8 +169,7 @@ export const recreation_Config: MainCard[] = [
 		imageAlt: 'photo',
 		direction: 'flex-direction: row-reverse',
 		routerLink: '/booking',
-		priceText:
-			'Price:  sleigh for 4 people – 1 hr trip – 110 CHF; 160 CHF – return trip to the valleys (including 1 hr stay)',
+		priceText: 'sleigh for 4 people – 1 hr trip – 110 CHF; 160 CHF – return trip to the valleys (including 1 hr stay)',
 		clickAction: {
 			actionType: 'navigate',
 			type: BookingType.IndividualRecreation,

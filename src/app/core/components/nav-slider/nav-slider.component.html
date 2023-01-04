@@ -25,7 +25,7 @@
 					<span class="title">{{ 'BookingPageTitle' | translate }}</span>
 					<button mat-button [matMenuTriggerFor]="belowMenu" class="booking-menu mat-display-4">
 						<div class="wrapper">
-							<span>{{ currentBooking }}</span>
+							<span>{{ currentBooking | translate }}</span>
 							<div class="booking-icon">
 								<mat-icon aria-hidden="false">keyboard_arrow_down</mat-icon>
 							</div>
@@ -38,7 +38,7 @@
 							(click)="onBookingTypeChange(bookType)"
 							mat-menu-item
 						>
-							{{ bookType }}
+							{{ bookType | translate }}
 						</button>
 					</mat-menu>
 				</div>

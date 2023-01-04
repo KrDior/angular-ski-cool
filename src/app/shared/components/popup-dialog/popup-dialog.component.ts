@@ -36,9 +36,9 @@ export class PopupDialogComponent implements OnInit {
 
 	ngOnInit() {
 		this.contactForm = new FormGroup({
-			firstName: new FormControl('', [Validators.required, Validators.maxLength(100)]),
-			lastName: new FormControl('', [Validators.required, Validators.maxLength(100)]),
-			email: new FormControl('', [Validators.required, Validators.maxLength(200)]),
+			firstName: new FormControl('', [Validators.required, Validators.maxLength(30)]),
+			lastName: new FormControl('', [Validators.required, Validators.maxLength(30)]),
+			email: new FormControl('', [Validators.required, Validators.maxLength(100)]),
 			phoneNumber: new FormControl('', [Validators.required]),
 			language: new FormControl('', [Validators.required]),
 			natureOfRequest: new FormControl('', [Validators.required]),
@@ -46,9 +46,9 @@ export class PopupDialogComponent implements OnInit {
 		});
 
 		this.feedbackForm = new FormGroup({
-			firstNameFeedback: new FormControl('', [Validators.required, Validators.maxLength(100)]),
-			lastNameFeedback: new FormControl('', [Validators.required, Validators.maxLength(100)]),
-			emailFeedback: new FormControl('', [Validators.required, Validators.maxLength(200)]),
+			firstNameFeedback: new FormControl('', [Validators.required, Validators.maxLength(30)]),
+			lastNameFeedback: new FormControl('', [Validators.required, Validators.maxLength(30)]),
+			emailFeedback: new FormControl('', [Validators.required, Validators.maxLength(100)]),
 			phoneNumberFeedback: new FormControl(''),
 			inviteLink: new FormControl('', [Validators.required]),
 			messageFeedback: new FormControl('', [Validators.required, Validators.maxLength(500)]),

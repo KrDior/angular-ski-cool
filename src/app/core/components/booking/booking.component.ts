@@ -2,13 +2,13 @@ import { Component, OnDestroy } from '@angular/core';
 import { BroadcasterService } from '@core/services/broadcaster.service';
 import { NavigationService } from '@core/services/navigation.service';
 import { BroadcastConstant } from '@shared/constants/broadcast-constants';
-import { Subject, Subscription, takeUntil } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 import { BottomContext } from '../nav-slider/nav-slider.component';
 
 export enum BookingType {
-	PrivateLesson = 'Private Lesson',
-	GroupLesson = 'Group Lesson',
-	IndividualRecreation = 'Individual Recreation',
+	PrivateLesson = 'PrivateLesson',
+	GroupLesson = 'GroupLesson',
+	IndividualRecreation = 'IndividualRecreation',
 }
 @Component({
 	selector: 'app-booking',
@@ -28,7 +28,9 @@ export class BookingComponent implements OnDestroy {
 			imagePath: '/assets/img/lesson/lesson-background.png',
 		});
 		this.subscriptions.push(
-			this.navigationService.getCurrentBookingType().subscribe((val) => (this.bookingType = val))
+			this.navigationService.getCurrentBookingType().subscribe((val) => {
+				this.bookingType = val;
+			})
 		);
 	}
 

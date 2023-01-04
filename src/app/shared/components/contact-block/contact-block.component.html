@@ -4,25 +4,25 @@
 		<div class="column center-content">
 			<div class="column mat-display-4">
 				<a class="link" routerLink="{{ routes.AboutUs }}">
-					<span>{{ 'About us' }}</span>
+					<span>{{ 'Menu.AboutUs' | translate }}</span>
 				</a>
 				<a class="link" routerLink="{{ routes.PrivateLesson }}">
-					<span>{{ 'Private lessons' }}</span>
+					<span>{{ 'Menu.PrivateLessons' | translate }}</span>
 				</a>
 				<a class="link" routerLink="{{ routes.GroupLesson }}">
-					<span>{{ 'Group lessons' }}</span>
+					<span>{{ 'Menu.GroupLesson' | translate }}</span>
 				</a>
 				<a class="link" routerLink="{{ routes.Recreation }}">
-					<span>{{ 'Individual recreation' }}</span>
+					<span>{{ 'Menu.IndividualRecreation' | translate }}</span>
 				</a>
 				<a class="link" routerLink="{{ routes.OurTeam }}">
-					<span>{{ 'Our team' }}</span>
+					<span>{{ 'Menu.OurTeam' | translate }}</span>
 				</a>
 				<a class="link" routerLink="{{ routes.OurTeam }}">
-					<span>{{ 'Careers & Jobs' }}</span>
+					<span>{{ 'Menu.CareersJobs' | translate }}</span>
 				</a>
 				<a class="link" routerLink="{{ routes.Reviews }}">
-					<span>{{ 'Reviews' }}</span>
+					<span>{{ 'Menu.Reviews' | translate }}</span>
 				</a>
 			</div>
 			<div class="column mat-display-4">
@@ -34,15 +34,15 @@
 					{{ 'Phone' }}: <a class="mat-display-4" href="tel:+41(0)799152989">+41 (0) 799152989</a>
 				</div>
 				<div class="info work-hours">
-					<span style="margin-bottom: 10px">Working hours winter:</span>
-					<span class="available">we are available for your inquires <br />on the phone line 24/7</span>
+					<span style="margin-bottom: 10px">{{ 'ContactBlock.WorkingHours' | translate }}</span>
+					<span [innerHTML]="'ContactBlock.AvailableInquires' | translate" class="available"></span>
 				</div>
 			</div>
 		</div>
 
 		<div class="column mat-display-4 contact">
 			<button mat-button appButtonConfig [type]="'transparentLight'" class="contact-btn" (click)="showContactPopup()">
-				<span>{{ 'Contact Us' }}</span>
+				<span>{{ 'ContactUs' | translate }}</span>
 			</button>
 			<div class="icon-block">
 				<a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
@@ -59,8 +59,12 @@
 	<div class="bottom-section">
 		<span class="condition mat-display-4">
 			{{ 'Copyright @ 2022 Ski Cool. All rights reserved.' }}
-			<a class="active-link mat-display-4" routerLink="{{ routes.TermAndCondition }}">{{ 'Term and Conditions' }}</a>
+			<a class="active-link mat-display-4" routerLink="{{ routes.TermAndCondition }}">{{
+				'TermAndConditions' | translate
+			}}</a>
 		</span>
-		<a class="active-link mat-display-4" routerLink="{{ routes.TermAndCondition }}">{{ 'Privacy Policy' }}</a>
+		<a class="active-link mat-display-4" routerLink="{{ routes.TermAndCondition }}">{{
+			'PrivacyPolicy' | translate
+		}}</a>
 	</div>
 </div>

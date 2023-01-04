@@ -1,6 +1,6 @@
 export interface MenuItem {
 	label: string;
-	localizeField?: string;
+	localizeField: string;
 	icon?: string;
 	command?: (event?: any) => void;
 	url?: string;

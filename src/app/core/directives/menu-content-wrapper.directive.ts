@@ -61,8 +61,8 @@ export class MenuContentWrapperDirective implements OnInit, OnDestroy {
 	}
 
 	private translateLabel(): void {
-		this.translateSubscription = this.translate.get(this.item.label).subscribe((text: string) => {
-			this.item.localizeField = text;
+		this.translateSubscription = this.translate.get(this.item.localizeField).subscribe((text: string) => {
+			this.item.label = text;
 			this.changeDetectorRef.detectChanges();
 		});
 	}

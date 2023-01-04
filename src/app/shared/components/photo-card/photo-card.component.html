@@ -1,23 +1,23 @@
 <div class="card-wrapper" [style]="cardConfig.direction">
 	<div class="article">
 		<ng-container *ngIf="cardConfig?.header">
-			<app-text-line [text]="cardConfig.header || ''"></app-text-line>
+			<app-text-line [text]="cardConfig.header || '' | translate"></app-text-line>
 		</ng-container>
 		<div class="title mat-display-2">
-			{{ cardConfig.title }}
+			{{ cardConfig.title | translate }}
 		</div>
 		<div class="description mat-display-4">
-			{{ cardConfig.description }}
+			{{ cardConfig.description | translate }}
 		</div>
-		<div *ngIf="cardConfig?.price" class="price mat-display-4" (click)="onClickPriceButton()">
-			<span>{{ cardConfig.price }}</span>
+		<div *ngIf="cardConfig?.price as price" class="price mat-display-4" (click)="onClickPriceButton()">
+			<span>{{ price | translate }}</span>
 			<mat-icon aria-hidden="true" class="booking-svg" svgIcon="booking"></mat-icon>
 		</div>
-		<div *ngIf="cardConfig?.priceText" class="priceText mat-display-4">
-			<span>{{ cardConfig.priceText }}</span>
+		<div *ngIf="cardConfig?.priceText as priceText" class="priceText mat-display-4">
+			<span>{{ priceText | translate }}</span>
 		</div>
 		<button mat-button appButtonConfig [type]="'transparent'" class="discover-btn" (click)="onClickButton()">
-			{{ cardConfig.button }}
+			{{ cardConfig.button | translate }}
 		</button>
 	</div>
 	<div class="image-block">

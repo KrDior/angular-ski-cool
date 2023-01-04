@@ -5,7 +5,7 @@
 		[text]="carouselConfig.message"
 		[ngClass]="{ fullWidth: carouselConfig.fullTitleWidth }"
 	></app-text-line>
-	<span *ngIf="carouselConfig?.title" class="title mat-display-2">{{ carouselConfig.title }}</span>
+	<span *ngIf="carouselConfig?.title as title" class="title mat-display-2">{{ title | translate }}</span>
 	<app-panning-container class="card-block" #panner>
 		<ng-container *ngFor="let card of carouselConfig.cards; index as i">
 			<ng-container *ngIf="carouselConfig.type === 'feedback'">
@@ -54,7 +54,7 @@
 			[type]="'stroked'"
 			routerLink="{{ carouselConfig.routerLink }}"
 		>
-			{{ carouselConfig.button }}
+			{{ carouselConfig.button | translate }}
 		</button>
 		<div class="pagination" *ngIf="carouselConfig.isScrollable">
 			<button class="pagination-btn" (click)="panner.shift(-1)" aria-label="Example icon button with a home icon">

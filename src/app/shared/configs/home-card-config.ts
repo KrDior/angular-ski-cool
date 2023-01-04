@@ -2,11 +2,10 @@ import { BookingType } from '@core/components/booking/booking.component';
 import { MainCard } from '@shared/models/main-card.model';
 
 export const homeCard_1_Config: MainCard = {
-	header: 'private lessons',
-	title: 'Our elite school provides excellent individual lessons',
-	description:
-		'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover.',
-	button: 'Discover more',
+	header: 'HomeCard_1_Config.Header',
+	title: 'HomeCard_1_Config.Title',
+	description: 'HomeCard_1_Config.Description',
+	button: 'DiscoverMore',
 	imageLink: 'assets/img/home/about-us-1.png',
 	imageAlt: 'photo',
 	direction: 'flex-direction: row-reverse',
@@ -14,11 +13,10 @@ export const homeCard_1_Config: MainCard = {
 };
 
 export const homeCard_2_Config: MainCard = {
-	header: 'group lessons',
-	title: 'Our elite school provides excellent group lessons',
-	description:
-		'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets.',
-	button: 'Discover more',
+	header: 'HomeCard_2_Config.Header',
+	title: 'HomeCard_2_Config.Title',
+	description: 'HomeCard_2_Config.Description',
+	button: 'DiscoverMore',
 	imageLink: 'assets/img/home/about-us-2.png',
 	imageAlt: 'photo',
 	direction: 'flex-direction: row',
@@ -26,11 +24,10 @@ export const homeCard_2_Config: MainCard = {
 };
 
 export const homeCard_3_Config: MainCard = {
-	header: 'about us',
-	title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
-	description:
-		'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
-	button: 'Discover more',
+	header: 'HomeCard_3_Config.Header',
+	title: 'HomeCard_3_Config.Title',
+	description: 'HomeCard_3_Config.Description',
+	button: 'DiscoverMore',
 	imageLink: 'assets/img/home/about-us-3.png',
 	imageAlt: 'photo',
 	direction: 'flex-direction: row-reverse',
@@ -38,10 +35,9 @@ export const homeCard_3_Config: MainCard = {
 };
 
 export const aboutUsCard_1_Config: MainCard = {
-	title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
-	description:
-		'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
-	button: 'Our Team',
+	title: 'AboutUsCard_1_Config.Title',
+	description: 'AboutUsCard_1_Config.Description',
+	button: 'AboutUsCard_1_Config.Button',
 	imageLink: 'assets/img/home/about-us-3.png',
 	imageAlt: 'photo',
 	direction: 'flex-direction: row-reverse',
@@ -49,11 +45,10 @@ export const aboutUsCard_1_Config: MainCard = {
 };
 
 export const ourTeamCard_1_Config: MainCard = {
-	header: 'our team',
-	title: 'Would you like to be a part of our team?',
-	description:
-		'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
-	button: 'Join Us',
+	header: 'OurTeamCard_1_Config.Header',
+	title: 'OurTeamCard_1_Config.Title',
+	description: 'OurTeamCard_1_Config.Description',
+	button: 'OurTeamCard_1_Config.Button',
 	imageLink: 'assets/img/team/photo.png',
 	imageAlt: 'photo',
 	direction: 'flex-direction: row',
@@ -66,60 +61,56 @@ export const ourTeamCard_1_Config: MainCard = {
 
 export const privateLesson_Config: MainCard[] = [
 	{
-		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
-		description:
-			'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
-		button: 'Book now',
+		title: 'PrivateLesson_Config.Card1.Title',
+		description: 'PrivateLesson_Config.Card1.Description',
+		button: 'PrivateLesson_Config.Card1.Button',
 		imageLink: 'assets/img/home/about-us-3.png',
 		imageAlt: 'photo',
 		direction: 'flex-direction: row',
 		routerLink: '/booking',
-		price: 'View the price list',
+		price: 'ViewPrice',
 		clickAction: {
 			actionType: 'navigate',
 			type: BookingType.PrivateLesson,
 		},
 	},
 	{
-		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
-		description:
-			'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
-		button: 'Book now',
+		title: 'PrivateLesson_Config.Card2.Title',
+		description: 'PrivateLesson_Config.Card2.Description',
+		button: 'PrivateLesson_Config.Card2.Button',
 		imageLink: 'assets/img/home/about-us-3.png',
 		imageAlt: 'photo',
 		direction: 'flex-direction: row-reverse',
 		routerLink: '/booking',
-		price: 'View the price list',
+		price: 'ViewPrice',
 		clickAction: {
 			actionType: 'navigate',
 			type: BookingType.PrivateLesson,
 		},
 	},
 	{
-		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
-		description:
-			'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
-		button: 'Book now',
+		title: 'PrivateLesson_Config.Card3.Title',
+		description: 'PrivateLesson_Config.Card3.Description',
+		button: 'PrivateLesson_Config.Card3.Button',
 		imageLink: 'assets/img/home/about-us-3.png',
 		imageAlt: 'photo',
 		direction: 'flex-direction: row',
 		routerLink: '/booking',
-		price: 'View the price list',
+		price: 'ViewPrice',
 		clickAction: {
 			actionType: 'navigate',
 			type: BookingType.PrivateLesson,
 		},
 	},
 	{
-		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
-		description:
-			'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
-		button: 'Book now',
+		title: 'PrivateLesson_Config.Card4.Title',
+		description: 'PrivateLesson_Config.Card4.Description',
+		button: 'PrivateLesson_Config.Card4.Button',
 		imageLink: 'assets/img/home/about-us-3.png',
 		imageAlt: 'photo',
 		direction: 'flex-direction: row-reverse',
 		routerLink: '/booking',
-		price: 'View the price list',
+		price: 'ViewPrice',
 		clickAction: {
 			actionType: 'navigate',
 			type: BookingType.PrivateLesson,
@@ -129,10 +120,9 @@ export const privateLesson_Config: MainCard[] = [
 
 export const recreation_Config: MainCard[] = [
 	{
-		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
-		description:
-			'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
-		button: 'Book now',
+		title: 'Recreation_Config.Card1.Title',
+		description: 'Recreation_Config.Card1.Description',
+		button: 'Recreation_Config.Card1.Button',
 		imageLink: 'assets/img/home/about-us-3.png',
 		imageAlt: 'photo',
 		direction: 'flex-direction: row',
@@ -144,10 +134,9 @@ export const recreation_Config: MainCard[] = [
 		},
 	},
 	{
-		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
-		description:
-			'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
-		button: 'Book now',
+		title: 'Recreation_Config.Card2.Title',
+		description: 'Recreation_Config.Card2.Description',
+		button: 'Recreation_Config.Card2.Button',
 		imageLink: 'assets/img/home/about-us-3.png',
 		imageAlt: 'photo',
 		direction: 'flex-direction: row-reverse',
@@ -160,10 +149,9 @@ export const recreation_Config: MainCard[] = [
 		},
 	},
 	{
-		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
-		description:
-			'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
-		button: 'Book now',
+		title: 'Recreation_Config.Card3.Title',
+		description: 'Recreation_Config.Card3.Description',
+		button: 'Recreation_Config.Card3.Button',
 		imageLink: 'assets/img/home/about-us-3.png',
 		imageAlt: 'photo',
 		direction: 'flex-direction: row',
@@ -175,10 +163,9 @@ export const recreation_Config: MainCard[] = [
 		},
 	},
 	{
-		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
-		description:
-			'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
-		button: 'Book now',
+		title: 'Recreation_Config.Card4.Title',
+		description: 'Recreation_Config.Card4.Description',
+		button: 'Recreation_Config.Card4.Button',
 		imageLink: 'assets/img/home/about-us-3.png',
 		imageAlt: 'photo',
 		direction: 'flex-direction: row-reverse',
@@ -194,60 +181,56 @@ export const recreation_Config: MainCard[] = [
 
 export const groupLesson_Config: MainCard[] = [
 	{
-		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
-		description:
-			'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
-		button: 'Book now',
+		title: 'GroupLesson_Config.Card1.Title',
+		description: 'GroupLesson_Config.Card1.Description',
+		button: 'GroupLesson_Config.Card1.Button',
 		imageLink: 'assets/img/home/about-us-3.png',
 		imageAlt: 'photo',
 		direction: 'flex-direction: row',
 		routerLink: '/booking',
-		price: 'View the price list',
+		price: 'ViewPrice',
 		clickAction: {
 			actionType: 'navigate',
 			type: BookingType.GroupLesson,
 		},
 	},
 	{
-		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
-		description:
-			'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
-		button: 'Book now',
+		title: 'GroupLesson_Config.Card2.Title',
+		description: 'GroupLesson_Config.Card2.Description',
+		button: 'GroupLesson_Config.Card2.Button',
 		imageLink: 'assets/img/home/about-us-3.png',
 		imageAlt: 'photo',
 		direction: 'flex-direction: row-reverse',
 		routerLink: '/booking',
-		price: 'View the price list',
+		price: 'ViewPrice',
 		clickAction: {
 			actionType: 'navigate',
 			type: BookingType.GroupLesson,
 		},
 	},
 	{
-		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
-		description:
-			'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
-		button: 'Book now',
+		title: 'GroupLesson_Config.Card3.Title',
+		description: 'GroupLesson_Config.Card3.Description',
+		button: 'GroupLesson_Config.Card3.Button',
 		imageLink: 'assets/img/home/about-us-3.png',
 		imageAlt: 'photo',
 		direction: 'flex-direction: row',
 		routerLink: '/booking',
-		price: 'View the price list',
+		price: 'ViewPrice',
 		clickAction: {
 			actionType: 'navigate',
 			type: BookingType.GroupLesson,
 		},
 	},
 	{
-		title: 'Ski Cool St. Moritz, is an elite snowsports school of the Engadin Valley, Switzerland',
-		description:
-			'Our team has great expertise of the Engadin valley: we spent the last 9 years learning all the secrets of the resort, and we are ready to guide our guests to discover the four main areas of the skiable domain: Corviglia, Corvatsch, Lagalb-Diavolezza or Zuoz.',
-		button: 'Book now',
+		title: 'GroupLesson_Config.Card4.Title',
+		description: 'GroupLesson_Config.Card4.Description',
+		button: 'GroupLesson_Config.Card4.Button',
 		imageLink: 'assets/img/home/about-us-3.png',
 		imageAlt: 'photo',
 		direction: 'flex-direction: row-reverse',
 		routerLink: '/booking',
-		price: 'View the price list',
+		price: 'ViewPrice',
 		clickAction: {
 			actionType: 'navigate',
 			type: BookingType.GroupLesson,

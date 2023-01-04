@@ -1,3 +1,10 @@
 {
-	"Home": "Home DE"
+	"Home": "Home EN",
+	"Menu": {
+		"More": "More",
+		"AboutUs": "About Us",
+		"PrivateLessons": "Private Lessons",
+		"GroupLesson": "Group Lesson",
+		"IndividualRecreation": "Individual Recreation"
+	}
 }

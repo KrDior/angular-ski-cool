@@ -6,7 +6,7 @@
 
 		<mat-drawer-content>
 			<button mat-button appButtonConfig [type]="'stroked'" class="booking-btn" routerLink="{{ routes.Booking }}">
-				<span>{{ 'Book now' }}</span>
+				<span>{{ 'BookNow' | translate }}</span>
 			</button>
 			<app-nav-slider
 				[isDesktop]="isDesktopView$ | async"
@@ -22,7 +22,7 @@
 				>
 				</app-nav-tab>
 				<button mat-button [matMenuTriggerFor]="belowMenu" class="lang mat-display-4">
-					{{ currentLang.slice(0, 2) | uppercase }}
+					{{ currentLang | translate | uppercase }}
 					<mat-icon aria-hidden="false">keyboard_arrow_down</mat-icon>
 				</button>
 				<mat-menu class="lang-menu" #belowMenu="matMenu" yPosition="below">
@@ -32,7 +32,7 @@
 						(click)="onLanguageChange(lang)"
 						mat-menu-item
 					>
-						{{ lang.slice(0, 2) | uppercase }}
+						{{ lang | translate | uppercase }}
 					</button>
 				</mat-menu>
 			</app-nav-slider>

@@ -60,11 +60,11 @@ export const feedbacks: CarouselCard[] = [
 ];
 
 export const homeCarouselConfig: CarouselConfig = {
-	message: 'our reviews',
+	message: 'HomeCarouselConfig.Message',
 	type: 'feedback',
-	title: 'You can also read reviews about our school',
+	title: 'HomeCarouselConfig.Title',
 	cards: feedbacks,
-	button: 'Discover more',
+	button: 'DiscoverMore',
 	routerLink: '/review',
 	isScrollable: true,
 };
@@ -79,7 +79,7 @@ export const reviewCarouselConfig: CarouselConfig = {
 };
 
 export const homeCarouselPartnerConfig: CarouselConfig = {
-	message: 'our partners',
+	message: 'HomeCarouselPartnerConfig.Message',
 	type: 'partner',
 	fullTitleWidth: true,
 	isScrollable: false,

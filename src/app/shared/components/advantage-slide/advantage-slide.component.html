@@ -5,10 +5,10 @@
 		<ng-container *ngFor="let slide of homeAdvantageSlideConfig">
 			<div class="slide" [style]="'background-image: url(' + slide.imageLink + ');'">
 				<p class="header-text">
-					{{ slide.header }}
+					{{ slide.header | translate }}
 				</p>
 				<div class="title">
-					{{ slide.title }}
+					{{ slide.title | translate }}
 				</div>
 			</div>
 		</ng-container>

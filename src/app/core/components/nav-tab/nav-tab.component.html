@@ -56,7 +56,7 @@
 							[attr.target]="item.target"
 						>
 							<span class="fa fa-fw" style="margin-right: 4px" *ngIf="item.icon" [ngClass]="item.icon"></span
-							>{{ item.localizeField }}
+							>{{ item.label }}
 						</a>
 						<a
 							*ngIf="item.visible && !item.routerLink"
@@ -90,7 +90,7 @@
 						[ngClass]="moreMenuItem.styleClass"
 						[ngStyle]="moreMenuItem.style"
 					>
-						{{ 'More' }}
+						{{ 'Menu.More' | translate }}
 						<mat-icon *ngIf="moreMenuItem.icon" aria-hidden="false" [ngClass]="moreMenuItem.icon">{{
 							moreMenuItem.icon
 						}}</mat-icon>

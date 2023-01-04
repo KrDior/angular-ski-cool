@@ -1,8 +1,10 @@
 <div class="contact-block-wrapper">
 	<div class="content-left">
-		<span class="title mat-display-2">{{ 'Ski Cool St. Moritz Silvaplana-Surlej, Switzerland' }}</span>
+		<span class="title mat-display-2"
+			>{{ 'SkiCool' | translate }} {{ ' St. Moritz Silvaplana-Surlej, Switzerland' }}</span
+		>
 		<button mat-flat-button appButtonConfig [type]="'flat'" class="contact-btn" (click)="showContactPopup()">
-			<span>{{ 'Contact Us' }}</span>
+			<span>{{ 'ContactUs' | translate }}</span>
 		</button>
 	</div>
 	<div class="content-right">
@@ -11,13 +13,13 @@
 			Via Sturetscha 13, CH 7513, Switzerland<br />
 		</div>
 		<div class="info email">
-			{{ 'Email' }}: <a class="mat-display-4" href="mailto:info@skicool.ch">info@skicool.ch</a>
+			{{ 'ContactBlock.Email' | translate }}: <a class="mat-display-4" href="mailto:info@skicool.ch">info@skicool.ch</a>
 		</div>
 		<div class="info phone">
-			{{ 'Phone' }}: <a class="mat-display-4" href="tel:+41(0)799152989">+41 (0) 799152989</a>
+			{{ 'ContactBlock.Phone' | translate }}: <a class="mat-display-4" href="tel:+41(0)799152989">+41 (0) 799152989</a>
 		</div>
 		<div class="info bank">
-			Bank account: Erste Bank - IBAN: AT19 <br />
+			{{ 'ContactBlock.BankAccount' | translate }}: Erste Bank - IBAN: AT19 <br />
 			2011 1000 0041 8765 - BIC: GIBAATWW <br />
 		</div>
 	</div>

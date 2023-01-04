@@ -2,12 +2,14 @@
 <br />
 <div class="title-wrapper">
 	<img class="logo" alt="Logo" src="assets/img/Logo.png" routerLink="{{ routes.Home }}" />
-	<h1 class="title">Ski Cool</h1>
+	<h1 class="title">{{ 'SkiCool' | translate }}</h1>
 </div>
 
 <mat-list role="list">
 	<mat-list-item role="listitem">
-		<a mat-button class="router-btn" routerLink="{{ routes.Home }}" (click)="toggleDrawer()">{{ 'Main page' }}</a>
+		<a mat-button class="router-btn" routerLink="{{ routes.Home }}" (click)="toggleDrawer()">{{
+			'Menu.MainPage' | translate
+		}}</a>
 	</mat-list-item>
 	<ng-container *ngFor="let item of menuItems; let i = index">
 		<mat-list-item role="listitem" [disabled]="item.disabled">
@@ -22,7 +24,7 @@
 				[attr.id]="item.id"
 				[attr.target]="item.target"
 				(click)="toggleDrawer()"
-				>{{ item.label }}</a
+				>{{ item.localizeField | translate }}</a
 			>
 		</mat-list-item>
 	</ng-container>

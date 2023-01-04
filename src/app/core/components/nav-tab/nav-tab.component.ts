@@ -53,7 +53,7 @@ export class NavTabComponent implements AfterViewInit, OnDestroy {
 
 	// If you want to customize the "more" button
 	@Input()
-	public moreMenuItem!: MenuItemMore;
+	public moreMenuItem!: Partial<MenuItemMore>;
 
 	// Position the main menu block, not the items
 	@Input()

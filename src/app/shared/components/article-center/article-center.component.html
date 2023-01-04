@@ -1,16 +1,16 @@
 <div class="article-wrapper">
 	<div class="article" [style]="'background-image: url(' + articleConfig.imageLink + ');'">
-		<p *ngIf="articleConfig?.header" class="header-text mat-display-3">
-			{{ articleConfig.header }}
+		<p *ngIf="articleConfig?.header as header" class="header-text mat-display-3">
+			{{ header | translate }}
 		</p>
 		<div class="title mat-display-2">
-			{{ articleConfig.title }}
+			{{ articleConfig.title | translate }}
 		</div>
 		<div class="description mat-display-4">
-			{{ articleConfig.description }}
+			{{ articleConfig.description | translate }}
 		</div>
 		<button mat-button appButtonConfig [type]="'transparentLight'" class="discover-btn" (click)="onClickButton()">
-			{{ articleConfig.button }}
+			{{ articleConfig.button | translate }}
 		</button>
 	</div>
 </div>

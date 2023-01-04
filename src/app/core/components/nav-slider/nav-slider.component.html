@@ -8,29 +8,21 @@
 		</div>
 		<div class="bottom-content" *ngIf="!isPageNotFound">
 			<ng-container *ngIf="bottomContext === bottomContextTypes.Home">
-				<h1 class="mat-headline home-title">{{ 'Ski Cool' }}</h1>
-				<p>
-					Ski Cool St. Moritz, is an elite snowsports school <br />
-					of the Engadin Valley, Switzerland.
-				</p>
+				<h1 class="mat-headline home-title">{{ 'SkiCool' | translate }}</h1>
+				<p [innerHTML]="'SkiCoolEliteSchool' | translate"></p>
 				<button mat-flat-button class="discover-btn" appButtonConfig [type]="'flat'" routerLink="{{ routes.Booking }}">
-					Book now
+					{{ 'BookNow' | translate }}
 				</button>
 			</ng-container>
 
 			<ng-container *ngIf="bottomContext === bottomContextTypes.Review">
 				<h1 class="mat-headline home-title">{{ 'Review' }}</h1>
-				<p>
-					Ski Cool St. Moritz, is an elite snowsports school <br />
-					of the Engadin Valley, Switzerland.
-				</p>
+				<p [innerHTML]="'SkiCoolEliteSchool' | translate"></p>
 			</ng-container>
 
 			<ng-container *ngIf="bottomContext === bottomContextTypes.Booking">
 				<div class="booking-section">
-					<span class="title">{{
-						'You have arrived at the booking page, please select the type of lessons you are interested in'
-					}}</span>
+					<span class="title">{{ 'BookingPageTitle' | translate }}</span>
 					<button mat-button [matMenuTriggerFor]="belowMenu" class="booking-menu mat-display-4">
 						<div class="wrapper">
 							<span>{{ currentBooking }}</span>
@@ -59,11 +51,8 @@
 					bottomContext === bottomContextTypes.Recreation
 				"
 			>
-				<h1 class="mat-headline private-lesson-title">{{ 'Ski Cool' }}</h1>
-				<p class="private-lesson-title">
-					Ski Cool St. Moritz, is an elite snowsports school <br />
-					of the Engadin Valley, Switzerland.
-				</p>
+				<h1 class="mat-headline private-lesson-title">{{ 'SkiCool' | translate }}</h1>
+				<p class="private-lesson-title" [innerHTML]="'SkiCoolEliteSchool' | translate"></p>
 				<button mat-button [matMenuTriggerFor]="belowMenu" class="resort mat-display-4">
 					<div class="wrapper">
 						<span>{{ currentResort }}</span>
@@ -85,32 +74,29 @@
 			</ng-container>
 
 			<ng-container *ngIf="bottomContext === bottomContextTypes.AboutUs">
-				<h1 class="mat-headline about-title">{{ 'About us' }}</h1>
-				<p>
-					Ski Cool St. Moritz, is an elite snowsports school <br />
-					of the Engadin Valley, Switzerland.
-				</p>
+				<h1 class="mat-headline about-title">{{ 'Menu.AboutUs' | translate }}</h1>
+				<p [innerHTML]="'SkiCoolEliteSchool' | translate"></p>
 			</ng-container>
 
 			<ng-container *ngIf="bottomContext === bottomContextTypes.OurTeam">
-				<h1 class="mat-headline about-title">{{ 'Our team' }}</h1>
+				<h1 class="mat-headline about-title">{{ 'Menu.OurTeam' | translate }}</h1>
 			</ng-container>
 		</div>
 		<div class="not-found" *ngIf="isPageNotFound">
 			<span class="title-message">
-				{{ 'Oh no, the snow is gone.' }}
+				{{ 'PageNotFound.Title' | translate }}
 			</span>
-			<h1 class="header-message">{{ 'Something went' }}</h1>
-			<h1 class="header-message">{{ 'wrong ...' }}</h1>
+			<h1 class="header-message">{{ 'PageNotFound.Header1' | translate }}</h1>
+			<h1 class="header-message">{{ 'PageNotFound.Header2' | translate }}</h1>
 			<button mat-button appButtonConfig [type]="'flat'" class="booking-btn" routerLink="{{ routes.Home }}">
-				<span>{{ 'Back to home' }}</span>
+				<span>{{ 'PageNotFound.Button' | translate }}</span>
 			</button>
 			<h1 class="not-found-number">{{ '404' }}</h1>
 		</div>
 	</div>
 	<div
 		class="contact-btn"
-		matTooltip="Contact us"
+		matTooltip="{{ 'ContactUs' | translate }}"
 		(click)="showContactPopup()"
 		[ngClass]="{ 'fixed-btn': bottomContext !== bottomContextTypes.Home }"
 	>
